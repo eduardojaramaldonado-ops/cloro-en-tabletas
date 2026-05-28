@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>¡Pedido Confirmado! | Cloro en Tabletas</title>
+
+<link rel="icon" type="image/png" href="../../assets/img/logo%20nuevo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+
+<style>
+
+.gracias-section{
+  padding:50px 0 90px;
+  background:#f1f5f9;
+  min-height:calc(100vh - 120px);
+
+  display:flex;
+  align-items:center;
+}
+
+.gracias-wrap{
+  max-width:680px;
+  margin:0 auto;
+
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(10,120,194,.12);
+
+  padding:60px 50px;
+  text-align:center;
+}
+
+.gracias-icon{
+  width:100px;
+  height:100px;
+  margin:0 auto 24px;
+
+  border-radius:50%;
+  background:linear-gradient(135deg, #00a63f, #27b964);
+  color:#fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:46px;
+
+  box-shadow:0 12px 30px rgba(0,166,63,.35);
+
+  animation:pop .5s ease;
+}
+
+@keyframes pop{
+  0% { transform:scale(0); }
+  60% { transform:scale(1.15); }
+  100% { transform:scale(1); }
+}
+
+.gracias-wrap h1{
+  font-size:36px;
+  font-weight:900;
+  color:#0a3a5f;
+  margin-bottom:12px;
+  line-height:1.2;
+}
+
+.gracias-wrap h1 .yellow{ color:#ffb800; }
+
+.gracias-wrap > p.lead{
+  font-size:17px;
+  color:#374151;
+  line-height:1.6;
+  margin-bottom:32px;
+  max-width:480px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.pedido-info{
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  border-radius:14px;
+
+  padding:24px 28px;
+  margin-bottom:30px;
+
+  text-align:left;
+}
+
+.pedido-numero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:14px;
+  border-bottom:1px solid #bfdbfe;
+  margin-bottom:14px;
+}
+
+.pedido-numero .label{
+  font-size:13px;
+  color:#0a3a5f;
+  font-weight:700;
+}
+
+.pedido-numero .codigo{
+  font-size:18px;
+  font-weight:900;
+  color:#0a78c2;
+  letter-spacing:.5px;
+}
+
+.pedido-detalles{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:14px;
+}
+
+.detalle{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.detalle .key{
+  font-size:11px;
+  color:#6b7280;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  font-weight:700;
+}
+
+.detalle .val{
+  font-size:14px;
+  color:#0a3a5f;
+  font-weight:700;
+}
+
+.detalle .val.total{
+  font-size:18px;
+  color:#0a78c2;
+  font-weight:900;
+}
+
+.proximos{
+  text-align:left;
+  margin-bottom:30px;
+}
+
+.proximos h3{
+  font-size:18px;
+  font-weight:800;
+  color:#0a3a5f;
+  margin-bottom:16px;
+}
+
+.proximos ol{
+  padding-left:0;
+  list-style:none;
+
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.proximos li{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.proximos li .num{
+  width:28px; height:28px;
+  flex-shrink:0;
+  background:#ffb800;
+  color:#0a3a5f;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  font-weight:900;
+}
+
+.proximos li p{
+  font-size:14px;
+  line-height:1.5;
+  color:#374151;
+}
+
+.proximos li strong{ color:#0a3a5f; }
+
+.acciones{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn-prim, .btn-sec{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 28px;
+
+  border-radius:50px;
+  text-decoration:none;
+
+  font-size:14px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  transition:.2s;
+}
+
+.btn-prim{
+  background:#0a78c2;
+  color:#fff;
+  box-shadow:0 10px 25px rgba(10,120,194,.3);
+}
+
+.btn-prim:hover{
+  background:#0a3a5f;
+  transform:translateY(-2px);
+}
+
+.btn-sec{
+  background:transparent;
+  color:#0a78c2;
+  border:2px solid #0a78c2;
+}
+
+.btn-sec:hover{
+  background:#0a78c2;
+  color:#fff;
+}
+
+@media(max-width:768px){
+  .gracias-wrap{ padding:40px 24px; }
+  .gracias-wrap h1{ font-size:26px; }
+  .gracias-icon{ width:80px; height:80px; font-size:38px; }
+  .pedido-detalles{ grid-template-columns:1fr; }
+  .acciones{ flex-direction:column; align-items:stretch; }
+  .btn-prim, .btn-sec{ justify-content:center; }
+}
+
+</style>
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-wrap">
+
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <a href="../../" class="logo">
+      <img src="../../assets/img/logo%20nuevo.png" alt="Cloro en Tabletas" class="logo-img">
+    </a>
+
+    <nav class="nav-links">
+      <a href="../../">INICIO</a>
+      <a href="../../#productos">PRODUCTOS</a>
+      <a href="../../#blog">BLOG</a>
+      <a href="../../#contacto">CONTACTO</a>
+    </nav>
+
+    <div class="header-right">
+      <a href="../../cuenta/login/index.html" class="user-info">
+        <i class="fa-regular fa-circle-user"></i>
+        <span><strong>¡Hola!</strong>Inicia sesión o regístrate</span>
+      </a>
+      <a href="#" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+  <nav class="drawer-nav">
+    <a href="../../"><i class="fa-solid fa-house"></i> Inicio</a>
+    <a href="../../#productos"><i class="fa-solid fa-tag"></i> Productos</a>
+    <a href="../../#blog"><i class="fa-solid fa-newspaper"></i> Blog</a>
+  </nav>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</h3>
+    <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-empty" id="cartEmpty">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <p>Tu carrito está vacío</p>
+    <a href="../../#productos" class="cart-empty-btn">Ver productos</a>
+  </div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">$0</span></div>
+    <p class="cart-note">Envío e impuestos calculados en el checkout.</p>
+    <a href="../" class="cart-checkout-btn">Ir al Checkout <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</aside>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<section class="gracias-section">
+  <div class="container">
+
+    <div class="gracias-wrap">
+
+      <div class="gracias-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <h1>¡Pedido <span class="yellow">Confirmado</span>!</h1>
+      <p class="lead">Gracias por tu compra <span id="nombreCliente">cliente</span>. Hemos recibido tu pedido y enviamos los detalles a tu email.</p>
+
+      <div class="pedido-info">
+        <div class="pedido-numero">
+          <span class="label">Número de Pedido</span>
+          <span class="codigo" id="pedidoCodigo">CT-00000000</span>
+        </div>
+        <div class="pedido-detalles">
+          <div class="detalle">
+            <span class="key">Email</span>
+            <span class="val" id="pedidoEmail">—</span>
+          </div>
+          <div class="detalle">
+            <span class="key">Productos</span>
+            <span class="val" id="pedidoItems">—</span>
+          </div>
+          <div class="detalle">
+            <span class="key">Método de Pago</span>
+            <span class="val" id="pedidoPago">—</span>
+          </div>
+          <div class="detalle">
+            <span class="key">Total Pagado</span>
+            <span class="val total" id="pedidoTotal">$0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proximos">
+        <h3>¿Qué sigue ahora?</h3>
+        <ol>
+          <li>
+            <span class="num">1</span>
+            <p><strong>Revisa tu email:</strong> te enviamos la confirmación con los datos del pedido y, si corresponde, los datos para transferencia bancaria.</p>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <p><strong>Preparación:</strong> empacamos tu pedido en las próximas 24-48 horas hábiles.</p>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <p><strong>Despacho:</strong> recibirás un email con el número de seguimiento cuando tu pedido salga a despacho.</p>
+          </li>
+          <li>
+            <span class="num">4</span>
+            <p><strong>Entrega:</strong> tiempo estimado de entrega entre 2 y 5 días hábiles según tu región.</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="acciones">
+        <a href="../../" class="btn-prim">
+          <i class="fa-solid fa-house"></i>
+          Volver al Inicio
+        </a>
+        <a href="../../#productos" class="btn-sec">
+          Seguir Comprando
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-wrap">
+      <div class="footer-col-brand">
+        <h3>CLORO EN TABLETAS</h3>
+        <p>Ecommerce especializado en productos para limpieza y mantención de piscinas.</p>
+      </div>
+      <div>
+        <h4>Atención al Cliente</h4>
+        <ul class="footer-links">
+          <li><a href="../../politica-privacidad/">Política de Privacidad</a></li>
+          <li><a href="../../politica-devoluciones/">Política de Devoluciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-envelope"></i> contacto@cloroentabletas.cl</li>
+          <li><i class="fa-solid fa-phone"></i> +56 9 9999 9999</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 Cloro en Tabletas. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+const data = JSON.parse(sessionStorage.getItem('cloroentabletas_pedido') || '{}');
+if(data.pedido){
+  document.getElementById('nombreCliente').textContent = data.nombre || 'cliente';
+  document.getElementById('pedidoCodigo').textContent = data.pedido;
+  document.getElementById('pedidoEmail').textContent = data.email || '—';
+  document.getElementById('pedidoItems').textContent = data.items + ' producto' + (data.items > 1 ? 's' : '');
+  document.getElementById('pedidoTotal').textContent = '$' + Number(data.total).toLocaleString('es-CL');
+  const pagoNombres = { webpay:'Webpay', transferencia:'Transferencia', mercadopago:'Mercado Pago' };
+  document.getElementById('pedidoPago').textContent = pagoNombres[data.pago] || data.pago;
+}
+
+const drawer = document.getElementById('mobileDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerClose = document.getElementById('drawerClose');
+const menuToggle = document.getElementById('menuToggle');
+
+menuToggle.addEventListener('click', () => {
+  drawer.classList.add('active');
+  drawerOverlay.classList.add('active');
+});
+drawerClose.addEventListener('click', () => {
+  drawer.classList.remove('active');
+  drawerOverlay.classList.remove('active');
+});
+drawerOverlay.addEventListener('click', () => {
+  drawer.classList.remove('active');
+  drawerOverlay.classList.remove('active');
+});
+</script>
+
+<script src="../../assets/js/cart.js"></script>
+<script src="../../assets/js/auth.js"></script>
+
+</body>
+</html>

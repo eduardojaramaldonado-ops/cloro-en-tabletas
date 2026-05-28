@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Guía Completa de Dosificación de Cloro | Cloro en Tabletas</title>
+<meta name="description" content="Aprende a dosificar cloro correctamente en tu piscina. Cálculo de volumen, tabla por m³, frecuencia de reposición y errores comunes a evitar.">
+
+<link rel="icon" type="image/png" href="../../assets/img/logo%20nuevo.png">
+<link rel="apple-touch-icon" href="../../assets/img/logo%20nuevo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-wrap">
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <a href="../../" class="logo">
+      <img src="../../assets/img/logo%20nuevo.png" alt="Cloro en Tabletas" class="logo-img">
+    </a>
+
+    <nav class="nav-links">
+      <a href="../../">INICIO</a>
+      <a href="../../#productos">PRODUCTOS</a>
+      <a href="../../#quienes-somos">QUIENES SOMOS</a>
+      <a href="../../#blog">BLOG</a>
+      <a href="../../#contacto">CONTACTO</a>
+    </nav>
+
+    <div class="header-right">
+      <a href="../../cuenta/login/index.html" class="user-info">
+        <i class="fa-regular fa-circle-user"></i>
+        <span><strong>¡Hola!</strong>Inicia sesión o regístrate</span>
+      </a>
+      <a href="../../#productos" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+  <nav class="drawer-nav">
+    <a href="../../#productos"><i class="fa-solid fa-tag"></i> Productos</a>
+    <a href="../../#productos"><i class="fa-solid fa-store"></i> Tienda</a>
+    <a href="../../#blog"><i class="fa-solid fa-newspaper"></i> Blog</a>
+    <a href="../../#ofertas"><i class="fa-solid fa-fire"></i> Ofertas</a>
+    <a href="../../#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a>
+  </nav>
+  <div class="drawer-footer">
+    <a href="#" class="drawer-cta"><i class="fa-regular fa-circle-user"></i> Iniciar Sesión</a>
+  </div>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</h3>
+    <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-empty" id="cartEmpty">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <p>Tu carrito está vacío</p>
+    <a href="../../#productos" class="cart-empty-btn">Ver productos</a>
+  </div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">$0</span>
+    </div>
+    <p class="cart-note">Envío e impuestos calculados en el checkout.</p>
+    <a href="../../checkout/index.html" class="cart-checkout-btn">
+      Ir al Checkout
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</aside>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<section class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-wrap">
+      <a href="../../">Home</a>
+      <span class="sep">/</span>
+      <a href="../../#blog">Blog</a>
+      <span class="sep">/</span>
+      <span class="current">Guía Completa de Dosificación de Cloro</span>
+    </div>
+  </div>
+</section>
+
+<article class="post-section">
+  <div class="container post-wrap">
+
+    <div class="post-main">
+
+      <div class="post-header">
+        <span class="post-cat">Tips</span>
+        <h1>Guía Completa de <span class="yellow">Dosificación</span> de Cloro</h1>
+        <div class="post-meta">
+          <span><i class="fa-regular fa-calendar"></i> 02 de Mayo, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 6 min de lectura</span>
+          <span><i class="fa-regular fa-user"></i> Equipo Cloro en Tabletas</span>
+        </div>
+
+        <div class="post-featured">
+          <img src="../../assets/img/cloro-en-tabletas-en-una-piscina.webp" alt="Dosificación de cloro en tabletas">
+        </div>
+      </div>
+
+      <div class="post-body">
+
+        <p class="lead">Dosificar mal el cloro es la causa #1 de problemas en piscinas: agua verde por subdosificación o irritación en piel y ojos por sobredosificación. Esta guía te entrega la fórmula exacta para tu piscina específica, sin cálculos complicados.</p>
+
+        <p>La buena noticia es que con 3 datos básicos (largo, ancho y profundidad promedio de tu piscina) puedes saber exactamente cuánto cloro necesitas y cada cuánto reponerlo. Vamos paso a paso.</p>
+
+        <h2>Paso 1: Calcula el <span class="azul">Volumen</span> de tu Piscina</h2>
+
+        <p>El volumen se mide en metros cúbicos (m³), donde 1 m³ = 1.000 litros. La fórmula depende de la forma:</p>
+
+        <ul>
+          <li><strong>Rectangular:</strong> largo × ancho × profundidad promedio</li>
+          <li><strong>Circular:</strong> π × radio² × profundidad promedio</li>
+          <li><strong>Ovalada:</strong> largo × ancho × profundidad × 0,89</li>
+        </ul>
+
+        <p><strong>Ejemplo:</strong> piscina rectangular de 8m × 4m × 1,5m de profundidad = <strong>48 m³</strong> (o 48.000 litros).</p>
+
+        <blockquote>"Si dudas del cálculo, mide en metros y multiplica directamente. Es mejor sobrestimar levemente el volumen que subestimarlo: una subdosificación es siempre peor que una ligera sobredosificación controlada."</blockquote>
+
+        <h2>Paso 2: Tabla de <span class="azul">Dosificación</span> por m³</h2>
+
+        <p>Estos valores asumen <strong>cloro en tabletas multifunción al 90%</strong> (tricloro), con reposición cada 5-7 días:</p>
+
+        <ul>
+          <li><strong>10 m³:</strong> 1 tableta de 200g por semana</li>
+          <li><strong>20 m³:</strong> 1 a 2 tabletas de 200g por semana</li>
+          <li><strong>30 m³:</strong> 2 tabletas de 200g o 1 de 500g</li>
+          <li><strong>50 m³:</strong> 3 tabletas de 200g o 2 de 500g</li>
+          <li><strong>80 m³:</strong> 5 tabletas de 200g o 3 de 500g</li>
+          <li><strong>100 m³:</strong> 6 tabletas de 200g o 4 de 500g</li>
+        </ul>
+
+        <p>Para uso intensivo o temperaturas sobre 30°C, agrega un 20% más.</p>
+
+        <div class="product-cta-box">
+          <div class="cta-img">
+            <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=600&auto=format&fit=crop" alt="Cloro Tabletas 5KG">
+          </div>
+          <div class="cta-text">
+            <span class="cta-tag">Más Eficiente</span>
+            <h4>Cloro Tabletas 5KG 200g</h4>
+            <p>El formato más usado en Chile. Cada tableta dura aproximadamente 1 semana en piscinas residenciales.</p>
+            <a href="../../#productos" class="btn">
+              Comprar Tabletas
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <h2>Paso 3: Cómo Aplicar las Tabletas <span class="azul">Correctamente</span></h2>
+
+        <p>Nunca tires las tabletas directamente al agua: hacen contacto con el liner y pueden mancharlo o decolorarlo. Usa siempre uno de estos métodos:</p>
+
+        <ol>
+          <li><strong>Dosificador flotante:</strong> económico y eficaz. Lo cargas y se mueve solo.</li>
+          <li><strong>Skimmer:</strong> el cloro se disuelve mientras el agua circula. No olvides retirarlo si vas a hacer retrolavado.</li>
+          <li><strong>Clorador en línea:</strong> profesional, regula la dosis automáticamente.</li>
+        </ol>
+
+        <h2>Galería: Métodos de Dosificación</h2>
+
+        <div class="post-gallery">
+          <figure>
+            <img src="https://picsum.photos/seed/dosificador-flotante/600/450" alt="Dosificador flotante">
+            <figcaption>Dosificador flotante</figcaption>
+          </figure>
+          <figure>
+            <img src="https://picsum.photos/seed/skimmer-piscina/600/450" alt="Aplicación en skimmer">
+            <figcaption>Tabletas en skimmer</figcaption>
+          </figure>
+          <figure>
+            <img src="https://picsum.photos/seed/clorador-linea/600/450" alt="Clorador en línea">
+            <figcaption>Clorador automático en línea</figcaption>
+          </figure>
+        </div>
+
+        <h2>Paso 4: Mide el Cloro <span class="azul">Libre</span></h2>
+
+        <p>El cloro libre es el que realmente desinfecta. Debe mantenerse entre <strong>1 y 3 ppm</strong> (partes por millón). Con un <a href="../../#productos">test kit</a> es cuestión de 30 segundos:</p>
+
+        <ul>
+          <li><strong>Menos de 1 ppm:</strong> agregar cloro inmediatamente.</li>
+          <li><strong>1 a 3 ppm:</strong> rango óptimo.</li>
+          <li><strong>3 a 5 ppm:</strong> aceptable pero alto. Evita bañarte hasta que baje.</li>
+          <li><strong>Más de 5 ppm:</strong> sobredosificación. Espera 24 horas antes de bañarte.</li>
+        </ul>
+
+        <h2>Frecuencia de <span class="azul">Reposición</span></h2>
+
+        <p>En condiciones normales, una tableta de 200g rinde entre 5 y 7 días. Sin embargo, varios factores aceleran su consumo:</p>
+
+        <ul>
+          <li><strong>Sol directo:</strong> los rayos UV degradan el cloro hasta un 75% por día sin estabilizador.</li>
+          <li><strong>Temperatura alta:</strong> sobre 28°C, el cloro se consume hasta 30% más rápido.</li>
+          <li><strong>Uso intensivo:</strong> más bañistas = más materia orgánica a desinfectar.</li>
+          <li><strong>Lluvias:</strong> aportan suciedad y bajan la concentración.</li>
+        </ul>
+
+        <h2>Errores Comunes que Debes <span class="azul">Evitar</span></h2>
+
+        <ol>
+          <li><strong>Echar todo de una vez:</strong> sobredosificas y luego subdosificas. Mantén consistencia.</li>
+          <li><strong>No medir el pH:</strong> con pH alto, el 90% del cloro pierde efectividad.</li>
+          <li><strong>Mezclar productos en seco:</strong> nunca mezcles tabletas con cloro líquido directamente, puede reaccionar.</li>
+          <li><strong>Reponer "cuando se acuerden":</strong> establece un día fijo de la semana.</li>
+          <li><strong>Ignorar el estabilizador:</strong> el ácido cianúrico (40-50 ppm) protege el cloro del sol.</li>
+        </ol>
+
+        <h2>Plan de <span class="azul">Dosificación</span> Recomendado</h2>
+
+        <p>Una rutina simple para que no falle:</p>
+
+        <ul>
+          <li><strong>Domingo:</strong> reponer tabletas de cloro en dosificador.</li>
+          <li><strong>Miércoles:</strong> medir cloro libre y pH. Ajustar si es necesario.</li>
+          <li><strong>1 vez al mes:</strong> tratamiento shock con hipoclorito + control de estabilizador.</li>
+        </ul>
+
+        <p>Con este plan vas a usar entre 6 y 8 kg de cloro en tabletas por temporada (6 meses), gastando aproximadamente $35.000-$50.000 según el formato que elijas.</p>
+
+        <div class="product-cta-box">
+          <div class="cta-img">
+            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=600&auto=format&fit=crop" alt="Kit Mantención Completo">
+          </div>
+          <div class="cta-text">
+            <span class="cta-tag">Pack Recomendado</span>
+            <h4>Kit Mantención Completo</h4>
+            <p>Cloro Tabletas 5KG + Test Kit Digital + Dosificador Flotante + Estabilizador. Todo lo que necesitas para una temporada completa.</p>
+            <a href="../../#ofertas" class="btn">
+              Ver Kit Completo
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <h2>Resumen Final</h2>
+
+        <p>Dosificar cloro correctamente no es complicado: <strong>conoce tu volumen, sigue la tabla, mide regularmente y reponer con consistencia</strong>. Con estos 4 pasos, tu piscina va a estar siempre lista para usar.</p>
+
+        <p>Si no tienes claro cuántas tabletas comprar para tu piscina, revisa nuestra <a href="../../#productos">tienda</a> donde puedes filtrar productos por volumen de piscina y obtener una recomendación exacta.</p>
+
+        <div class="post-tags">
+          <a href="#">#dosificación</a>
+          <a href="#">#cloro</a>
+          <a href="#">#guía</a>
+          <a href="#">#tabletas</a>
+          <a href="#">#cálculo-piscina</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <aside class="post-sidebar">
+
+      <div class="sidebar-block sidebar-product">
+        <h4>Producto Destacado</h4>
+        <div class="sp-img">
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=400&auto=format&fit=crop" alt="Test Kit Piscina">
+        </div>
+        <div class="sp-title">Test Kit Piscina</div>
+        <div class="sp-price">$8.990</div>
+        <a href="../../#productos" class="sp-btn">Comprar Ahora</a>
+      </div>
+
+      <div class="sidebar-block">
+        <h4>Temas Recientes</h4>
+        <div class="recent-list">
+          <a href="../como-mantener-piscina-cristalina/">
+            <img src="https://picsum.photos/seed/blog-cristalina/200/200" alt="">
+            <div class="recent-info">
+              <div class="date">15 May, 2026</div>
+              <h5>Cómo Mantener tu Piscina Cristalina Todo el Verano</h5>
+            </div>
+          </a>
+          <a href="../cloro-tabletas-vs-liquido/">
+            <img src="https://picsum.photos/seed/blog-comparativa/200/200" alt="">
+            <div class="recent-info">
+              <div class="date">08 May, 2026</div>
+              <h5>Cloro en Tabletas vs Cloro Líquido</h5>
+            </div>
+          </a>
+          <a href="#">
+            <img src="https://picsum.photos/seed/blog-algas/200/200" alt="">
+            <div class="recent-info">
+              <div class="date">25 Abr, 2026</div>
+              <h5>Cómo Eliminar Algas Verdes en 24 Horas</h5>
+            </div>
+          </a>
+          <a href="#">
+            <img src="https://picsum.photos/seed/blog-ph/200/200" alt="">
+            <div class="recent-info">
+              <div class="date">11 Abr, 2026</div>
+              <h5>Por Qué el pH Es Más Importante que el Cloro</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <h4>Preguntas Frecuentes</h4>
+        <div class="faq-list">
+          <details>
+            <summary>¿Cómo calculo el volumen si mi piscina es irregular?</summary>
+            <p>Mide el largo y ancho máximos, multiplica por la profundidad promedio y aplica un factor de 0,85 para compensar las formas irregulares.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa si pongo más tabletas de las necesarias?</summary>
+            <p>El cloro libre se dispara sobre 5 ppm. No puedes bañarte por 24-48 horas hasta que baje. No es peligroso para la piscina, solo para los usuarios.</p>
+          </details>
+          <details>
+            <summary>¿Las tabletas de 200g y 500g son iguales?</summary>
+            <p>Mismo compuesto activo, solo cambia el tamaño. Las de 500g duran más en piscinas grandes pero se disuelven más lento.</p>
+          </details>
+          <details>
+            <summary>¿Necesito estabilizador siempre?</summary>
+            <p>Sí, en piscinas exteriores. Sin estabilizador, el sol destruye hasta 75% del cloro al día. Las tabletas multifunción ya lo incluyen.</p>
+          </details>
+          <details>
+            <summary>¿Cuál es la diferencia entre cloro libre y total?</summary>
+            <p>Cloro libre es el que desinfecta activamente. Cloro total incluye también el cloro ya combinado (cloraminas). La diferencia debe ser menor a 0,2 ppm.</p>
+          </details>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</article>
+
+<section class="big-cta">
+  <div class="container">
+    <h2>Encuentra el Cloro Perfecto para <span class="yellow">Tu Piscina</span></h2>
+    <p>Calculamos por ti la cantidad exacta. Solo dinos el volumen y te recomendamos el formato ideal.</p>
+    <a href="../../#productos" class="big-cta-btn">
+      Comprar Productos
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<section class="related-section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Artículos <span>Relacionados</span></h2>
+    </div>
+    <div class="related-grid">
+
+      <a href="../como-mantener-piscina-cristalina/" class="related-card">
+        <div class="rc-img">
+          <img src="https://picsum.photos/seed/blog-cristalina/400/300" alt="">
+        </div>
+        <div class="rc-info">
+          <div class="rc-cat">Guías</div>
+          <h3>Cómo Mantener tu Piscina Cristalina Todo el Verano</h3>
+        </div>
+      </a>
+
+      <a href="../cloro-tabletas-vs-liquido/" class="related-card">
+        <div class="rc-img">
+          <img src="https://picsum.photos/seed/blog-comparativa/400/300" alt="">
+        </div>
+        <div class="rc-info">
+          <div class="rc-cat">Comparativa</div>
+          <h3>Cloro en Tabletas vs Cloro Líquido: ¿Cuál Elegir?</h3>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-wrap">
+      <div>
+        <h3>CLORO EN TABLETAS</h3>
+        <p>Ecommerce especializado en productos para limpieza y mantención de piscinas. Cloro en tabletas, kits, accesorios y todo lo necesario.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>contacto@cloroentabletas.cl</p>
+        <p>+56 9 9999 9999</p>
+        <p>Lun a Vie 9:00 - 18:00</p>
+      </div>
+      <div>
+        <h4>Redes Sociales</h4>
+        <div class="redes-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 Cloro en Tabletas. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+const drawer = document.getElementById('mobileDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerClose = document.getElementById('drawerClose');
+const menuToggle = document.getElementById('menuToggle');
+
+function abrirDrawer(){
+  drawer.classList.add('active');
+  drawerOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function cerrarDrawer(){
+  drawer.classList.remove('active');
+  drawerOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+menuToggle.addEventListener('click', abrirDrawer);
+drawerClose.addEventListener('click', cerrarDrawer);
+drawerOverlay.addEventListener('click', cerrarDrawer);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarDrawer));
+</script>
+
+<script src="../../assets/js/cart.js"></script>
+<script src="../../assets/js/auth.js"></script>
+
+</body>
+</html>

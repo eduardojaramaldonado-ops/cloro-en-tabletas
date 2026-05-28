@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Iniciar Sesión | Cloro en Tabletas</title>
+<meta name="description" content="Accede a tu cuenta de Cloro en Tabletas para gestionar tus pedidos y favoritos.">
+
+<link rel="icon" type="image/png" href="../../assets/img/logo%20nuevo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-wrap">
+
+    <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+
+    <a href="../../index.html" class="logo">
+      <img src="../../assets/img/logo%20nuevo.png" alt="Cloro en Tabletas" class="logo-img">
+    </a>
+
+    <nav class="nav-links">
+      <a href="../../index.html">INICIO</a>
+      <a href="../../index.html#productos">PRODUCTOS</a>
+      <a href="../../index.html#quienes-somos">QUIENES SOMOS</a>
+      <a href="../../index.html#blog">BLOG</a>
+      <a href="../../index.html#contacto">CONTACTO</a>
+    </nav>
+
+    <div class="header-right">
+      <a href="#" class="user-info">
+        <i class="fa-regular fa-circle-user"></i>
+        <span><strong>¡Hola!</strong>Inicia sesión o regístrate</span>
+      </a>
+      <a href="#" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+  <nav class="drawer-nav">
+    <a href="../../index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+    <a href="../../index.html#productos"><i class="fa-solid fa-tag"></i> Productos</a>
+    <a href="../../index.html#blog"><i class="fa-solid fa-newspaper"></i> Blog</a>
+  </nav>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</h3>
+    <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-empty" id="cartEmpty">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <p>Tu carrito está vacío</p>
+    <a href="../../index.html#productos" class="cart-empty-btn">Ver productos</a>
+  </div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">$0</span></div>
+    <p class="cart-note">Envío e impuestos calculados en el checkout.</p>
+    <a href="../../checkout/index.html" class="cart-checkout-btn">Ir al Checkout <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</aside>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<section class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-wrap">
+      <a href="../../index.html">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Iniciar Sesión</span>
+    </div>
+  </div>
+</section>
+
+<section class="auth-section">
+  <div class="container">
+
+    <div class="auth-card">
+
+      <div class="auth-icon">
+        <i class="fa-solid fa-right-to-bracket"></i>
+      </div>
+
+      <h1>Iniciar <span class="yellow">Sesión</span></h1>
+      <p class="auth-sub">Ingresa a tu cuenta para gestionar tus pedidos y acceder más rápido al checkout.</p>
+
+      <div id="authMsg" class="auth-msg"></div>
+
+      <form id="loginForm" class="auth-form" novalidate>
+
+        <div class="auth-row">
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="email" required>
+        </div>
+
+        <div class="auth-row">
+          <label for="password">Contraseña</label>
+          <input id="password" type="password" autocomplete="current-password" required>
+        </div>
+
+        <div class="auth-extra">
+          <label>
+            <input type="checkbox" id="remember">
+            Recordarme
+          </label>
+          <a href="../recuperar/index.html">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="auth-submit">
+          Entrar
+        </button>
+
+      </form>
+
+      <div class="auth-divider">o</div>
+
+      <p class="auth-alt">
+        ¿Eres nuevo? <a href="../registro/index.html">Crea tu cuenta</a>
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-wrap">
+      <div class="footer-col-brand">
+        <h3>CLORO EN TABLETAS</h3>
+        <p>Ecommerce especializado en productos para limpieza y mantención de piscinas.</p>
+      </div>
+      <div>
+        <h4>Atención al Cliente</h4>
+        <ul class="footer-links">
+          <li><a href="../../politica-privacidad/index.html">Política de Privacidad</a></li>
+          <li><a href="../../politica-devoluciones/index.html">Política de Devoluciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-envelope"></i> contacto@cloroentabletas.cl</li>
+          <li><i class="fa-solid fa-phone"></i> +56 9 9999 9999</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 Cloro en Tabletas. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+const drawer = document.getElementById('mobileDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerClose = document.getElementById('drawerClose');
+const menuToggle = document.getElementById('menuToggle');
+
+menuToggle.addEventListener('click', () => { drawer.classList.add('active'); drawerOverlay.classList.add('active'); });
+drawerClose.addEventListener('click', () => { drawer.classList.remove('active'); drawerOverlay.classList.remove('active'); });
+drawerOverlay.addEventListener('click', () => { drawer.classList.remove('active'); drawerOverlay.classList.remove('active'); });
+</script>
+
+<script src="../../assets/js/cart.js"></script>
+<script src="../../assets/js/auth.js"></script>
+
+<script>
+const form = document.getElementById('loginForm');
+const msg = document.getElementById('authMsg');
+
+if(window.CloroAuth && window.CloroAuth.isAuth()){
+  window.location.href = '../../index.html';
+}
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  msg.className = 'auth-msg';
+  msg.textContent = '';
+
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+
+  if(!email || !password){
+    msg.className = 'auth-msg error';
+    msg.textContent = 'Completa email y contraseña.';
+    return;
+  }
+
+  try {
+    window.CloroAuth.login(email, password);
+    msg.className = 'auth-msg success';
+    msg.textContent = 'Sesión iniciada. Redirigiendo...';
+    setTimeout(() => { window.location.href = '../../index.html'; }, 800);
+  } catch(err){
+    msg.className = 'auth-msg error';
+    msg.textContent = err.message;
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,13 +1,3020 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cloro-en-tabletas</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cloro en Tabletas</title>
+
+<link rel="icon" type="image/png" href="assets/img/logo%20nuevo.png">
+<link rel="apple-touch-icon" href="assets/img/logo%20nuevo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* =========================
+RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body,
+button,
+input,
+textarea,
+select,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div{
+  font-family:'Montserrat',sans-serif;
+}
+
+body{
+  overflow-x:hidden;
+  background:#fff;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* =========================
+CONTAINER
+========================= */
+
+.container{
+  width:100%;
+  max-width:1280px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9999;
+
+  background:#0a78c2;
+
+  box-shadow:0 4px 14px rgba(0,0,0,.18);
+}
+
+.header-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+
+  height:120px;
+  position:relative;
+}
+
+/* LOGO */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  color:#fff;
+  text-decoration:none;
+
+  font-size:22px;
+  font-weight:800;
+
+  line-height:1;
+}
+
+.logo-img{
+  height:70px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+
+.logo-circle{
+  width:48px;
+  height:48px;
+
+  border-radius:50%;
+  background:#fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#0a78c2;
+  font-size:22px;
+
+  position:relative;
+}
+
+.logo-circle::after{
+  content:"";
+  position:absolute;
+  top:6px;
+  right:6px;
+
+  width:10px;
+  height:10px;
+
+  background:#ffb800;
+  border-radius:50%;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.logo-text span:first-child{
+  font-size:13px;
+  font-weight:600;
+  opacity:.95;
+}
+
+.logo-text span:last-child{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+/* MENU PRODUCTOS */
+
+.menu-productos{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  background:transparent;
+  border:none;
+
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+
+  cursor:pointer;
+  padding:10px 14px;
+
+  border-radius:8px;
+  transition:.3s;
+}
+
+.menu-productos:hover{
+  background:rgba(255,255,255,.12);
+}
+
+.menu-productos i{
+  font-size:18px;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+
+  font-size:14px;
+  font-weight:700;
+
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  transition:.3s;
+  position:relative;
+}
+
+.nav-links a:hover{
+  color:#ffb800;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:0;
+
+  width:0;
+  height:2px;
+  background:#ffb800;
+
+  transition:.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* SEARCH */
+
+.search-box{
+  flex:1;
+  max-width:560px;
+
+  position:relative;
+}
+
+.search-box input{
+  width:100%;
+  height:48px;
+
+  padding:0 60px 0 22px;
+
+  border:none;
+  border-radius:30px;
+
+  background:#fff;
+  color:#111827;
+
+  font-size:15px;
+  outline:none;
+}
+
+.search-box input::placeholder{
+  color:#9ca3af;
+}
+
+.search-box button{
+  position:absolute;
+  top:50%;
+  right:5px;
+  transform:translateY(-50%);
+
+  width:40px;
+  height:40px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#0a78c2;
+  color:#fff;
+
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* HEADER RIGHT */
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+.help-info{
+  color:#fff;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.3;
+
+  text-align:right;
+}
+
+.help-info strong{
+  display:block;
+  font-size:15px;
+  font-weight:800;
+}
+
+.user-info{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  color:#fff;
+  text-decoration:none;
+
+  font-size:13px;
+  line-height:1.3;
+}
+
+.user-info i{
+  font-size:30px;
+}
+
+.user-info strong{
+  display:block;
+  font-weight:700;
+  font-size:14px;
+}
+
+.cart-icon{
+  position:relative;
+
+  color:#fff;
+  font-size:26px;
+
+  text-decoration:none;
+}
+
+.cart-badge{
+  position:absolute;
+  top:-6px;
+  right:-8px;
+
+  width:22px;
+  height:22px;
+
+  background:#ffb800;
+  color:#0a78c2;
+
+  border-radius:50%;
+
+  font-size:11px;
+  font-weight:800;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* MENU TOGGLE MOBILE */
+
+.menu-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+
+  background:transparent;
+  border:none;
+
+  color:#fff;
+  font-size:22px;
+
+  cursor:pointer;
+
+  align-items:center;
+  justify-content:center;
+}
+
+/* MOBILE DRAWER */
+
+.mobile-drawer{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:300px;
+  max-width:85%;
+  height:100vh;
+
+  background:#0a3a5f;
+  color:#fff;
+
+  padding:80px 30px 30px;
+
+  z-index:10001;
+
+  transform:translateX(-100%);
+  transition:transform .35s ease;
+
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+
+  box-shadow:0 0 40px rgba(0,0,0,.3);
+}
+
+.mobile-drawer.active{
+  transform:translateX(0);
+}
+
+.drawer-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+
+  width:42px;
+  height:42px;
+
+  background:rgba(255,255,255,.1);
+  border:none;
+  border-radius:50%;
+
+  color:#fff;
+  font-size:18px;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.drawer-nav{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.drawer-nav a{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  padding:14px 16px;
+
+  color:#fff;
+  text-decoration:none;
+
+  font-size:15px;
+  font-weight:600;
+
+  border-radius:10px;
+  transition:.2s;
+}
+
+.drawer-nav a i{
+  width:24px;
+  color:#ffb800;
+}
+
+.drawer-nav a:hover{
+  background:rgba(255,255,255,.08);
+}
+
+.drawer-footer{
+  margin-top:auto;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+.drawer-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  width:100%;
+  padding:14px;
+
+  background:#ffb800;
+  color:#0a3a5f;
+
+  border-radius:10px;
+  text-decoration:none;
+
+  font-weight:800;
+  font-size:14px;
+  text-transform:uppercase;
+
+  margin-bottom:16px;
+}
+
+.drawer-footer p{
+  font-size:13px;
+  color:#d1d5db;
+  text-align:center;
+}
+
+.drawer-footer strong{
+  color:#fff;
+  font-size:15px;
+  display:block;
+}
+
+.drawer-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+
+  z-index:10000;
+}
+
+.drawer-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+/* CART DRAWER */
+
+.cart-drawer{
+  position:fixed;
+  top:0;
+  right:0;
+
+  width:420px;
+  max-width:100%;
+  height:100vh;
+
+  background:#fff;
+  z-index:10001;
+
+  transform:translateX(100%);
+  transition:transform .35s ease;
+
+  display:flex;
+  flex-direction:column;
+
+  box-shadow:-10px 0 40px rgba(0,0,0,.15);
+}
+
+.cart-drawer.active{
+  transform:translateX(0);
+}
+
+.cart-drawer-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:20px 22px;
+
+  background:#0a78c2;
+  color:#fff;
+}
+
+.cart-drawer-header h3{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:18px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.cart-drawer-header h3 i{ color:#ffb800; }
+
+.cart-close{
+  width:38px;
+  height:38px;
+
+  background:rgba(255,255,255,.15);
+  border:none;
+  border-radius:50%;
+
+  color:#fff;
+  font-size:16px;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:.2s;
+}
+
+.cart-close:hover{
+  background:rgba(255,255,255,.28);
+}
+
+.cart-items{
+  flex:1;
+  overflow-y:auto;
+  padding:18px 22px;
+}
+
+.cart-item{
+  display:grid;
+  grid-template-columns:70px 1fr auto;
+  gap:14px;
+
+  padding:14px 0;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.cart-item:last-child{ border-bottom:none; }
+
+.cart-item-img{
+  width:70px;
+  height:70px;
+
+  background:#f7fafc;
+  border-radius:8px;
+
+  overflow:hidden;
+  border:1px solid #e5e7eb;
+}
+
+.cart-item-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:6px;
+}
+
+.cart-item-info{
+  min-width:0;
+}
+
+.cart-item-name{
+  font-size:13px;
+  font-weight:700;
+  color:#0a3a5f;
+  line-height:1.3;
+  margin-bottom:4px;
+
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.cart-item-price{
+  font-size:12px;
+  color:#6b7280;
+  margin-bottom:8px;
+}
+
+.cart-item-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.qty-control{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid #e5e7eb;
+  border-radius:6px;
+  padding:2px 4px;
+}
+
+.qty-btn{
+  width:22px;
+  height:22px;
+
+  border:none;
+  background:transparent;
+
+  font-size:14px;
+  font-weight:800;
+  color:#0a78c2;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.qty-btn:hover{ color:#0a3a5f; }
+
+.qty-control .qty{
+  font-size:13px;
+  font-weight:700;
+  color:#0a3a5f;
+  min-width:18px;
+  text-align:center;
+}
+
+.remove-btn{
+  background:transparent;
+  border:none;
+  color:#dc2626;
+  font-size:13px;
+  cursor:pointer;
+  padding:4px;
+}
+
+.remove-btn:hover{ color:#991b1b; }
+
+.cart-item-subtotal{
+  font-size:14px;
+  font-weight:800;
+  color:#0a78c2;
+  align-self:flex-start;
+  white-space:nowrap;
+}
+
+.cart-empty{
+  flex:1;
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  padding:40px 30px;
+  text-align:center;
+}
+
+.cart-empty i{
+  font-size:60px;
+  color:#cbd5e1;
+  margin-bottom:16px;
+}
+
+.cart-empty p{
+  font-size:15px;
+  color:#6b7280;
+  margin-bottom:20px;
+}
+
+.cart-empty-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:12px 24px;
+
+  background:#0a78c2;
+  color:#fff;
+
+  border-radius:30px;
+  text-decoration:none;
+
+  font-size:13px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.cart-footer{
+  padding:18px 22px 22px;
+  border-top:1px solid #e5e7eb;
+  background:#f9fafb;
+}
+
+.cart-subtotal{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  font-size:18px;
+  font-weight:900;
+  color:#0a3a5f;
+
+  margin-bottom:6px;
+}
+
+.cart-note{
+  font-size:12px;
+  color:#6b7280;
+  margin-bottom:14px;
+}
+
+.cart-checkout-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  width:100%;
+  padding:14px;
+
+  background:#0a78c2;
+  color:#fff;
+
+  border-radius:10px;
+  text-decoration:none;
+
+  font-size:14px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  transition:.2s;
+}
+
+.cart-checkout-btn:hover{
+  background:#0a3a5f;
+}
+
+.cart-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+
+  z-index:10000;
+}
+
+.cart-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero-section{
+  padding-top:120px;
+  background:#f1f5f9;
+}
+
+.hero-wrap{
+  padding:0;
+}
+
+.hero-slider{
+  position:relative;
+  width:100%;
+
+  height:600px;
+
+  overflow:hidden;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:1s ease;
+}
+
+.slide.active{
+  opacity:1;
+  z-index:2;
+}
+
+.slide-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+
+  background-size:cover;
+  background-position:center;
+}
+
+.slide-overlay{
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(90deg,
+    rgba(10,120,194,.85) 0%,
+    rgba(10,120,194,.35) 55%,
+    rgba(10,120,194,0) 100%);
+}
+
+.slide-content{
+  position:absolute;
+  inset:0;
+
+  display:flex;
+  align-items:center;
+
+  width:100%;
+  max-width:1280px;
+
+  margin:0 auto;
+  padding:0 40px;
+
+  z-index:3;
+}
+
+.slide-text{
+  max-width:600px;
+  color:#fff;
+}
+
+.slide-tag{
+  display:inline-block;
+
+  padding:8px 18px;
+
+  background:#ffb800;
+  color:#0a3a5f;
+
+  border-radius:30px;
+
+  font-size:13px;
+  font-weight:800;
+
+  letter-spacing:1px;
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+}
+
+.slide-text h1{
+  font-size:64px;
+  font-weight:900;
+
+  line-height:1;
+  letter-spacing:-1px;
+
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+
+  text-shadow:0 4px 20px rgba(0,0,0,.3);
+}
+
+.slide-text h1 .yellow{
+  color:#ffb800;
+}
+
+.slide-text p{
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:28px;
+
+  max-width:480px;
+  opacity:.95;
+}
+
+.slide-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  padding:16px 32px;
+
+  background:#ffb800;
+  color:#0a3a5f;
+
+  text-decoration:none;
+  border-radius:50px;
+
+  font-size:15px;
+  font-weight:800;
+
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  transition:.3s;
+  box-shadow:0 10px 25px rgba(255,184,0,.4);
+}
+
+.slide-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(255,184,0,.55);
+}
+
+/* WAVE */
+
+.hero-wave{
+  position:absolute;
+  bottom:-1px;
+  left:0;
+  width:100%;
+  height:100px;
+
+  pointer-events:none;
+  z-index:6;
+}
+
+.hero-wave svg{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+/* DOTS */
+
+.slide-dots{
+  position:absolute;
+  bottom:60px;
+  left:50%;
+  transform:translateX(-50%);
+
+  display:flex;
+  gap:8px;
+  z-index:10;
+}
+
+.slide-dots span{
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+  background:rgba(255,255,255,.5);
+
+  cursor:pointer;
+  transition:.3s;
+}
+
+.slide-dots span.active{
+  background:#ffb800;
+  width:28px;
+  border-radius:6px;
+}
+
+/* =========================
+PRODUCTOS DESTACADOS
+========================= */
+
+.productos-destacados{
+  padding:90px 0;
+  background:#fff;
+}
+
+.section-head{
+  margin-bottom:40px;
+}
+
+.section-head h2{
+  font-size:36px;
+  color:#0a3a5f;
+  font-weight:500;
+  text-transform:uppercase;
+  overflow-wrap:break-word;
+  word-break:break-word;
+}
+
+.section-head h2 span{
+  color:#0a78c2;
+}
+
+.productos-slider-wrap{
+  position:relative;
+  overflow:hidden;
+
+  -webkit-mask-image:linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image:linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.productos-track{
+  display:flex;
+  width:max-content;
+
+  padding:10px 0;
+
+  will-change:transform;
+}
+
+.producto-card{
+  width:280px;
+  margin-right:20px;
+
+  background:#fff;
+
+  border-radius:14px;
+  overflow:hidden;
+
+  box-shadow:0 10px 25px rgba(10,120,194,.10);
+
+  flex-shrink:0;
+  position:relative;
+
+  border:1px solid #e5e7eb;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.producto-card img{
+  width:100%;
+  height:220px;
+  object-fit:contain;
+  background:#f7fafc;
+  padding:15px;
+  flex-shrink:0;
+}
+
+.producto-info{
+  padding:20px;
+  flex:1;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.producto-info h3{
+  font-size:16px;
+  line-height:1.4;
+  margin-bottom:12px;
+  color:#0a3a5f;
+  font-weight:700;
+
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  min-height:44px;
+}
+
+.precio{
+  font-size:22px;
+  font-weight:900;
+  color:#0a78c2;
+  margin-bottom:18px;
+
+  margin-top:auto;
+}
+
+.btn-producto{
+  width:100%;
+  height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  background:#0a78c2;
+  color:#fff;
+
+  border-radius:8px;
+  text-decoration:none;
+
+  font-weight:700;
+  font-size:14px;
+  text-transform:uppercase;
+
+  transition:.3s;
+}
+
+.btn-producto:hover{
+  background:#0a3a5f;
+}
+
+/* =========================
+MAS VENDIDOS
+========================= */
+
+.mas-vendidos{
+  padding:90px 0;
+  background:#f1f5f9;
+}
+
+.otro-card{
+  position:relative;
+}
+
+.badge-top{
+  position:absolute;
+  top:14px;
+  left:14px;
+  z-index:5;
+
+  padding:6px 12px;
+
+  background:#ffb800;
+  color:#0a3a5f;
+
+  border-radius:30px;
+
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+
+  box-shadow:0 4px 12px rgba(255,184,0,.35);
+}
+
+.badge-top::before{
+  content:"\f005";
+  font-family:"Font Awesome 6 Free";
+  font-weight:900;
+  font-size:9px;
+}
+
+/* =========================
+OFERTAS
+========================= */
+
+.productos-oferta{
+  padding:90px 0;
+  background:#f1f5f9;
+}
+
+.grid-ofertas{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:20px;
+}
+
+.grid-ofertas .producto-card{
+  width:100%;
+  margin-right:0;
+}
+
+.badge-oferta{
+  position:absolute;
+  top:15px;
+  right:-35px;
+
+  background:#e60023;
+  color:#fff;
+
+  padding:10px 45px;
+
+  font-size:12px;
+  font-weight:800;
+
+  transform:rotate(45deg);
+  z-index:10;
+}
+
+/* =========================
+OTROS PRODUCTOS
+========================= */
+
+.otros-productos{
+  padding:90px 0;
+  background:#fff;
+}
+
+.otros-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:20px;
+
+  margin-bottom:50px;
+}
+
+.otro-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  overflow:hidden;
+
+  box-shadow:0 10px 25px rgba(10,120,194,.10);
+
+  display:flex;
+  flex-direction:column;
+  transition:.3s;
+}
+
+.otro-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 35px rgba(10,120,194,.15);
+}
+
+.otro-img{
+  width:100%;
+  height:220px;
+  overflow:hidden;
+  background:#f7fafc;
+  flex-shrink:0;
+}
+
+.otro-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:15px;
+}
+
+.otro-info{
+  flex:1;
+  padding:20px;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.otro-cat{
+  display:inline-block;
+  align-self:flex-start;
+
+  padding:4px 12px;
+
+  background:#eff6ff;
+  color:#0a78c2;
+
+  border-radius:30px;
+
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+
+  margin-bottom:10px;
+}
+
+.otro-info h3{
+  font-size:16px;
+  line-height:1.4;
+  margin-bottom:12px;
+  color:#0a3a5f;
+  font-weight:700;
+
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  min-height:44px;
+}
+
+.otro-info p{
+  display:none;
+}
+
+.otro-bottom{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+
+  margin-top:auto;
+}
+
+.otro-bottom .precio{
+  font-size:22px;
+  font-weight:900;
+  color:#0a78c2;
+  margin-bottom:0;
+}
+
+.otro-bottom .btn-producto{
+  width:100%;
+  height:48px;
+  padding:0;
+  font-size:14px;
+}
+
+.otros-cta-wrap{
+  text-align:center;
+}
+
+.otros-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  padding:16px 36px;
+
+  background:transparent;
+  color:#0a78c2;
+  border:2px solid #0a78c2;
+
+  border-radius:50px;
+  text-decoration:none;
+
+  font-size:14px;
+  font-weight:800;
+
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  transition:.3s;
+}
+
+.otros-cta-btn:hover{
+  background:#0a78c2;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* =========================
+PARALLAX BANNER
+========================= */
+
+.parallax-banner{
+  position:relative;
+
+  min-height:480px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background-image:url('assets/img/disfrutando%20la%20piscina.webp');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+
+  text-align:center;
+  color:#fff;
+
+  overflow:hidden;
+}
+
+.parallax-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(10,58,95,.45), rgba(10,58,95,.7));
+  z-index:1;
+}
+
+.parallax-content{
+  position:relative;
+  z-index:2;
+
+  max-width:880px;
+  padding:60px 24px;
+}
+
+.parallax-content h2{
+  font-size:48px;
+  font-weight:900;
+  line-height:1.15;
+
+  margin-bottom:18px;
+
+  text-shadow:0 4px 24px rgba(0,0,0,.4);
+}
+
+.parallax-content h2 .yellow{ color:#ffb800; }
+
+.parallax-content p{
+  font-size:20px;
+  line-height:1.5;
+
+  margin-bottom:32px;
+
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+
+.parallax-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  padding:18px 42px;
+
+  background:#e60023;
+  color:#fff;
+
+  text-decoration:none;
+  border-radius:50px;
+
+  font-size:16px;
+  font-weight:800;
+
+  letter-spacing:.5px;
+
+  box-shadow:0 14px 30px rgba(230,0,35,.45);
+  transition:.3s;
+}
+
+.parallax-cta:hover{
+  background:#b8001b;
+  transform:translateY(-3px);
+  box-shadow:0 18px 38px rgba(230,0,35,.55);
+}
+
+/* =========================
+BLOG
+========================= */
+
+.blog-section{
+  padding:90px 0;
+  background:#f1f5f9;
+}
+
+.section-sub{
+  font-size:16px;
+  color:#6b7280;
+
+  margin-top:10px;
+  max-width:600px;
+}
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+
+  margin-bottom:50px;
+}
+
+.blog-card{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+
+  border:1px solid #e5e7eb;
+  box-shadow:0 8px 20px rgba(10,120,194,.08);
+
+  display:flex;
+  flex-direction:column;
+
+  transition:.3s;
+}
+
+.blog-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 35px rgba(10,120,194,.18);
+}
+
+.blog-img{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  height:230px;
+}
+
+.blog-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.blog-card:hover .blog-img img{
+  transform:scale(1.08);
+}
+
+.blog-cat{
+  position:absolute;
+  top:16px;
+  left:16px;
+
+  padding:6px 14px;
+
+  background:#ffb800;
+  color:#0a3a5f;
+
+  border-radius:30px;
+
+  font-size:11px;
+  font-weight:800;
+
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+
+.blog-info{
+  padding:24px;
+
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.blog-meta{
+  display:flex;
+  gap:18px;
+
+  font-size:12px;
+  color:#9ca3af;
+
+  margin-bottom:14px;
+}
+
+.blog-meta i{
+  margin-right:5px;
+  color:#0a78c2;
+}
+
+.blog-info h3{
+  font-size:19px;
+  line-height:1.35;
+  font-weight:800;
+  color:#0a3a5f;
+
+  margin-bottom:12px;
+}
+
+.blog-info h3 a{
+  color:inherit;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.blog-info h3 a:hover{
+  color:#0a78c2;
+}
+
+.blog-info p{
+  font-size:14px;
+  line-height:1.6;
+  color:#6b7280;
+
+  margin-bottom:20px;
+  flex:1;
+}
+
+.blog-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  color:#0a78c2;
+  text-decoration:none;
+
+  font-size:14px;
+  font-weight:700;
+
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  transition:.2s;
+}
+
+.blog-link:hover{
+  gap:14px;
+  color:#0a3a5f;
+}
+
+.blog-cta-wrap{
+  text-align:center;
+}
+
+.blog-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  padding:16px 36px;
+
+  background:#0a78c2;
+  color:#fff;
+
+  border-radius:50px;
+  text-decoration:none;
+
+  font-size:14px;
+  font-weight:800;
+
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  transition:.3s;
+  box-shadow:0 10px 25px rgba(10,120,194,.3);
+}
+
+.blog-cta-btn:hover{
+  background:#0a3a5f;
+  transform:translateY(-2px);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:#0a3a5f;
+  padding:70px 0 30px;
+  color:#fff;
+}
+
+.footer-wrap{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.2fr;
+  gap:40px;
+
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.footer h3{
+  font-size:28px;
+  margin-bottom:18px;
+  font-weight:900;
+}
+
+.footer h4{
+  font-size:16px;
+  margin-bottom:20px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#ffb800;
+}
+
+.footer p{
+  line-height:1.7;
+  color:#d1d5db;
+  font-size:14px;
+}
+
+.footer-col-brand p{
+  margin-bottom:22px;
+}
+
+.footer-links{
+  list-style:none;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-links a{
+  color:#d1d5db;
+  text-decoration:none;
+  font-size:14px;
+  transition:.2s;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.footer-links a::before{
+  content:"›";
+  color:#0a78c2;
+  font-weight:900;
+}
+
+.footer-links a:hover{
+  color:#ffb800;
+  padding-left:4px;
+}
+
+.footer-contact{
+  list-style:none;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-contact li{
+  color:#d1d5db;
+  font-size:14px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.footer-contact i{
+  color:#ffb800;
+  width:18px;
+  margin-top:3px;
+}
+
+.redes-icons{
+  display:flex;
+  gap:12px;
+}
+
+.redes-icons a{
+  width:42px;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.1);
+  color:#fff;
+
+  text-decoration:none;
+  transition:.3s;
+}
+
+.redes-icons a:hover{
+  background:#ffb800;
+  color:#0a3a5f;
+}
+
+.copyright{
+  text-align:center;
+  padding-top:25px;
+
+  font-size:13px;
+  color:#9ca3af;
+}
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:1024px){
+
+  .menu-toggle{
+    display:flex;
+  }
+
+  .menu-productos,
+  .nav-links,
+  .help-info,
+  .user-info span:not(:first-child){
+    display:none;
+  }
+
+  .header-wrap{
+    gap:14px;
+    height:80px;
+  }
+
+  .logo{ order:1; }
+  .header-right{ order:2; margin-left:auto; }
+  .menu-toggle{ order:3; }
+
+  .hero-section{
+    padding-top:80px;
+  }
+
+  .hero-slider{
+    height:480px;
+  }
+
+  .slide-content{
+    padding:0 30px;
+  }
+
+  .slide-text h1{
+    font-size:46px;
+  }
+
+  .grid-ofertas{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .blog-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+
+  .blog-card:last-child{
+    grid-column:1 / -1;
+    max-width:550px;
+    margin:0 auto;
+  }
+
+  .otros-grid{
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
+  }
+
+  .parallax-banner{
+    min-height:380px;
+  }
+
+  .parallax-content h2{
+    font-size:34px;
+  }
+
+  .parallax-content p{
+    font-size:17px;
+  }
+
+  .footer-wrap{
+    grid-template-columns:repeat(2, 1fr);
+    gap:30px;
+  }
+
+  .footer-col-brand{
+    grid-column:1 / -1;
+  }
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .container{
+    padding:0 10px;
+  }
+
+  .header .container.header-wrap{
+    padding:0 14px;
+  }
+
+  .header-wrap{
+    height:64px;
+    gap:8px;
+  }
+
+  .logo-img{
+    height:40px;
+  }
+
+  .menu-toggle{
+    width:42px;
+    height:42px;
+    font-size:22px;
+    flex-shrink:0;
+  }
+
+  .cart-icon{
+    font-size:22px;
+    flex-shrink:0;
+  }
+
+  .header-right{
+    gap:12px;
+  }
+
+  .user-info{
+    display:none;
+  }
+
+  .hero-section{
+    padding-top:64px;
+  }
+
+  .hero-wrap{
+    padding:0;
+  }
+
+  .hero-slider{
+    height:520px;
+  }
+
+  .hero-wave{
+    height:80px;
+  }
+
+  .slide-dots{
+    bottom:50px;
+  }
+
+  .slide-content{
+    padding:24px 18px 70px;
+    align-items:center;
+  }
+
+  .slide-text{
+    max-width:100%;
+  }
+
+  .slide-tag{
+    font-size:11px;
+    padding:6px 14px;
+  }
+
+  .slide-text h1{
+    font-size:26px;
+    letter-spacing:0;
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
+
+  .slide-text p{
+    font-size:13px;
+    line-height:1.5;
+    margin-bottom:20px;
+    max-width:100%;
+  }
+
+  .slide-cta{
+    padding:12px 22px;
+    font-size:13px;
+  }
+
+  .producto-card{
+    width:240px;
+  }
+
+  .grid-ofertas{
+    grid-template-columns:1fr;
+  }
+
+  .blog-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-bottom:30px;
+  }
+
+  .blog-card:last-child{
+    max-width:none;
+  }
+
+  .otros-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .otro-img{
+    height:180px;
+  }
+
+  .otro-info{
+    padding:16px;
+  }
+
+  .otro-info h3{
+    font-size:15px;
+  }
+
+  .otro-bottom .precio{
+    font-size:20px;
+  }
+
+  .parallax-banner{
+    min-height:340px;
+    background-attachment:scroll;
+  }
+
+  .parallax-content{
+    padding:40px 20px;
+  }
+
+  .parallax-content h2{
+    font-size:26px;
+  }
+
+  .parallax-content p{
+    font-size:15px;
+    margin-bottom:24px;
+  }
+
+  .parallax-cta{
+    padding:14px 28px;
+    font-size:14px;
+  }
+
+  .footer-wrap{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .footer-col-brand{
+    grid-column:auto;
+  }
+
+
+  .blog-img{
+    height:200px;
+  }
+
+  .blog-info{
+    padding:20px;
+  }
+
+  .blog-info h3{
+    font-size:17px;
+  }
+
+  .blog-section,
+  .productos-destacados,
+  .productos-oferta{
+    padding:60px 0;
+  }
+
+  .section-head h2{
+    font-size:22px;
+    line-height:1.2;
+  }
+
+  .section-sub{
+    font-size:14px;
+  }
+
+  .producto-info h3{
+    font-size:15px;
+  }
+
+  .precio{
+    font-size:20px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="container header-wrap">
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <a href="#" class="logo">
+      <img src="assets/img/logo%20nuevo.png" alt="Cloro en Tabletas" class="logo-img">
+    </a>
+
+    <nav class="nav-links">
+      <a href="#">INICIO</a>
+      <a href="#productos">PRODUCTOS</a>
+      <a href="#quienes-somos">QUIENES SOMOS</a>
+      <a href="#blog">BLOG</a>
+      <a href="#contacto">CONTACTO</a>
+    </nav>
+
+    <div class="header-right">
+
+      <a href="cuenta/login/index.html" class="user-info">
+        <i class="fa-regular fa-circle-user"></i>
+        <span>
+          <strong>¡Hola!</strong>
+          Inicia sesión o regístrate
+        </span>
+      </a>
+
+      <a href="#" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge">0</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+
+  <button class="drawer-close" id="drawerClose">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+  <nav class="drawer-nav">
+    <a href="#productos"><i class="fa-solid fa-tag"></i> Productos</a>
+    <a href="#productos"><i class="fa-solid fa-store"></i> Tienda</a>
+    <a href="#blog"><i class="fa-solid fa-newspaper"></i> Blog</a>
+    <a href="#ofertas"><i class="fa-solid fa-fire"></i> Ofertas</a>
+    <a href="#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a>
+  </nav>
+
+  <div class="drawer-footer">
+    <a href="#" class="drawer-cta">
+      <i class="fa-regular fa-circle-user"></i>
+      Iniciar Sesión
+    </a>
+  </div>
+
+</div>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras">
+
+  <div class="cart-drawer-header">
+    <h3><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</h3>
+    <button class="cart-close" id="cartClose" aria-label="Cerrar carrito">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-empty" id="cartEmpty">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <p>Tu carrito está vacío</p>
+    <a href="#productos" class="cart-empty-btn" onclick="document.getElementById('cartDrawer').classList.remove('active');document.getElementById('cartOverlay').classList.remove('active');document.body.style.overflow='';">Ver productos</a>
+  </div>
+
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">$0</span>
+    </div>
+    <p class="cart-note">Envío e impuestos calculados en el checkout.</p>
+    <a href="checkout/index.html" class="cart-checkout-btn">
+      Ir al Checkout
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+
+</aside>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<section class="hero-section">
+
+  <div class="hero-wrap">
+
+    <div class="hero-slider">
+
+      <div class="slide active">
+
+        <div class="slide-bg" style="background-image:url('assets/img/cloro-en-tabletas-en-una-piscina.webp')"></div>
+        <div class="slide-overlay"></div>
+
+        <div class="slide-content">
+          <div class="slide-text">
+
+            <span class="slide-tag">
+              <i class="fa-solid fa-bolt"></i>
+              Promo de Temporada
+            </span>
+
+            <h1>
+              Mantención de<br>
+              <span class="yellow" style="white-space:nowrap">Agua Cristalina</span>
+            </h1>
+
+            <p>
+              Cloro en tabletas de alta concentración. Larga duración, mayor pureza y agua impecable todo el verano.
+            </p>
+
+            <a href="#" class="slide-cta">
+              Comprar Ahora
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="slide">
+
+        <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1800&auto=format&fit=crop')"></div>
+        <div class="slide-overlay"></div>
+
+        <div class="slide-content">
+          <div class="slide-text">
+
+            <span class="slide-tag">
+              <i class="fa-solid fa-shield-halved"></i>
+              Mantención Profesional
+            </span>
+
+            <h1>
+              <span style="white-space:nowrap">Tu Piscina Siempre</span><br>
+              <span style="white-space:nowrap">en <span class="yellow">Buenas Condiciones</span></span>
+            </h1>
+
+            <p>
+              Tratamiento profesional para piscinas residenciales. Tabletas multifunción 3 en 1 con efecto prolongado.
+            </p>
+
+            <a href="#" class="slide-cta">
+              Ver Producto
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="slide">
+
+        <div class="slide-bg" style="background-image:url('assets/img/cloro-para-piscinas-en-tabletas.webp')"></div>
+        <div class="slide-overlay"></div>
+
+        <div class="slide-content">
+          <div class="slide-text">
+
+            <span class="slide-tag">
+              <i class="fa-solid fa-droplet"></i>
+              Calidad Profesional
+            </span>
+
+            <h1>
+              <span style="white-space:nowrap">Cloro en Tabletas</span><br>
+              <span style="white-space:nowrap">de <span class="yellow">Alta Eficiencia</span></span>
+            </h1>
+
+            <p>
+              Disolución lenta, alto poder desinfectante y fácil dosificación. Mantén tu agua sana sin esfuerzo.
+            </p>
+
+            <a href="#" class="slide-cta">
+              Ver Catálogo
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="slide">
+
+        <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1572331165267-854da2b10ccc?q=80&w=1800&auto=format&fit=crop')"></div>
+        <div class="slide-overlay"></div>
+
+        <div class="slide-content">
+          <div class="slide-text">
+
+            <span class="slide-tag">
+              <i class="fa-solid fa-building"></i>
+              Edificios y Condominios
+            </span>
+
+            <h1>
+              Piscinas <span class="yellow">Comunitarias</span><br>
+              Siempre Limpias
+            </h1>
+
+            <p>
+              Soluciones de cloración de uso intensivo para piscinas de edificios, hoteles y condominios.
+            </p>
+
+            <a href="#" class="slide-cta">
+              Cotizar Ahora
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="slide-dots" id="slideDots"></div>
+
+      <div class="hero-wave">
+        <svg viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#ffffff" d="M0,80 C240,140 480,20 720,60 C960,100 1200,140 1440,70 L1440,140 L0,140 Z"></path>
+          <path fill="#ffffff" fill-opacity="0.4" d="M0,100 C300,40 600,120 900,80 C1140,50 1320,110 1440,90 L1440,140 L0,140 Z"></path>
+        </svg>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="productos-destacados" id="productos">
+
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Productos <span>Destacados</span></h2>
+    </div>
+
+    <div class="productos-slider-wrap">
+
+      <div class="productos-track" id="productosTrack">
+
+        <div class="producto-card">
+          <img src="assets/img/products/cloro-tabletas-4k.webp" alt="Cloro en Tabletas Pack 4 Kilos">
+          <div class="producto-info">
+            <h3>Cloro en Tabletas Pack 4 Kilos</h3>
+            <div class="precio">$19.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <img src="assets/img/products/cloro-tabletas-2k.webp" alt="Cloro para Piscina Pack 2 Kilos Tabletas">
+          <div class="producto-info">
+            <h3>Cloro Tabletas Pack 2 Kilos</h3>
+            <div class="precio">$10.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <img src="assets/img/products/cloro-1k.webp" alt="Cloro para Piscina 1 Kilo">
+          <div class="producto-info">
+            <h3>Cloro para Piscina 1 Kilo</h3>
+            <div class="precio">$5.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <img src="assets/img/products/algicida-concentrado.png" alt="Algicida Concentrado">
+          <div class="producto-info">
+            <h3>Algicida Concentrado</h3>
+            <div class="precio">$10.000</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <img src="assets/img/products/baja-ph.webp" alt="Baja PH para piscinas 1 kilo">
+          <div class="producto-info">
+            <h3>Baja PH para Piscinas 1 Kilo</h3>
+            <div class="precio">$10.000</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="mas-vendidos" id="mas-vendidos">
+
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Los Productos <span>Más Vendidos</span></h2>
+      <p class="section-sub">Los favoritos de nuestros clientes este verano.</p>
+    </div>
+
+    <div class="otros-grid">
+
+      <article class="otro-card">
+        <span class="badge-top">TOP</span>
+        <div class="otro-img">
+          <img src="assets/img/products/cloro-tabletas-4k.webp" alt="Cloro en Tabletas Pack 4 Kilos">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Sanitizante</span>
+          <h3>Cloro en Tabletas Pack 4 Kilos</h3>
+          <div class="otro-bottom">
+            <div class="precio">$19.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <span class="badge-top">TOP</span>
+        <div class="otro-img">
+          <img src="assets/img/products/cloro-tabletas-2k.webp" alt="Cloro Tabletas Pack 2 Kilos">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Sanitizante</span>
+          <h3>Cloro Tabletas Pack 2 Kilos</h3>
+          <div class="otro-bottom">
+            <div class="precio">$10.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <span class="badge-top">TOP</span>
+        <div class="otro-img">
+          <img src="assets/img/products/cloro-1k.webp" alt="Cloro para Piscina 1 Kilo">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Sanitizante</span>
+          <h3>Cloro para Piscina 1 Kilo</h3>
+          <div class="otro-bottom">
+            <div class="precio">$5.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <span class="badge-top">TOP</span>
+        <div class="otro-img">
+          <img src="assets/img/products/algicida-concentrado.png" alt="Algicida Concentrado">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Tratamiento</span>
+          <h3>Algicida Concentrado</h3>
+          <div class="otro-bottom">
+            <div class="precio">$10.000</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="productos-oferta" id="ofertas">
+
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Productos en <span>Oferta</span></h2>
+    </div>
+
+    <div class="grid-ofertas">
+
+      <div class="producto-card">
+        <span class="badge-oferta">OFERTA</span>
+        <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="producto-info">
+          <h3>Pack Cloro 10KG</h3>
+          <div class="precio">$54.990</div>
+          <a href="#" class="btn-producto">
+            <i class="fa-solid fa-cart-plus"></i>
+            Agregar
+          </a>
+        </div>
+      </div>
+
+      <div class="producto-card">
+        <span class="badge-oferta">OFERTA</span>
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="producto-info">
+          <h3>Clarificador Piscina</h3>
+          <div class="precio">$12.990</div>
+          <a href="#" class="btn-producto">
+            <i class="fa-solid fa-cart-plus"></i>
+            Agregar
+          </a>
+        </div>
+      </div>
+
+      <div class="producto-card">
+        <span class="badge-oferta">OFERTA</span>
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="producto-info">
+          <h3>Test Kit Piscina</h3>
+          <div class="precio">$8.990</div>
+          <a href="#" class="btn-producto">
+            <i class="fa-solid fa-cart-plus"></i>
+            Agregar
+          </a>
+        </div>
+      </div>
+
+      <div class="producto-card">
+        <span class="badge-oferta">OFERTA</span>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="producto-info">
+          <h3>Alguicida Premium</h3>
+          <div class="precio">$18.990</div>
+          <a href="#" class="btn-producto">
+            <i class="fa-solid fa-cart-plus"></i>
+            Agregar
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="otros-productos" id="tienda">
+
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Otros Productos <span>de la Tienda</span></h2>
+      <p class="section-sub">Accesorios, equipos y todo lo que necesitas para una piscina impecable.</p>
+    </div>
+
+    <div class="otros-grid">
+
+      <article class="otro-card">
+        <div class="otro-img">
+          <img src="https://picsum.photos/seed/limpiafondos/600/450" alt="Limpiafondos manual">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Accesorios</span>
+          <h3>Limpiafondos Manual</h3>
+          <p>Cabezal con ruedas para aspirar suciedad fina del fondo de tu piscina sin esfuerzo.</p>
+          <div class="otro-bottom">
+            <div class="precio">$19.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <div class="otro-img">
+          <img src="https://picsum.photos/seed/manguera-telescopica/600/450" alt="Manguera telescópica 6m">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Accesorios</span>
+          <h3>Manguera Telescópica 6m</h3>
+          <p>Resistente a los químicos, extensible hasta 6 metros. Compatible con todos los limpiafondos estándar.</p>
+          <div class="otro-bottom">
+            <div class="precio">$14.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <div class="otro-img">
+          <img src="assets/img/products/colchon-inflable.png" alt="Colchón Inflable Queen">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Lifestyle</span>
+          <h3>Colchón Inflable Tamaño Queen</h3>
+          <p>Colchón inflable de tamaño Queen, ideal para invitados o relajarte junto a tu piscina.</p>
+          <div class="otro-bottom">
+            <div class="precio">$52.000</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <div class="otro-img">
+          <img src="assets/img/products/hamaca-algodon.webp" alt="Hamaca de algodón 2 plazas">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Lifestyle</span>
+          <h3>Hamaca de Algodón 2 Plazas</h3>
+          <p>Hamaca de algodón resistente para descansar al aire libre. Capacidad para 2 personas.</p>
+          <div class="otro-bottom">
+            <div class="precio">$10.400</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <div class="otro-img">
+          <img src="https://picsum.photos/seed/reflector-led/600/450" alt="Reflector LED subacuático">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Iluminación</span>
+          <h3>Reflector LED Subacuático RGB</h3>
+          <p>Iluminación 16 colores con control remoto. Resistente al agua IP68, bajo consumo.</p>
+          <div class="otro-bottom">
+            <div class="precio">$39.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <div class="otro-img">
+          <img src="assets/img/products/termo-globo.png" alt="Termo Retráctil Globo Terráqueo">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Lifestyle</span>
+          <h3>Termo Retráctil Globo Terráqueo</h3>
+          <p>Termo retráctil con diseño de globo terráqueo. Conserva la temperatura y se ajusta fácilmente.</p>
+          <div class="otro-bottom">
+            <div class="precio">$6.500</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <div class="otro-img">
+          <img src="https://picsum.photos/seed/bomba-piscina/600/450" alt="Bomba de filtración 1HP">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Equipos</span>
+          <h3>Bomba de Filtración 1HP</h3>
+          <p>Caudal 12.000 L/h, motor silencioso. Compatible con filtros de arena y cartucho.</p>
+          <div class="otro-bottom">
+            <div class="precio">$129.990</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="otro-card">
+        <div class="otro-img">
+          <img src="assets/img/products/rueda-sport.png" alt="Rueda Sport Ejercicios Abdominales">
+        </div>
+        <div class="otro-info">
+          <span class="otro-cat">Fitness</span>
+          <h3>Rueda Sport Ejercicios Abdominales</h3>
+          <p>Rueda para ejercicios abdominales con mango ergonómico. Entrena en casa o junto a tu piscina.</p>
+          <div class="otro-bottom">
+            <div class="precio">$19.500</div>
+            <a href="#" class="btn-producto">
+              <i class="fa-solid fa-cart-plus"></i>
+              Agregar
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="otros-cta-wrap">
+      <a href="#" class="otros-cta-btn">
+        Ver Tienda Completa
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="parallax-banner">
+  <div class="parallax-overlay"></div>
+  <div class="parallax-content">
+    <h2>Disfruta de tu Piscina <span class="yellow">durante todo el año</span></h2>
+    <p>Incluye en tu mantención el mejor Cloro en Tabletas del mercado.</p>
+    <a href="#productos" class="parallax-cta">
+      ¡¡Haz tu pedido ahora!!
+    </a>
+  </div>
+</section>
+
+<section class="blog-section" id="blog">
+
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Desde Nuestro <span>Blog</span></h2>
+      <p class="section-sub">Guías, tips y novedades para mantener tu piscina impecable todo el año.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <a href="blog/como-mantener-piscina-cristalina/" class="blog-img">
+          <img src="https://picsum.photos/seed/blog-cristalina/800/500" alt="Cómo mantener tu piscina cristalina">
+          <span class="blog-cat">Guías</span>
+        </a>
+        <div class="blog-info">
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> 15 May, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 5 min</span>
+          </div>
+          <h3><a href="blog/como-mantener-piscina-cristalina/">Cómo Mantener tu Piscina Cristalina Todo el Verano</a></h3>
+          <p>Descubre la rutina semanal de cloración, filtrado y pH que los profesionales usan para que el agua nunca se enturbie.</p>
+          <a href="blog/como-mantener-piscina-cristalina/" class="blog-link">
+            Leer Más
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <a href="blog/cloro-tabletas-vs-liquido/" class="blog-img">
+          <img src="https://picsum.photos/seed/blog-comparativa/800/500" alt="Cloro en tabletas vs cloro líquido">
+          <span class="blog-cat">Comparativa</span>
+        </a>
+        <div class="blog-info">
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> 08 May, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 7 min</span>
+          </div>
+          <h3><a href="blog/cloro-tabletas-vs-liquido/">Cloro en Tabletas vs Cloro Líquido: ¿Cuál Elegir?</a></h3>
+          <p>Te explicamos las ventajas, desventajas y costos reales de cada formato para que escojas el adecuado para tu piscina.</p>
+          <a href="blog/cloro-tabletas-vs-liquido/" class="blog-link">
+            Leer Más
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <a href="blog/guia-dosificacion-cloro/" class="blog-img">
+          <img src="https://picsum.photos/seed/blog-dosificacion/800/500" alt="Guía de dosificación de cloro">
+          <span class="blog-cat">Tips</span>
+        </a>
+        <div class="blog-info">
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> 02 May, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 6 min</span>
+          </div>
+          <h3><a href="blog/guia-dosificacion-cloro/">Guía Completa de Dosificación de Cloro</a></h3>
+          <p>Cuántas tabletas usar según el volumen de tu piscina, cada cuánto reponerlas y cómo evitar sobre o subdosificar.</p>
+          <a href="blog/guia-dosificacion-cloro/" class="blog-link">
+            Leer Más
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="blog-cta-wrap">
+      <a href="#" class="blog-cta-btn">
+        Ver Todos los Artículos
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer" id="contacto">
+
+  <div class="container">
+
+    <div class="footer-wrap">
+
+      <div class="footer-col-brand">
+        <h3>CLORO EN TABLETAS</h3>
+        <p>
+          Ecommerce especializado en productos para limpieza y mantención de piscinas.
+          Cloro en tabletas, kits, accesorios y todo lo necesario para mantener tu piscina cristalina.
+        </p>
+        <div class="redes-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#productos">Tienda</a></li>
+          <li><a href="#mas-vendidos">Más Vendidos</a></li>
+          <li><a href="#ofertas">Ofertas</a></li>
+          <li><a href="#tienda">Otros Productos</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Atención al Cliente</h4>
+        <ul class="footer-links">
+          <li><a href="politica-privacidad/">Política de Privacidad</a></li>
+          <li><a href="politica-devoluciones/">Política de Devoluciones</a></li>
+          <li><a href="#terminos">Términos y Condiciones</a></li>
+          <li><a href="#envios">Política de Envíos</a></li>
+          <li><a href="#cookies">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-envelope"></i> contacto@cloroentabletas.cl</li>
+          <li><i class="fa-solid fa-phone"></i> +56 9 9999 9999</li>
+          <li><i class="fa-regular fa-clock"></i> Lun a Vie 9:00 - 18:00</li>
+          <li><i class="fa-solid fa-location-dot"></i> Santiago, Chile</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      &copy; 2026 Cloro en Tabletas. Todos los derechos reservados. RUT 76.XXX.XXX-X
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+
+/* HERO SLIDER */
+
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('slideDots');
+
+let current = 0;
+let autoplay;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('span');
+  if(i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => irASlide(i));
+  dotsContainer.appendChild(dot);
+});
+
+const dots = dotsContainer.querySelectorAll('span');
+
+function irASlide(index){
+  slides[current].classList.remove('active');
+  dots[current].classList.remove('active');
+
+  current = index;
+
+  if(current >= slides.length) current = 0;
+  if(current < 0) current = slides.length - 1;
+
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
+}
+
+function cambiarSlide(dir){
+  irASlide(current + dir);
+  reiniciarAutoplay();
+}
+
+function reiniciarAutoplay(){
+  clearInterval(autoplay);
+  autoplay = setInterval(() => cambiarSlide(1), 6000);
+}
+
+reiniciarAutoplay();
+
+/* CARRUSEL INFINITO PRODUCTOS (paso a paso) */
+
+const track = document.getElementById('productosTrack');
+const originalCards = Array.from(track.children);
+const cardCount = originalCards.length;
+
+originalCards.forEach(card => {
+  const clon = card.cloneNode(true);
+  clon.setAttribute('aria-hidden', 'true');
+  track.appendChild(clon);
+});
+
+let currentIndex = 0;
+let pausado = false;
+
+function pasoCardWidth(){
+  const card = track.querySelector('.producto-card');
+  if(!card) return 0;
+  const estilo = window.getComputedStyle(card);
+  return card.offsetWidth + parseFloat(estilo.marginRight || 0);
+}
+
+function avanzar(){
+  if(pausado) return;
+
+  currentIndex++;
+  const ancho = pasoCardWidth();
+
+  track.style.transition = 'transform .6s ease';
+  track.style.transform = `translateX(-${currentIndex * ancho}px)`;
+
+  if(currentIndex >= cardCount){
+    setTimeout(() => {
+      track.style.transition = 'none';
+      currentIndex = 0;
+      track.style.transform = 'translateX(0)';
+    }, 620);
+  }
+}
+
+let intervaloCarrusel = setInterval(avanzar, 3000);
+
+track.addEventListener('mouseenter', () => { pausado = true; });
+track.addEventListener('mouseleave', () => { pausado = false; });
+
+window.addEventListener('resize', () => {
+  track.style.transition = 'none';
+  track.style.transform = `translateX(-${currentIndex * pasoCardWidth()}px)`;
+});
+
+/* MOBILE DRAWER */
+
+const drawer = document.getElementById('mobileDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerClose = document.getElementById('drawerClose');
+const menuToggle = document.getElementById('menuToggle');
+
+function abrirDrawer(){
+  drawer.classList.add('active');
+  drawerOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarDrawer(){
+  drawer.classList.remove('active');
+  drawerOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+menuToggle.addEventListener('click', abrirDrawer);
+drawerClose.addEventListener('click', cerrarDrawer);
+drawerOverlay.addEventListener('click', cerrarDrawer);
+
+drawer.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', cerrarDrawer);
+});
+
+</script>
+
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/auth.js"></script>
+
+</body>
 </html>

@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | Cloro en Tabletas</title>
+<meta name="description" content="Finaliza tu compra de productos para piscinas con envío a todo Chile.">
+
+<link rel="icon" type="image/png" href="../assets/img/logo%20nuevo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/blog.css">
+
+<style>
+
+.checkout-section{
+  padding:30px 0 80px;
+  background:#f1f5f9;
+  min-height:calc(100vh - 120px);
+}
+
+.checkout-wrap{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:30px;
+  align-items:flex-start;
+}
+
+.checkout-main, .checkout-summary{
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(10,120,194,.08);
+}
+
+.checkout-main{ padding:36px 40px; }
+
+.checkout-summary{
+  padding:28px 30px;
+  position:sticky;
+  top:140px;
+}
+
+.checkout-title{
+  font-size:30px;
+  font-weight:900;
+  color:#0a3a5f;
+  margin-bottom:8px;
+  line-height:1.2;
+}
+
+.checkout-title .yellow{ color:#ffb800; }
+
+.checkout-sub{
+  font-size:14px;
+  color:#6b7280;
+  margin-bottom:28px;
+}
+
+.form-section{
+  margin-bottom:30px;
+  padding-bottom:25px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.form-section:last-of-type{
+  border-bottom:none;
+  margin-bottom:0;
+}
+
+.form-section h3{
+  font-size:18px;
+  font-weight:800;
+  color:#0a3a5f;
+  margin-bottom:18px;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.form-section h3 .step-num{
+  width:30px; height:30px;
+  background:#0a78c2;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:900;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:14px;
+}
+
+.form-row{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.form-row.full{ grid-column:1 / -1; }
+
+.form-row label{
+  font-size:13px;
+  font-weight:700;
+  color:#0a3a5f;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1.5px solid #e5e7eb;
+  border-radius:8px;
+  font-size:14px;
+  font-family:inherit;
+  color:#111827;
+  outline:none;
+  transition:.2s;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus{
+  border-color:#0a78c2;
+  box-shadow:0 0 0 3px rgba(10,120,194,.12);
+}
+
+.form-row textarea{
+  resize:vertical;
+  min-height:80px;
+}
+
+.pago-options{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.pago-option{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 16px;
+  border:1.5px solid #e5e7eb;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.pago-option:hover{ border-color:#0a78c2; }
+
+.pago-option input{
+  width:18px; height:18px;
+  accent-color:#0a78c2;
+}
+
+.pago-option:has(input:checked){
+  border-color:#0a78c2;
+  background:#eff6ff;
+}
+
+.pago-label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:1;
+  font-size:14px;
+  font-weight:700;
+  color:#0a3a5f;
+}
+
+.pago-label i{
+  font-size:22px;
+  color:#0a78c2;
+  width:28px;
+  text-align:center;
+}
+
+.pago-desc{
+  font-size:12px;
+  color:#6b7280;
+  font-weight:500;
+  display:block;
+  margin-top:2px;
+}
+
+.checkout-cta{
+  width:100%;
+  padding:16px;
+  background:#ffb800;
+  color:#0a3a5f;
+  border:none;
+  border-radius:12px;
+
+  font-family:inherit;
+  font-size:15px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 8px 20px rgba(255,184,0,.35);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.checkout-cta:hover{
+  background:#f0a800;
+  transform:translateY(-2px);
+}
+
+.checkout-cta:disabled{
+  background:#cbd5e1;
+  color:#6b7280;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+/* SUMMARY */
+
+.summary-title{
+  font-size:18px;
+  font-weight:900;
+  color:#0a3a5f;
+  margin-bottom:18px;
+  padding-bottom:14px;
+  border-bottom:2px solid #ffb800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.summary-items{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  max-height:320px;
+  overflow-y:auto;
+  margin-bottom:18px;
+}
+
+.summary-item{
+  display:grid;
+  grid-template-columns:60px 1fr;
+  gap:12px;
+  padding-bottom:14px;
+  border-bottom:1px solid #f1f5f9;
+}
+
+.summary-item:last-child{ border-bottom:none; padding-bottom:0; }
+
+.summary-item-img{
+  width:60px; height:60px;
+  background:#f7fafc;
+  border:1px solid #e5e7eb;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.summary-item-img img{
+  width:100%; height:100%;
+  object-fit:contain;
+  padding:5px;
+}
+
+.summary-item-body{
+  min-width:0;
+}
+
+.summary-item-name{
+  font-size:12px;
+  font-weight:700;
+  color:#0a3a5f;
+  line-height:1.3;
+  margin-bottom:6px;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.summary-item-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+
+.sum-qty{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  border:1px solid #e5e7eb;
+  border-radius:6px;
+  padding:2px 4px;
+}
+
+.sum-qty button{
+  width:22px; height:22px;
+  border:none;
+  background:transparent;
+  font-size:14px;
+  font-weight:800;
+  color:#0a78c2;
+  cursor:pointer;
+}
+
+.sum-qty button:hover{ color:#0a3a5f; }
+
+.sum-qty .qval{
+  font-size:12px;
+  font-weight:700;
+  color:#0a3a5f;
+  min-width:18px;
+  text-align:center;
+}
+
+.sum-remove{
+  background:transparent;
+  border:none;
+  color:#dc2626;
+  font-size:12px;
+  cursor:pointer;
+  padding:2px 4px;
+}
+
+.sum-remove:hover{ color:#991b1b; }
+
+.summary-item-price{
+  font-size:13px;
+  font-weight:800;
+  color:#0a78c2;
+  white-space:nowrap;
+}
+
+/* CUPÓN */
+
+.cupon-block{
+  margin-bottom:16px;
+  padding-bottom:16px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.cupon-toggle{
+  background:none;
+  border:none;
+  color:#0a78c2;
+  font-family:inherit;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  padding:0;
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.cupon-toggle:hover{ color:#0a3a5f; }
+
+.cupon-form{
+  display:none;
+  margin-top:10px;
+  gap:8px;
+}
+
+.cupon-form.active{ display:flex; }
+
+.cupon-form input{
+  flex:1;
+  padding:10px 12px;
+  border:1.5px solid #e5e7eb;
+  border-radius:8px;
+  font-size:13px;
+  font-family:inherit;
+  outline:none;
+  text-transform:uppercase;
+}
+
+.cupon-form input:focus{
+  border-color:#0a78c2;
+}
+
+.cupon-form button{
+  padding:10px 16px;
+  background:#0a3a5f;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-family:inherit;
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+.cupon-form button:hover{ background:#0a78c2; }
+
+.cupon-msg{
+  font-size:12px;
+  margin-top:8px;
+  padding:6px 10px;
+  border-radius:6px;
+}
+
+.cupon-msg.ok{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.cupon-msg.err{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.aplicado{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#eff6ff;
+  border:1px dashed #0a78c2;
+  border-radius:8px;
+  padding:8px 12px;
+  margin-top:8px;
+}
+
+.aplicado span:first-child{
+  font-size:12px;
+  font-weight:700;
+  color:#0a78c2;
+}
+
+.aplicado button{
+  background:none;
+  border:none;
+  color:#dc2626;
+  cursor:pointer;
+  font-size:13px;
+  padding:0;
+}
+
+.summary-totals{
+  border-top:1px solid #e5e7eb;
+  padding-top:16px;
+}
+
+.summary-line{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  color:#374151;
+  margin-bottom:8px;
+}
+
+.summary-line.total{
+  font-size:18px;
+  font-weight:900;
+  color:#0a3a5f;
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid #e5e7eb;
+}
+
+.empty-checkout{
+  text-align:center;
+  padding:60px 20px;
+}
+
+.empty-checkout i{
+  font-size:80px;
+  color:#cbd5e1;
+  margin-bottom:20px;
+}
+
+.empty-checkout h2{
+  font-size:26px;
+  color:#0a3a5f;
+  margin-bottom:10px;
+}
+
+.empty-checkout p{
+  font-size:15px;
+  color:#6b7280;
+  margin-bottom:24px;
+}
+
+.empty-checkout a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 30px;
+  background:#0a78c2;
+  color:#fff;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+@media(max-width:1024px){
+  .checkout-wrap{
+    grid-template-columns:1fr;
+  }
+  .checkout-summary{
+    position:static;
+  }
+  .checkout-main{ padding:28px 24px; }
+}
+
+@media(max-width:768px){
+  .checkout-title{ font-size:22px; }
+  .form-grid{ grid-template-columns:1fr; }
+  .checkout-main{ padding:22px 18px; }
+  .checkout-summary{ padding:22px 18px; }
+}
+
+</style>
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-wrap">
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <a href="../" class="logo">
+      <img src="../assets/img/logo%20nuevo.png" alt="Cloro en Tabletas" class="logo-img">
+    </a>
+
+    <nav class="nav-links">
+      <a href="../">INICIO</a>
+      <a href="../#productos">PRODUCTOS</a>
+      <a href="../#quienes-somos">QUIENES SOMOS</a>
+      <a href="../#blog">BLOG</a>
+      <a href="../#contacto">CONTACTO</a>
+    </nav>
+
+    <div class="header-right">
+      <a href="../cuenta/login/index.html" class="user-info">
+        <i class="fa-regular fa-circle-user"></i>
+        <span><strong>¡Hola!</strong>Inicia sesión o regístrate</span>
+      </a>
+      <a href="#" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+  <nav class="drawer-nav">
+    <a href="../"><i class="fa-solid fa-house"></i> Inicio</a>
+    <a href="../#productos"><i class="fa-solid fa-tag"></i> Productos</a>
+    <a href="../#blog"><i class="fa-solid fa-newspaper"></i> Blog</a>
+    <a href="../#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a>
+  </nav>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</h3>
+    <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-empty" id="cartEmpty">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <p>Tu carrito está vacío</p>
+    <a href="../#productos" class="cart-empty-btn">Ver productos</a>
+  </div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">$0</span>
+    </div>
+    <p class="cart-note">Envío e impuestos calculados en el checkout.</p>
+    <a href="#" class="cart-checkout-btn">
+      Ya estás en Checkout
+    </a>
+  </div>
+</aside>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<section class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-wrap">
+      <a href="../">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Checkout</span>
+    </div>
+  </div>
+</section>
+
+<section class="checkout-section">
+  <div class="container">
+
+    <div id="checkoutEmpty" class="empty-checkout" style="display:none">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <h2>Tu carrito está vacío</h2>
+      <p>Agrega productos antes de continuar con tu compra.</p>
+      <a href="../#productos">
+        Ver Productos
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div id="checkoutWrap" class="checkout-wrap">
+
+      <div class="checkout-main">
+
+        <h1 class="checkout-title">Finalizar <span class="yellow">Compra</span></h1>
+        <p class="checkout-sub">Completa tus datos y elige el método de pago para confirmar tu pedido.</p>
+
+        <form id="checkoutForm" novalidate>
+
+          <div class="form-section">
+            <h3><span class="step-num">1</span> Datos de Contacto</h3>
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="nombre">Nombre *</label>
+                <input id="nombre" name="nombre" type="text" required>
+              </div>
+              <div class="form-row">
+                <label for="apellido">Apellido *</label>
+                <input id="apellido" name="apellido" type="text" required>
+              </div>
+              <div class="form-row">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" required>
+              </div>
+              <div class="form-row">
+                <label for="telefono">Teléfono *</label>
+                <input id="telefono" name="telefono" type="tel" placeholder="+56 9 1234 5678" required>
+              </div>
+              <div class="form-row">
+                <label for="rut">RUT *</label>
+                <input id="rut" name="rut" type="text" placeholder="12.345.678-9" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3><span class="step-num">2</span> Dirección de Envío</h3>
+            <div class="form-grid">
+              <div class="form-row full">
+                <label for="direccion">Calle y Número *</label>
+                <input id="direccion" name="direccion" type="text" required>
+              </div>
+              <div class="form-row">
+                <label for="depto">Depto / Casa</label>
+                <input id="depto" name="depto" type="text">
+              </div>
+              <div class="form-row">
+                <label for="comuna">Comuna *</label>
+                <input id="comuna" name="comuna" type="text" required>
+              </div>
+              <div class="form-row">
+                <label for="ciudad">Ciudad *</label>
+                <input id="ciudad" name="ciudad" type="text" required>
+              </div>
+              <div class="form-row">
+                <label for="region">Región *</label>
+                <select id="region" name="region" required>
+                  <option value="">Selecciona...</option>
+                  <option>Arica y Parinacota</option>
+                  <option>Tarapacá</option>
+                  <option>Antofagasta</option>
+                  <option>Atacama</option>
+                  <option>Coquimbo</option>
+                  <option>Valparaíso</option>
+                  <option>Metropolitana</option>
+                  <option>O'Higgins</option>
+                  <option>Maule</option>
+                  <option>Ñuble</option>
+                  <option>Biobío</option>
+                  <option>Araucanía</option>
+                  <option>Los Ríos</option>
+                  <option>Los Lagos</option>
+                  <option>Aysén</option>
+                  <option>Magallanes</option>
+                </select>
+              </div>
+              <div class="form-row full">
+                <label for="notas">Notas para el despacho</label>
+                <textarea id="notas" name="notas" placeholder="Instrucciones especiales (opcional)"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3><span class="step-num">3</span> Método de Pago</h3>
+            <div class="pago-options">
+              <label class="pago-option">
+                <input type="radio" name="pago" value="webpay" checked>
+                <span class="pago-label">
+                  <i class="fa-solid fa-credit-card"></i>
+                  Webpay (Tarjetas Crédito y Débito)
+                  <span class="pago-desc">Pago seguro con Transbank</span>
+                </span>
+              </label>
+              <label class="pago-option">
+                <input type="radio" name="pago" value="transferencia">
+                <span class="pago-label">
+                  <i class="fa-solid fa-building-columns"></i>
+                  Transferencia Bancaria
+                  <span class="pago-desc">Te enviamos los datos al confirmar el pedido</span>
+                </span>
+              </label>
+              <label class="pago-option">
+                <input type="radio" name="pago" value="mercadopago">
+                <span class="pago-label">
+                  <i class="fa-solid fa-wallet"></i>
+                  Mercado Pago
+                  <span class="pago-desc">Crédito, débito o saldo Mercado Pago</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="checkout-cta">
+            Confirmar Pedido
+            <i class="fa-solid fa-lock"></i>
+          </button>
+
+        </form>
+
+      </div>
+
+      <aside class="checkout-summary">
+        <h3 class="summary-title">Resumen del Pedido</h3>
+        <div id="summaryItems" class="summary-items"></div>
+
+        <div class="cupon-block">
+          <button type="button" class="cupon-toggle" id="cuponToggle">
+            <i class="fa-solid fa-ticket"></i> ¿Tienes un código de descuento?
+          </button>
+          <div class="cupon-form" id="cuponForm">
+            <input type="text" id="cuponInput" placeholder="Código">
+            <button type="button" id="cuponApply">Aplicar</button>
+          </div>
+          <div id="cuponMsg"></div>
+          <div id="cuponAplicado" class="aplicado" style="display:none">
+            <span><i class="fa-solid fa-check"></i> <strong id="cuponNombre"></strong> aplicado</span>
+            <button type="button" id="cuponQuitar" aria-label="Quitar cupón"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+
+        <div class="summary-totals">
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="summarySubtotal">$0</span>
+          </div>
+          <div class="summary-line" id="summaryDescuentoRow" style="display:none">
+            <span style="color:#166534">Descuento <span id="cuponPorcentaje"></span></span>
+            <span id="summaryDescuento" style="color:#166534">-$0</span>
+          </div>
+          <div class="summary-line">
+            <span>Envío <small id="envioRegion" style="color:#9ca3af;font-weight:500"></small></span>
+            <span id="summaryShipping">—</span>
+          </div>
+          <div class="summary-line total">
+            <span>Total</span>
+            <span id="summaryTotal">$0</span>
+          </div>
+          <p style="font-size:11px;color:#9ca3af;margin-top:8px;line-height:1.5" id="envioInfo">Selecciona tu región para calcular el envío.</p>
+        </div>
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer" id="contacto">
+  <div class="container">
+    <div class="footer-wrap">
+      <div class="footer-col-brand">
+        <h3>CLORO EN TABLETAS</h3>
+        <p>Ecommerce especializado en productos para limpieza y mantención de piscinas.</p>
+        <div class="redes-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Atención al Cliente</h4>
+        <ul class="footer-links">
+          <li><a href="../politica-privacidad/">Política de Privacidad</a></li>
+          <li><a href="../politica-devoluciones/">Política de Devoluciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-envelope"></i> contacto@cloroentabletas.cl</li>
+          <li><i class="fa-solid fa-phone"></i> +56 9 9999 9999</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 Cloro en Tabletas. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+const drawer = document.getElementById('mobileDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerClose = document.getElementById('drawerClose');
+const menuToggle = document.getElementById('menuToggle');
+
+function abrirDrawer(){
+  drawer.classList.add('active');
+  drawerOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function cerrarDrawer(){
+  drawer.classList.remove('active');
+  drawerOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+menuToggle.addEventListener('click', abrirDrawer);
+drawerClose.addEventListener('click', cerrarDrawer);
+drawerOverlay.addEventListener('click', cerrarDrawer);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarDrawer));
+</script>
+
+<script src="../assets/js/cart.js"></script>
+
+<script>
+const STORAGE_KEY = 'cloroentabletas_cart';
+
+const ENVIO = {
+  metropolitana: 3990,
+  regiones: 6990,
+  otras: 9990
+};
+
+const REGIONES_4_A_10 = ['Coquimbo','Valparaíso',"O'Higgins",'Maule','Ñuble','Biobío','Araucanía'];
+
+const CUPONES = {
+  'VERANO10':   { tipo:'%',     valor:10, label:'-10%' },
+  'PISCINA15':  { tipo:'%',     valor:15, label:'-15%' },
+  'CLORO5000':  { tipo:'fijo',  valor:5000, label:'-$5.000' },
+  'ENVIOGRATIS':{ tipo:'envio', valor:0,   label:'Envío Gratis' }
+};
+
+let cuponActivo = null;
+
+function getEnvio(region){
+  if(!region) return null;
+  if(region === 'Metropolitana') return { costo: ENVIO.metropolitana, label: 'RM' };
+  if(REGIONES_4_A_10.includes(region)) return { costo: ENVIO.regiones, label: 'IV a X región' };
+  return { costo: ENVIO.otras, label: 'Otras regiones' };
+}
+
+function actualizarCantidad(id, change){
+  const cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  const item = cart.find(i => i.id === id);
+  if(!item) return;
+  item.quantity += change;
+  if(item.quantity < 1){
+    const filtered = cart.filter(i => i.id !== id);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
+  } else {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  }
+  document.dispatchEvent(new CustomEvent('cartchange'));
+  renderCheckout();
+}
+
+function eliminarItem(id){
+  const cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  const filtered = cart.filter(i => i.id !== id);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
+  document.dispatchEvent(new CustomEvent('cartchange'));
+  renderCheckout();
+}
+
+function renderCheckout(){
+  const items = window.CloroCart.getItems();
+  const subtotal = window.CloroCart.getTotal();
+
+  const wrap = document.getElementById('checkoutWrap');
+  const empty = document.getElementById('checkoutEmpty');
+
+  if(items.length === 0){
+    wrap.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+
+  wrap.style.display = 'grid';
+  empty.style.display = 'none';
+
+  document.getElementById('summaryItems').innerHTML = items.map(it => `
+    <div class="summary-item">
+      <div class="summary-item-img"><img src="${it.image}" alt=""></div>
+      <div class="summary-item-body">
+        <div class="summary-item-name">${it.name}</div>
+        <div class="summary-item-row">
+          <div class="sum-qty">
+            <button type="button" data-id="${it.id}" data-act="dec">−</button>
+            <span class="qval">${it.quantity}</span>
+            <button type="button" data-id="${it.id}" data-act="inc">+</button>
+          </div>
+          <div class="summary-item-price">${window.CloroCart.formatPrice(it.price * it.quantity)}</div>
+        </div>
+        <div style="margin-top:6px;text-align:right">
+          <button type="button" class="sum-remove" data-id="${it.id}" data-act="del">
+            <i class="fa-solid fa-trash"></i> Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  document.querySelectorAll('.sum-qty button, .sum-remove').forEach(b => {
+    b.addEventListener('click', () => {
+      const id = b.dataset.id;
+      const act = b.dataset.act;
+      if(act === 'inc') actualizarCantidad(id, 1);
+      else if(act === 'dec') actualizarCantidad(id, -1);
+      else if(act === 'del') eliminarItem(id);
+    });
+  });
+
+  // Envío según región
+  const region = document.getElementById('region').value;
+  const envioInfo = getEnvio(region);
+  let envio = 0;
+
+  const envioEl = document.getElementById('summaryShipping');
+  const envioRegionEl = document.getElementById('envioRegion');
+  const infoEl = document.getElementById('envioInfo');
+
+  if(envioInfo){
+    envio = envioInfo.costo;
+    envioEl.textContent = window.CloroCart.formatPrice(envio);
+    envioRegionEl.textContent = '(' + envioInfo.label + ')';
+    infoEl.textContent = '';
+  } else {
+    envioEl.textContent = '—';
+    envioRegionEl.textContent = '';
+    infoEl.textContent = 'Selecciona tu región para calcular el envío.';
+  }
+
+  // Descuento
+  let descuento = 0;
+  let envioGratis = false;
+
+  if(cuponActivo){
+    if(cuponActivo.tipo === '%'){
+      descuento = Math.round(subtotal * cuponActivo.valor / 100);
+    } else if(cuponActivo.tipo === 'fijo'){
+      descuento = Math.min(cuponActivo.valor, subtotal);
+    } else if(cuponActivo.tipo === 'envio'){
+      envioGratis = true;
+    }
+    document.getElementById('summaryDescuentoRow').style.display = 'flex';
+    document.getElementById('summaryDescuento').textContent = '-' + window.CloroCart.formatPrice(descuento);
+    document.getElementById('cuponPorcentaje').textContent = cuponActivo.label ? '(' + cuponActivo.label + ')' : '';
+  } else {
+    document.getElementById('summaryDescuentoRow').style.display = 'none';
+  }
+
+  if(envioGratis) envio = 0;
+
+  const total = subtotal - descuento + envio;
+
+  document.getElementById('summarySubtotal').textContent = window.CloroCart.formatPrice(subtotal);
+  document.getElementById('summaryTotal').textContent = window.CloroCart.formatPrice(total);
+}
+
+setTimeout(renderCheckout, 50);
+document.addEventListener('cartchange', renderCheckout);
+document.getElementById('region').addEventListener('change', renderCheckout);
+
+// Cupón
+document.getElementById('cuponToggle').addEventListener('click', () => {
+  document.getElementById('cuponForm').classList.toggle('active');
+});
+
+document.getElementById('cuponApply').addEventListener('click', () => {
+  const codigo = document.getElementById('cuponInput').value.trim().toUpperCase();
+  const msgEl = document.getElementById('cuponMsg');
+  msgEl.className = '';
+  msgEl.textContent = '';
+
+  if(!codigo){
+    msgEl.className = 'cupon-msg err';
+    msgEl.textContent = 'Ingresa un código.';
+    return;
+  }
+
+  const cupon = CUPONES[codigo];
+  if(!cupon){
+    msgEl.className = 'cupon-msg err';
+    msgEl.textContent = 'Código no válido.';
+    return;
+  }
+
+  cuponActivo = Object.assign({ codigo: codigo }, cupon);
+  document.getElementById('cuponForm').classList.remove('active');
+  document.getElementById('cuponAplicado').style.display = 'flex';
+  document.getElementById('cuponNombre').textContent = codigo;
+  document.getElementById('cuponInput').value = '';
+  msgEl.className = '';
+  msgEl.textContent = '';
+  renderCheckout();
+});
+
+document.getElementById('cuponQuitar').addEventListener('click', () => {
+  cuponActivo = null;
+  document.getElementById('cuponAplicado').style.display = 'none';
+  renderCheckout();
+});
+
+// Submit
+document.getElementById('checkoutForm').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const required = this.querySelectorAll('[required]');
+  let valido = true;
+  required.forEach(input => {
+    if(!input.value.trim()){
+      input.style.borderColor = '#dc2626';
+      valido = false;
+    } else {
+      input.style.borderColor = '#e5e7eb';
+    }
+  });
+
+  if(!valido){
+    alert('Por favor completa todos los campos obligatorios.');
+    return;
+  }
+
+  const subtotal = window.CloroCart.getTotal();
+  const region = document.getElementById('region').value;
+  const envioInfo = getEnvio(region);
+  let envio = envioInfo ? envioInfo.costo : 0;
+  let descuento = 0;
+
+  if(cuponActivo){
+    if(cuponActivo.tipo === '%') descuento = Math.round(subtotal * cuponActivo.valor / 100);
+    else if(cuponActivo.tipo === 'fijo') descuento = Math.min(cuponActivo.valor, subtotal);
+    else if(cuponActivo.tipo === 'envio') envio = 0;
+  }
+
+  const data = {
+    nombre: document.getElementById('nombre').value,
+    apellido: document.getElementById('apellido').value,
+    email: document.getElementById('email').value,
+    region: region,
+    total: subtotal - descuento + envio,
+    items: window.CloroCart.getItems().reduce((s,i)=>s+i.quantity,0),
+    pago: document.querySelector('input[name="pago"]:checked').value,
+    cupon: cuponActivo ? cuponActivo.codigo : null,
+    pedido: 'CT-' + Date.now().toString().slice(-8)
+  };
+
+  sessionStorage.setItem('cloroentabletas_pedido', JSON.stringify(data));
+  window.CloroCart.clearCart();
+  window.location.href = 'gracias/index.html';
+});
+</script>
+
+</body>
+</html>
