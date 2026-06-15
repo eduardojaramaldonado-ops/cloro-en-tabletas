@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog | Cloro en Tabletas</title>
+<meta name="description" content="Guías, tips y novedades para mantener tu piscina impecable todo el año: cloración, dosificación, invernar la piscina y más.">
+
+<link rel="icon" type="image/png" href="../assets/img/logo%20nuevo.png">
+<link rel="apple-touch-icon" href="../assets/img/logo%20nuevo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/blog.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-wrap">
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <a href="../" class="logo">
+      <img src="../assets/img/logo%20nuevo.png" alt="Cloro en Tabletas" class="logo-img">
+    </a>
+
+    <nav class="nav-links">
+      <a href="../">INICIO</a>
+      <a href="../#productos">PRODUCTOS</a>
+      <a href="../#quienes-somos">QUIENES SOMOS</a>
+      <a href="./">BLOG</a>
+      <a href="../#contacto">CONTACTO</a>
+    </nav>
+
+    <div class="header-right">
+      <a href="../cuenta/login/index.html" class="user-info">
+        <i class="fa-regular fa-circle-user"></i>
+        <span><strong>¡Hola!</strong>Inicia sesión o regístrate</span>
+      </a>
+      <a href="../#productos" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+  <nav class="drawer-nav">
+    <a href="../#productos"><i class="fa-solid fa-tag"></i> Productos</a>
+    <a href="../#productos"><i class="fa-solid fa-store"></i> Tienda</a>
+    <a href="./"><i class="fa-solid fa-newspaper"></i> Blog</a>
+    <a href="../#ofertas"><i class="fa-solid fa-fire"></i> Ofertas</a>
+    <a href="../#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a>
+  </nav>
+  <div class="drawer-footer">
+    <a href="#" class="drawer-cta"><i class="fa-regular fa-circle-user"></i> Iniciar Sesión</a>
+  </div>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</h3>
+    <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-empty" id="cartEmpty">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <p>Tu carrito está vacío</p>
+    <a href="../#productos" class="cart-empty-btn">Ver productos</a>
+  </div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">$0</span>
+    </div>
+    <p class="cart-note">Envío e impuestos calculados en el checkout.</p>
+    <a href="../checkout/index.html" class="cart-checkout-btn">
+      Ir al Checkout
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</aside>
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<section class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-wrap">
+      <a href="../">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Blog</span>
+    </div>
+  </div>
+</section>
+
+<section class="blog-landing">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Nuestro <span>Blog</span></h2>
+      <p class="section-sub">Guías, comparativas, tips y novedades para que tu piscina esté impecable los 365 días del año.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <a href="invernar-piscina-sin-vaciar/" class="blog-img">
+          <img src="../assets/img/blog/invernar-piscina.webp" alt="Invernar tu piscina sin vaciar el agua">
+          <span class="blog-cat">Guías</span>
+        </a>
+        <div class="blog-info">
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> 28 May, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 7 min</span>
+          </div>
+          <h3><a href="invernar-piscina-sin-vaciar/">Cómo Invernar tu Piscina sin Vaciar el Agua</a></h3>
+          <p>Guía paso a paso para dejar la piscina lista para el invierno sin perder agua ni dañar la estructura.</p>
+          <a href="invernar-piscina-sin-vaciar/" class="blog-link">
+            Leer Más
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <a href="mitos-piscina-invierno/" class="blog-img">
+          <img src="../assets/img/blog/mitos-piscina-invierno.webp" alt="Mitos sobre cuidar la piscina en invierno">
+          <span class="blog-cat">Tips</span>
+        </a>
+        <div class="blog-info">
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> 28 May, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 5 min</span>
+          </div>
+          <h3><a href="mitos-piscina-invierno/">7 Mitos sobre Cuidar la Piscina en Invierno</a></h3>
+          <p>Vaciar, no clorar, la lluvia limpia… Desmontamos los mitos que cada año hacen perder plata a los dueños de piscina.</p>
+          <a href="mitos-piscina-invierno/" class="blog-link">
+            Leer Más
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <a href="como-mantener-piscina-cristalina/" class="blog-img">
+          <img src="../assets/img/blog/piscina-cristalina.webp" alt="Cómo mantener tu piscina cristalina">
+          <span class="blog-cat">Guías</span>
+        </a>
+        <div class="blog-info">
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> 15 May, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 5 min</span>
+          </div>
+          <h3><a href="como-mantener-piscina-cristalina/">Cómo Mantener tu Piscina Cristalina Todo el Verano</a></h3>
+          <p>Descubre la rutina semanal de cloración, filtrado y pH que los profesionales usan para que el agua nunca se enturbie.</p>
+          <a href="como-mantener-piscina-cristalina/" class="blog-link">
+            Leer Más
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <a href="cloro-tabletas-vs-liquido/" class="blog-img">
+          <img src="../assets/img/blog/cloro-liquido-vs-tabletas.webp" alt="Cloro en tabletas vs cloro líquido">
+          <span class="blog-cat">Comparativa</span>
+        </a>
+        <div class="blog-info">
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> 08 May, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 7 min</span>
+          </div>
+          <h3><a href="cloro-tabletas-vs-liquido/">Cloro en Tabletas vs Cloro Líquido: ¿Cuál Elegir?</a></h3>
+          <p>Te explicamos las ventajas, desventajas y costos reales de cada formato para que escojas el adecuado para tu piscina.</p>
+          <a href="cloro-tabletas-vs-liquido/" class="blog-link">
+            Leer Más
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <a href="guia-dosificacion-cloro/" class="blog-img">
+          <img src="../assets/img/blog/dosificacion-cloro.webp" alt="Guía de dosificación de cloro">
+          <span class="blog-cat">Tips</span>
+        </a>
+        <div class="blog-info">
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> 02 May, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 6 min</span>
+          </div>
+          <h3><a href="guia-dosificacion-cloro/">Guía Completa de Dosificación de Cloro</a></h3>
+          <p>Cuántas tabletas usar según el volumen de tu piscina, cada cuánto reponerlas y cómo evitar sobre o subdosificar.</p>
+          <a href="guia-dosificacion-cloro/" class="blog-link">
+            Leer Más
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="big-cta">
+  <div class="container">
+    <h2>¿Listo para tu <span class="yellow">Piscina Perfecta</span>?</h2>
+    <p>Encuentra todo lo que necesitas en un solo lugar: cloro en tabletas, kits completos, accesorios y tratamientos profesionales.</p>
+    <a href="../#productos" class="big-cta-btn">
+      Comprar Productos
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-wrap">
+      <div>
+        <h3>CLORO EN TABLETAS</h3>
+        <p>Ecommerce especializado en productos para limpieza y mantención de piscinas. Cloro en tabletas, kits, accesorios y todo lo necesario.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>contacto@cloroentabletas.cl</p>
+        <p>+56 9 9999 9999</p>
+        <p>Lun a Vie 9:00 - 18:00</p>
+      </div>
+      <div>
+        <h4>Redes Sociales</h4>
+        <div class="redes-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 Cloro en Tabletas. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+const drawer = document.getElementById('mobileDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerClose = document.getElementById('drawerClose');
+const menuToggle = document.getElementById('menuToggle');
+
+function abrirDrawer(){
+  drawer.classList.add('active');
+  drawerOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function cerrarDrawer(){
+  drawer.classList.remove('active');
+  drawerOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+menuToggle.addEventListener('click', abrirDrawer);
+drawerClose.addEventListener('click', cerrarDrawer);
+drawerOverlay.addEventListener('click', cerrarDrawer);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarDrawer));
+</script>
+
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/auth.js"></script>
+
+</body>
+</html>
