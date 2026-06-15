@@ -109,7 +109,7 @@
       <p class="section-sub">Guías, comparativas, tips y novedades para que tu piscina esté impecable los 365 días del año.</p>
     </div>
 
-    <div class="blog-grid">
+    <div class="blog-grid" id="blogGrid">
 
       <article class="blog-card">
         <a href="invernar-piscina-sin-vaciar/" class="blog-img">
@@ -208,6 +208,13 @@
 
     </div>
 
+    <div class="blog-loader" id="blogLoader" hidden>
+      <span class="spinner"></span>
+      <span>Cargando más artículos…</span>
+    </div>
+
+    <div id="blogSentinel" aria-hidden="true"></div>
+
   </div>
 </section>
 
@@ -270,6 +277,56 @@ menuToggle.addEventListener('click', abrirDrawer);
 drawerClose.addEventListener('click', cerrarDrawer);
 drawerOverlay.addEventListener('click', cerrarDrawer);
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarDrawer));
+
+/* BLOG INFINITE SCROLL
+   - Muestra 12 cards iniciales (4 filas de 3).
+   - Al hacer scroll cerca del final, revela las siguientes 12.
+   - Si hay menos de 12 cards, no se activa nada. */
+
+(function(){
+  const PAGE_SIZE = 12;
+
+  const grid = document.getElementById('blogGrid');
+  const sentinel = document.getElementById('blogSentinel');
+  const loader = document.getElementById('blogLoader');
+
+  if(!grid || !sentinel) return;
+
+  const cards = Array.from(grid.querySelectorAll('.blog-card'));
+  if(cards.length <= PAGE_SIZE) return;
+
+  let shown = PAGE_SIZE;
+
+  cards.forEach((card, i) => {
+    if(i >= shown) card.classList.add('blog-card-hidden');
+  });
+
+  let revealing = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    const entry = entries[0];
+    if(!entry.isIntersecting || revealing || shown >= cards.length) return;
+
+    revealing = true;
+    if(loader) loader.hidden = false;
+
+    setTimeout(() => {
+      const next = Math.min(PAGE_SIZE, cards.length - shown);
+      for(let i = shown; i < shown + next; i++){
+        cards[i].classList.remove('blog-card-hidden');
+      }
+      shown += next;
+
+      if(loader) loader.hidden = true;
+      revealing = false;
+
+      if(shown >= cards.length) observer.disconnect();
+    }, 350);
+
+  }, { rootMargin: '300px' });
+
+  observer.observe(sentinel);
+})();
 </script>
 
 <script src="../assets/js/cart.js"></script>
