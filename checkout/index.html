@@ -193,6 +193,63 @@
   margin-top:2px;
 }
 
+.transferencia-data{
+  margin-top:16px;
+  padding:18px 20px;
+
+  background:#f0f9ff;
+  border:1.5px dashed #0a78c2;
+  border-radius:12px;
+}
+
+.transferencia-data h4{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  font-size:14px;
+  font-weight:800;
+  color:#0a3a5f;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  margin-bottom:14px;
+}
+
+.transferencia-data h4 i{ color:#0a78c2; }
+
+.td-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+
+  padding:8px 0;
+  border-bottom:1px dashed #cfe4f5;
+}
+
+.td-row:last-child{ border-bottom:none; }
+
+.td-label{
+  font-size:13px;
+  font-weight:600;
+  color:#6b7280;
+}
+
+.td-value{
+  font-size:14px;
+  font-weight:800;
+  color:#0a3a5f;
+  text-align:right;
+}
+
+.transferencia-note{
+  margin-top:12px;
+  font-size:12px;
+  line-height:1.5;
+  color:#6b7280;
+}
+
 .checkout-cta{
   width:100%;
   padding:16px;
@@ -714,9 +771,29 @@
                 <span class="pago-label">
                   <i class="fa-solid fa-building-columns"></i>
                   Transferencia Electrónica
-                  <span class="pago-desc">Te enviamos los datos bancarios al confirmar el pedido</span>
+                  <span class="pago-desc">Usa los datos bancarios que se muestran abajo</span>
                 </span>
               </label>
+            </div>
+
+            <div class="transferencia-data">
+              <h4><i class="fa-solid fa-building-columns"></i> Datos para la Transferencia</h4>
+              <div class="td-row">
+                <span class="td-label">Banco</span>
+                <span class="td-value">Banco Santander</span>
+              </div>
+              <div class="td-row">
+                <span class="td-label">Nombre</span>
+                <span class="td-value">Eduardo Jara Maldonado</span>
+              </div>
+              <div class="td-row">
+                <span class="td-label">RUT</span>
+                <span class="td-value">9.138.152-4</span>
+              </div>
+              <p class="transferencia-note">
+                Una vez realizada la transferencia, envía el comprobante a
+                <strong>contacto@cloroentabletas.cl</strong> indicando el número de tu pedido.
+              </p>
             </div>
           </div>
 
