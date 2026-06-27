@@ -425,7 +425,7 @@ if(data.pedido){
   document.getElementById('pedidoEmail').textContent = data.email || '—';
   document.getElementById('pedidoItems').textContent = data.items + ' producto' + (data.items > 1 ? 's' : '');
   document.getElementById('pedidoTotal').textContent = '$' + Number(data.total).toLocaleString('es-CL');
-  const pagoNombres = { webpay:'Webpay', transferencia:'Transferencia', mercadopago:'Mercado Pago' };
+  const pagoNombres = { transferencia:'Transferencia Electrónica' };
   document.getElementById('pedidoPago').textContent = pagoNombres[data.pago] || data.pago;
 }
 
