@@ -1919,7 +1919,8 @@ BLOG LANDING (listado de artículos)
 .blog-hero{
   position:relative;
 
-  padding:180px 0 90px;
+  /* Pegado al header: padding-top = altura del header (120px) + aire */
+  padding:150px 0 90px;
   margin-top:0;
 
   background:#f1f5f9;
@@ -1944,6 +1945,17 @@ BLOG LANDING (listado de artículos)
 .blog-hero > .container{
   position:relative;
   z-index:1;
+}
+
+/* Migas de pan dentro del hero, sobre la imagen */
+.blog-hero-crumbs{
+  justify-content:center;
+  margin-bottom:24px;
+
+  font-size:13px;
+  font-weight:600;
+
+  text-shadow:0 1px 6px rgba(255,255,255,.7);
 }
 
 .blog-hero h1{
@@ -2110,9 +2122,11 @@ BLOG LANDING (listado de artículos)
 }
 
 @media(max-width:1024px){
-  .blog-hero{ padding:130px 0 70px; }
+  /* Header mobile 80px de alto */
+  .blog-hero{ padding:110px 0 70px; }
   .blog-hero h1{ font-size:40px; }
   .blog-hero-sub{ font-size:16px; }
+  .blog-hero-crumbs{ margin-bottom:18px; }
 
   .blog-landing{ padding:50px 0 70px; }
   .blog-grid{
@@ -2127,9 +2141,11 @@ BLOG LANDING (listado de artículos)
 }
 
 @media(max-width:768px){
-  .blog-hero{ padding:100px 0 50px; }
+  /* Header mobile 64px de alto */
+  .blog-hero{ padding:90px 0 50px; }
   .blog-hero h1{ font-size:28px; letter-spacing:0; }
   .blog-hero-sub{ font-size:14px; margin-top:12px; }
+  .blog-hero-crumbs{ margin-bottom:14px; font-size:12px; }
 
   .blog-landing{ padding:40px 0 60px; }
   .blog-grid{
