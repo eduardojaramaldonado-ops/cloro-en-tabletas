@@ -1926,7 +1926,6 @@ BLOG LANDING (listado de artículos)
   text-align:center;
 
   overflow:hidden;
-  isolation:isolate;
 }
 
 .blog-hero::before{
@@ -1934,12 +1933,12 @@ BLOG LANDING (listado de artículos)
   position:absolute;
   inset:0;
 
-  background-image:url('../img/cloro-en-tabletas-en-una-piscina.webp');
+  background-image:url('../img/blog/blog-hero.webp');
   background-size:cover;
   background-position:center;
 
   opacity:.5;
-  z-index:-1;
+  pointer-events:none;
 }
 
 .blog-hero > .container{
