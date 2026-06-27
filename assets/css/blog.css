@@ -1916,33 +1916,66 @@ MOBILE
 BLOG LANDING (listado de artículos)
 ========================= */
 
-.blog-landing{
-  padding:140px 0 90px;
+.blog-hero{
+  position:relative;
+
+  padding:180px 0 90px;
+  margin-top:0;
+
   background:#f1f5f9;
-}
-
-.blog-landing .section-head{
   text-align:center;
-  margin-bottom:50px;
+
+  overflow:hidden;
+  isolation:isolate;
 }
 
-.blog-landing .section-head h2{
-  font-size:42px;
+.blog-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:url('../img/cloro-en-tabletas-en-una-piscina.webp');
+  background-size:cover;
+  background-position:center;
+
+  opacity:.5;
+  z-index:-1;
+}
+
+.blog-hero > .container{
+  position:relative;
+  z-index:1;
+}
+
+.blog-hero h1{
+  font-size:54px;
   color:#0a3a5f;
   font-weight:900;
   text-transform:uppercase;
-  letter-spacing:-.5px;
+  letter-spacing:-1px;
+  line-height:1.05;
+
+  text-shadow:0 2px 12px rgba(255,255,255,.6);
 }
 
-.blog-landing .section-head h2 span{
+.blog-hero h1 span{
   color:#0a78c2;
 }
 
-.blog-landing .section-sub{
-  font-size:17px;
-  color:#6b7280;
-  margin:14px auto 0;
-  max-width:680px;
+.blog-hero-sub{
+  font-size:18px;
+  color:#0a3a5f;
+  font-weight:600;
+
+  margin:18px auto 0;
+  max-width:720px;
+
+  text-shadow:0 1px 8px rgba(255,255,255,.7);
+}
+
+.blog-landing{
+  padding:60px 0 90px;
+  background:#f1f5f9;
 }
 
 .blog-grid{
@@ -2078,8 +2111,11 @@ BLOG LANDING (listado de artículos)
 }
 
 @media(max-width:1024px){
-  .blog-landing{ padding:110px 0 70px; }
-  .blog-landing .section-head h2{ font-size:32px; }
+  .blog-hero{ padding:130px 0 70px; }
+  .blog-hero h1{ font-size:40px; }
+  .blog-hero-sub{ font-size:16px; }
+
+  .blog-landing{ padding:50px 0 70px; }
   .blog-grid{
     grid-template-columns:repeat(2,1fr);
     gap:22px;
@@ -2092,9 +2128,11 @@ BLOG LANDING (listado de artículos)
 }
 
 @media(max-width:768px){
-  .blog-landing{ padding:90px 0 60px; }
-  .blog-landing .section-head h2{ font-size:24px; }
-  .blog-landing .section-sub{ font-size:14px; }
+  .blog-hero{ padding:100px 0 50px; }
+  .blog-hero h1{ font-size:28px; letter-spacing:0; }
+  .blog-hero-sub{ font-size:14px; margin-top:12px; }
+
+  .blog-landing{ padding:40px 0 60px; }
   .blog-grid{
     grid-template-columns:1fr;
     gap:22px;
