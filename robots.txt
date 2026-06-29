@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Páginas funcionales sin valor SEO
+Disallow: /checkout/gracias/
+Disallow: /cuenta/
+
+Sitemap: https://cloroentabletas.cl/sitemap.xml
