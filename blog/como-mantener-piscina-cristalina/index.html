@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
 
 <!-- Google Tag Manager -->
@@ -31,12 +31,70 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:image" content="https://cloroentabletas.cl/assets/img/blog/piscina-cristalina.webp">
 
 
-<link rel="icon" type="image/png" href="../../assets/img/logo%20nuevo.png">
-<link rel="apple-touch-icon" href="../../assets/img/logo%20nuevo.png">
+<link rel="icon" type="image/png" href="../../assets/img/logo-cloro-en-tabletas.png">
+<link rel="apple-touch-icon" href="../../assets/img/logo-cloro-en-tabletas.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../../assets/css/blog.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://cloroentabletas.cl/blog/como-mantener-piscina-cristalina/#article",
+      "headline": "Cómo Mantener tu Piscina Cristalina Todo el Verano",
+      "description": "Guía práctica de mantención semanal de piscinas: cloración, filtrado, pH y limpieza. Mantén tu agua cristalina sin esfuerzo todo el verano.",
+      "image": [
+        "https://cloroentabletas.cl/assets/img/blog/piscina-cristalina.webp"
+      ],
+      "datePublished": "2026-05-15",
+      "dateModified": "2026-09-28",
+      "inLanguage": "es-CL",
+      "mainEntityOfPage": "https://cloroentabletas.cl/blog/como-mantener-piscina-cristalina/",
+      "author": {
+        "@type": "Organization",
+        "name": "Equipo Cloro en Tabletas",
+        "url": "https://cloroentabletas.cl/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://cloroentabletas.cl/#organization",
+        "name": "Cloro en Tabletas",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cloroentabletas.cl/assets/img/logo-cloro-en-tabletas.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://cloroentabletas.cl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://cloroentabletas.cl/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cómo Mantener tu Piscina Cristalina Todo el Verano",
+          "item": "https://cloroentabletas.cl/blog/como-mantener-piscina-cristalina/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 </head>
 <body>
@@ -54,12 +112,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
 
     <a href="../../" class="logo">
-      <img src="../../assets/img/logo%20nuevo.png" alt="Cloro en Tabletas" class="logo-img">
+      <img src="../../assets/img/logo-cloro-en-tabletas.png" alt="Cloro en Tabletas" class="logo-img" width="83" height="70">
     </a>
 
     <nav class="nav-links">
       <a href="../../">INICIO</a>
-      <a href="../../#productos">PRODUCTOS</a>
+      <a href="../../productos/">PRODUCTOS</a>
       <a href="../../#quienes-somos">QUIENES SOMOS</a>
       <a href="../../blog/">BLOG</a>
       <a href="../../#contacto">CONTACTO</a>
@@ -70,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="fa-regular fa-circle-user"></i>
         <span><strong>¡Hola!</strong>Inicia sesión o regístrate</span>
       </a>
-      <a href="../../#productos" class="cart-icon">
+      <a href="../../productos/" class="cart-icon">
         <i class="fa-solid fa-cart-shopping"></i>
         <span class="cart-badge">0</span>
       </a>
@@ -82,14 +140,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="mobile-drawer" id="mobileDrawer">
   <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
   <nav class="drawer-nav">
-    <a href="../../#productos"><i class="fa-solid fa-tag"></i> Productos</a>
-    <a href="../../#productos"><i class="fa-solid fa-store"></i> Tienda</a>
+    <a href="../../productos/"><i class="fa-solid fa-tag"></i> Productos</a>
+    <a href="../../#quienes-somos"><i class="fa-solid fa-circle-info"></i> Quiénes Somos</a>
     <a href="../../blog/"><i class="fa-solid fa-newspaper"></i> Blog</a>
     <a href="../../#ofertas"><i class="fa-solid fa-fire"></i> Ofertas</a>
     <a href="../../#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a>
   </nav>
   <div class="drawer-footer">
-    <a href="#" class="drawer-cta"><i class="fa-regular fa-circle-user"></i> Iniciar Sesión</a>
+    <a href="../../cuenta/login/" class="drawer-cta"><i class="fa-regular fa-circle-user"></i> Iniciar Sesión</a>
   </div>
 </div>
 <div class="drawer-overlay" id="drawerOverlay"></div>
@@ -103,7 +161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cart-empty" id="cartEmpty">
     <i class="fa-solid fa-cart-shopping"></i>
     <p>Tu carrito está vacío</p>
-    <a href="../../#productos" class="cart-empty-btn">Ver productos</a>
+    <a href="../../productos/" class="cart-empty-btn">Ver productos</a>
   </div>
   <div class="cart-footer" id="cartFooter">
     <div class="cart-subtotal">
@@ -146,7 +204,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="post-featured">
-          <img src="../../assets/img/blog/piscina-cristalina.webp" alt="Piscina cristalina mantenida con cloro en tabletas">
+          <img fetchpriority="high" src="../../assets/img/blog/piscina-cristalina.webp" alt="Piscina cristalina mantenida con cloro en tabletas">
         </div>
       </div>
 
@@ -158,19 +216,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <h2>1. Cloración <span class="azul">Semanal</span></h2>
 
-        <p>El cloro es el desinfectante que mata bacterias, algas y microorganismos. Sin él, en menos de 72 horas el agua se enturbia. La forma más eficiente y económica de aplicarlo es con <a href="../../#productos">cloro en tabletas multifunción</a>, que se disuelven lentamente entregando dosis sostenidas sin que tengas que reponer cada día.</p>
+        <p>El cloro es el desinfectante que mata bacterias, algas y microorganismos. Sin él, en menos de 72 horas el agua se enturbia. La forma más eficiente y económica de aplicarlo es con <a href="../../productos/">cloro en tabletas multifunción</a>, que se disuelven lentamente entregando dosis sostenidas sin que tengas que reponer cada día.</p>
 
         <p>La regla básica: <strong>1 tableta de 200g por cada 20 m³ de agua</strong>, cada 5 a 7 días. Coloca las tabletas en un dosificador flotante o en el skimmer.</p>
 
         <div class="product-cta-box">
           <div class="cta-img">
-            <img src="../../assets/img/products/cloro-tabletas-5k.webp" alt="Cloro en Tabletas Pack de 5 Kg">
+            <img src="../../assets/img/products/cloro-tabletas-5k.webp" alt="Cloro en Tabletas Pack de 5 Kg" loading="lazy" decoding="async">
           </div>
           <div class="cta-text">
             <span class="cta-tag">Más Vendido</span>
             <h4>Cloro en Tabletas Pack de 5 Kg</h4>
             <p>Cloración, alguicida y clarificación en una sola tableta. Rinde varias semanas en piscinas residenciales.</p>
-            <a href="../../#ofertas" class="btn">
+            <a href="../../productos/cloro-en-tabletas-5-kilos/" class="btn">
               Comprar Ahora
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -185,7 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <h2>3. Control de <span class="azul">pH</span></h2>
 
-        <p>El pH ideal de una piscina está entre <strong>7.2 y 7.6</strong>. Si está fuera de ese rango, el cloro pierde efectividad y el agua puede irritar la piel y los ojos. Mide el pH al menos 2 veces por semana con un <a href="../../#productos">test kit confiable</a>.</p>
+        <p>El pH ideal de una piscina está entre <strong>7.2 y 7.6</strong>. Si está fuera de ese rango, el cloro pierde efectividad y el agua puede irritar la piel y los ojos. Mide el pH al menos 2 veces por semana con un <a href="../../productos/">test kit confiable</a>.</p>
 
         <ul>
           <li><strong>pH bajo (&lt;7.0):</strong> agua ácida, corroe equipos. Usa pH Plus.</li>
@@ -196,22 +254,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="post-gallery">
           <figure>
-            <img src="https://picsum.photos/seed/piscina-verde/600/450" alt="Piscina con agua verde">
-            <figcaption>Antes: agua descuidada</figcaption>
+            <img src="../../assets/img/blog/preparando-la-piscina.webp" alt="Preparando la piscina para la temporada" loading="lazy" decoding="async">
+            <figcaption>Antes: preparar la piscina</figcaption>
           </figure>
           <figure>
-            <img src="https://picsum.photos/seed/piscina-tratamiento/600/450" alt="Aplicación de cloro en tabletas">
+            <img src="../../assets/img/blog/tabletas-de-cloro.webp" alt="Tabletas de cloro para el tratamiento semanal" loading="lazy" decoding="async">
             <figcaption>Durante: tratamiento con tabletas</figcaption>
           </figure>
           <figure>
-            <img src="https://picsum.photos/seed/piscina-cristalina/600/450" alt="Piscina cristalina">
+            <img src="../../assets/img/blog/piscina-sin-algas.webp" alt="Piscina con agua cristalina" loading="lazy" decoding="async">
             <figcaption>Después: agua cristalina</figcaption>
           </figure>
         </div>
 
         <h2>4. Tratamiento <span class="azul">Shock</span> Mensual</h2>
 
-        <p>Una vez al mes (o después de una fiesta o lluvia intensa) aplica un <a href="../../#productos">tratamiento de shock con hipoclorito</a>. Esto elimina cloraminas, restaura la claridad del agua y previene la aparición de algas.</p>
+        <p>Una vez al mes (o después de una fiesta o lluvia intensa) aplica un <a href="../../productos/">tratamiento de shock con hipoclorito</a>. Esto elimina cloraminas, restaura la claridad del agua y previene la aparición de algas.</p>
 
         <blockquote>"La diferencia entre una piscina mantenida y una piscina abandonada es solo una rutina semanal. No esperes a que el problema aparezca: prevén con disciplina."</blockquote>
 
@@ -256,39 +314,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sidebar-block sidebar-product">
         <h4>Producto Destacado</h4>
         <div class="sp-img">
-          <img src="../../assets/img/products/cloro-tabletas-5k.webp" alt="Cloro en Tabletas Pack de 5 Kg">
+          <img src="../../assets/img/products/cloro-tabletas-5k.webp" alt="Cloro en Tabletas Pack de 5 Kg" loading="lazy" decoding="async">
         </div>
         <div class="sp-title">Cloro en Tabletas Pack de 5 Kg</div>
         <div class="sp-price">$20.900</div>
-        <a href="../../#ofertas" class="sp-btn">Comprar Ahora</a>
+        <a href="../../productos/cloro-en-tabletas-5-kilos/" class="sp-btn">Comprar Ahora</a>
       </div>
 
       <div class="sidebar-block">
         <h4>Temas Recientes</h4>
         <div class="recent-list">
           <a href="../prevenir-algas-en-piscina/">
-            <img src="../../assets/img/blog/evitar-algas-en-piscina.webp" alt="Cómo prevenir algas en la piscina">
+            <img src="../../assets/img/blog/evitar-algas-en-piscina.webp" alt="Cómo prevenir algas en la piscina" loading="lazy" decoding="async">
             <div class="recent-info">
               <div class="date">27 Jun, 2026</div>
               <h5>Cómo Prevenir Algas en tu Piscina</h5>
             </div>
           </a>
           <a href="../invernar-piscina-sin-vaciar/">
-            <img src="../../assets/img/blog/invernar-piscina.webp" alt="Invernar piscina sin vaciar">
+            <img src="../../assets/img/blog/invernar-piscina.webp" alt="Invernar piscina sin vaciar" loading="lazy" decoding="async">
             <div class="recent-info">
               <div class="date">28 May, 2026</div>
               <h5>Cómo Invernar tu Piscina sin Vaciar el Agua</h5>
             </div>
           </a>
           <a href="../mitos-piscina-invierno/">
-            <img src="../../assets/img/blog/mitos-piscina-invierno.webp" alt="Mitos sobre cuidar la piscina en invierno">
+            <img src="../../assets/img/blog/mitos-piscina-invierno.webp" alt="Mitos sobre cuidar la piscina en invierno" loading="lazy" decoding="async">
             <div class="recent-info">
               <div class="date">28 May, 2026</div>
               <h5>7 Mitos sobre Cuidar la Piscina en Invierno</h5>
             </div>
           </a>
           <a href="../cloro-tabletas-vs-liquido/">
-            <img src="../../assets/img/blog/cloro-liquido-vs-tabletas.webp" alt="Cloro tabletas vs cloro líquido">
+            <img src="../../assets/img/blog/cloro-liquido-vs-tabletas.webp" alt="Cloro tabletas vs cloro líquido" loading="lazy" decoding="async">
             <div class="recent-info">
               <div class="date">08 May, 2026</div>
               <h5>Cloro en Tabletas vs Cloro Líquido: ¿Cuál Elegir?</h5>
@@ -328,7 +386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2>¿Listo para tu <span class="yellow">Piscina Perfecta</span>?</h2>
     <p>Encuentra todo lo que necesitas en un solo lugar: cloro en tabletas, kits completos, accesorios y tratamientos profesionales.</p>
-    <a href="../../#productos" class="big-cta-btn">
+    <a href="../../productos/" class="big-cta-btn">
       Comprar Productos
       <i class="fa-solid fa-arrow-right"></i>
     </a>
@@ -344,7 +402,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <a href="../guia-dosificacion-cloro/" class="related-card">
         <div class="rc-img">
-          <img src="../../assets/img/blog/dosificacion-cloro.webp" alt="Guía de dosificación de cloro">
+          <img src="../../assets/img/blog/dosificacion-cloro.webp" alt="Guía de dosificación de cloro" loading="lazy" decoding="async">
         </div>
         <div class="rc-info">
           <div class="rc-cat">Tips</div>
@@ -354,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <a href="../cloro-tabletas-vs-liquido/" class="related-card">
         <div class="rc-img">
-          <img src="../../assets/img/blog/cloro-liquido-vs-tabletas.webp" alt="Cloro en tabletas vs cloro líquido">
+          <img src="../../assets/img/blog/cloro-liquido-vs-tabletas.webp" alt="Cloro en tabletas vs cloro líquido" loading="lazy" decoding="async">
         </div>
         <div class="rc-info">
           <div class="rc-cat">Comparativa</div>

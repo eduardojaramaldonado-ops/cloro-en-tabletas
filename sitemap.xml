@@ -1,120 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
+  <!-- Páginas principales -->
   <url>
     <loc>https://cloroentabletas.cl/</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-28</lastmod>
+    <image:image>
+      <image:loc>https://cloroentabletas.cl/assets/img/cloro-en-tabletas-en-una-piscina.webp</image:loc>
+      <image:title>Cloro en tabletas para piscinas</image:title>
+    </image:image>
   </url>
-
+  <url>
+    <loc>https://cloroentabletas.cl/productos/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
   <url>
     <loc>https://cloroentabletas.cl/blog/</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-09-28</lastmod>
   </url>
 
-  <!-- Blog posts publicados -->
+  <!-- Fichas de producto -->
   <url>
-    <loc>https://cloroentabletas.cl/blog/prevenir-algas-en-piscina/</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://cloroentabletas.cl/productos/cloro-en-tabletas-1-kilo/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <image:image>
+      <image:loc>https://cloroentabletas.cl/assets/img/products/cloro-1k.webp</image:loc>
+      <image:title>Cloro en Tabletas 1 Kilo</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://cloroentabletas.cl/blog/invernar-piscina-sin-vaciar/</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://cloroentabletas.cl/productos/cloro-en-tabletas-2-kilos/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <image:image>
+      <image:loc>https://cloroentabletas.cl/assets/img/products/cloro-tabletas-2k.webp</image:loc>
+      <image:title>Cloro en Tabletas Pack 2 Kilos</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://cloroentabletas.cl/blog/mitos-piscina-invierno/</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://cloroentabletas.cl/productos/cloro-en-tabletas-4-kilos/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <image:image>
+      <image:loc>https://cloroentabletas.cl/assets/img/products/cloro-tabletas-4k.webp</image:loc>
+      <image:title>Cloro en Tabletas Pack 4 Kilos</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://cloroentabletas.cl/blog/como-mantener-piscina-cristalina/</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://cloroentabletas.cl/productos/cloro-en-tabletas-5-kilos/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <image:image>
+      <image:loc>https://cloroentabletas.cl/assets/img/products/cloro-tabletas-5k.webp</image:loc>
+      <image:title>Cloro en Tabletas Pack 5 Kilos</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://cloroentabletas.cl/blog/cloro-tabletas-vs-liquido/</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://cloroentabletas.cl/productos/cloro-en-tabletas-10-kilos/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <image:image>
+      <image:loc>https://cloroentabletas.cl/assets/img/products/cloro-tabletas-10k.webp</image:loc>
+      <image:title>Cloro en Tabletas Pack 10 Kilos</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://cloroentabletas.cl/blog/guia-dosificacion-cloro/</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://cloroentabletas.cl/productos/algicida-concentrado/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <image:image>
+      <image:loc>https://cloroentabletas.cl/assets/img/products/algicida-concentrado.png</image:loc>
+      <image:title>Algicida Concentrado para Piscinas</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/productos/baja-ph-piscina-1-kilo/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <image:image>
+      <image:loc>https://cloroentabletas.cl/assets/img/products/baja-ph.webp</image:loc>
+      <image:title>Baja pH para Piscinas 1 Kilo</image:title>
+    </image:image>
   </url>
 
-  <!-- Blog posts programados (HTMLs ya accesibles, fecha de publicación futura) -->
+  <!-- Artículos del blog -->
   <url>
-    <loc>https://cloroentabletas.cl/blog/cloro-para-piscinas/</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://cloroentabletas.cl/blog/pastillas-cloro-piscinas/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://cloroentabletas.cl/blog/cloro-granulado-piscinas/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cloroentabletas.cl/blog/dispensador-cloro-piscinas/</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cloroentabletas.cl/blog/flotadores-cloro-piscinas/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cloroentabletas.cl/blog/tabla-cloro-piscinas/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://cloroentabletas.cl/blog/como-bajar-ph-piscina/</loc>
+    <lastmod>2026-09-28</lastmod>
   </url>
   <url>
     <loc>https://cloroentabletas.cl/blog/dosificador-cloro-piscinas/</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-09-28</lastmod>
   </url>
   <url>
-    <loc>https://cloroentabletas.cl/blog/como-bajar-ph-piscina/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://cloroentabletas.cl/blog/tabla-cloro-piscinas/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/flotadores-cloro-piscinas/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/dispensador-cloro-piscinas/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/cloro-granulado-piscinas/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/pastillas-cloro-piscinas/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/cloro-para-piscinas/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/prevenir-algas-en-piscina/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/invernar-piscina-sin-vaciar/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/mitos-piscina-invierno/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/como-mantener-piscina-cristalina/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/cloro-tabletas-vs-liquido/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://cloroentabletas.cl/blog/guia-dosificacion-cloro/</loc>
+    <lastmod>2026-09-28</lastmod>
   </url>
 
   <!-- Políticas -->
   <url>
     <loc>https://cloroentabletas.cl/politica-privacidad/</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://cloroentabletas.cl/politica-devoluciones/</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 
 </urlset>

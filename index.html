@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
 
 <!-- Google Tag Manager -->
@@ -16,7 +16,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Cloro en Tabletas para Piscinas | Despacho a Todo Chile</title>
 <meta name="description" content="Compra cloro en tabletas para piscinas, algicida concentrado, baja pH y accesorios. Packs desde 1 a 10 kilos. Despacho a todo Chile y precios directos de fábrica.">
 <meta name="keywords" content="cloro en tabletas, cloro piscina, cloro tabletas chile, algicida piscina, baja ph, mantención piscinas, pack cloro 10 kilos, cloro multifunción">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Cloro en Tabletas">
 
 <link rel="canonical" href="https://cloroentabletas.cl/">
@@ -37,8 +37,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:description" content="Cloro en tabletas, algicida, baja pH y accesorios. Packs desde 1 a 10 kilos. Despacho a todo Chile.">
 <meta name="twitter:image" content="https://cloroentabletas.cl/assets/img/cloro-en-tabletas-en-una-piscina.webp">
 
-<link rel="icon" type="image/png" href="assets/img/logo%20nuevo.png">
-<link rel="apple-touch-icon" href="assets/img/logo%20nuevo.png">
+<link rel="icon" type="image/png" href="assets/img/logo-cloro-en-tabletas.png">
+<link rel="apple-touch-icon" href="assets/img/logo-cloro-en-tabletas.png">
+
+<link rel="preload" as="image" href="assets/img/cloro-en-tabletas-en-una-piscina.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -1425,7 +1429,7 @@ PARALLAX BANNER
   align-items:center;
   justify-content:center;
 
-  background-image:url('assets/img/disfrutando%20la%20piscina.webp');
+  background-image:url('assets/img/disfrutando-la-piscina.webp');
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -1818,6 +1822,160 @@ FOOTER
 }
 
 /* =========================
+LINKS EN CARDS DE PRODUCTO
+========================= */
+
+.producto-card h3 a,
+.otro-card h3 a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.producto-card h3 a:hover,
+.otro-card h3 a:hover{
+  color:#0a78c2;
+}
+
+/* =========================
+QUIÉNES SOMOS / GUÍA
+========================= */
+
+.nosotros-section{
+  padding:90px 0;
+  background:#fff;
+}
+
+.nosotros-wrap{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:start;
+}
+
+.nosotros-texto p{
+  font-size:16px;
+  line-height:1.75;
+  color:#4b5563;
+  margin-bottom:16px;
+}
+
+.nosotros-texto a{
+  color:#0a78c2;
+  font-weight:700;
+}
+
+.nosotros-texto h3{
+  font-size:20px;
+  font-weight:800;
+  color:#0a3a5f;
+  margin:28px 0 12px;
+}
+
+.nosotros-texto ul{
+  padding-left:20px;
+  margin-bottom:16px;
+}
+
+.nosotros-texto li{
+  font-size:15px;
+  line-height:1.7;
+  color:#4b5563;
+  margin-bottom:6px;
+}
+
+.nosotros-beneficios{
+  display:grid;
+  gap:16px;
+}
+
+.beneficio{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+
+  padding:22px;
+  background:#f1f5f9;
+  border-radius:14px;
+}
+
+.beneficio i{
+  flex-shrink:0;
+  width:46px;
+  height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#0a78c2;
+  color:#fff;
+  border-radius:50%;
+  font-size:18px;
+}
+
+.beneficio h3{
+  font-size:16px;
+  font-weight:800;
+  color:#0a3a5f;
+  margin-bottom:4px;
+}
+
+.beneficio p{
+  font-size:14px;
+  line-height:1.6;
+  color:#6b7280;
+}
+
+/* =========================
+FAQ HOME
+========================= */
+
+.faq-section{
+  padding:90px 0;
+  background:#fff;
+}
+
+.faq-home{
+  max-width:900px;
+}
+
+.faq-home details{
+  border-bottom:1px solid #e5e7eb;
+  padding:18px 0;
+}
+
+.faq-home summary{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+
+  font-size:17px;
+  font-weight:700;
+  color:#0a3a5f;
+  cursor:pointer;
+  list-style:none;
+}
+
+.faq-home summary::-webkit-details-marker{ display:none; }
+
+.faq-home summary::after{
+  content:"+";
+  flex-shrink:0;
+  font-size:22px;
+  font-weight:900;
+  color:#0a78c2;
+}
+
+.faq-home details[open] summary::after{ content:"−"; }
+
+.faq-home details p{
+  margin-top:12px;
+  font-size:15px;
+  line-height:1.7;
+  color:#4b5563;
+}
+
+/* =========================
 TABLET
 ========================= */
 
@@ -1898,6 +2056,11 @@ TABLET
 
   .footer-col-brand{
     grid-column:1 / -1;
+  }
+
+  .nosotros-wrap{
+    grid-template-columns:1fr;
+    gap:36px;
   }
 
 }
@@ -2105,9 +2268,124 @@ MOBILE
     font-size:20px;
   }
 
+  .nosotros-section,
+  .faq-section{
+    padding:60px 0;
+  }
+
+  .nosotros-texto p{
+    font-size:15px;
+  }
+
+  .faq-home summary{
+    font-size:15px;
+  }
+
 }
 
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cloroentabletas.cl/#organization",
+      "name": "Cloro en Tabletas",
+      "url": "https://cloroentabletas.cl/",
+      "logo": "https://cloroentabletas.cl/assets/img/logo-cloro-en-tabletas.png",
+      "email": "contacto@cloroentabletas.cl",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santiago",
+        "addressCountry": "CL"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cloroentabletas.cl/#website",
+      "url": "https://cloroentabletas.cl/",
+      "name": "Cloro en Tabletas",
+      "inLanguage": "es-CL",
+      "publisher": {
+        "@id": "https://cloroentabletas.cl/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cloroentabletas.cl/#webpage",
+      "url": "https://cloroentabletas.cl/",
+      "name": "Cloro en Tabletas para Piscinas | Despacho a Todo Chile",
+      "isPartOf": {
+        "@id": "https://cloroentabletas.cl/#website"
+      },
+      "about": {
+        "@id": "https://cloroentabletas.cl/#organization"
+      },
+      "inLanguage": "es-CL"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cloroentabletas.cl/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuántas tabletas de cloro necesita mi piscina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La regla práctica es 1 tableta de 200 g por cada 20 m³ de agua, repuesta cada 5 a 7 días. Una piscina familiar de 30 m³ usa unas 2 tabletas por semana."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué formato de cloro en tabletas me conviene?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para piscinas pequeñas, 1 o 2 kilos. Para piscinas familiares de 20 a 40 m³, el pack de 4 o 5 kilos (el de 5 kilos tiene el mejor precio por kilo). Para piscinas grandes o condominios, el pack de 10 kilos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa que las tabletas sean multifunción 3 en 1?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Que además de desinfectar, previenen algas y clarifican el agua. También incluyen estabilizador, que protege el cloro de los rayos del sol."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde se ponen las tabletas de cloro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En un flotador dosificador o en el canasto del skimmer, con la filtración funcionando. Nunca directo en el fondo, porque pueden manchar el liner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hacen despacho a regiones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, despachamos a todo Chile. Región Metropolitana $3.990, de la IV a la X región $6.990 y otras regiones $9.990."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué el cloro no funciona si mi pH está alto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con un pH sobre 7,8 gran parte del cloro pierde su poder desinfectante. Por eso hay que mantener el pH entre 7,2 y 7,6, usando un reductor como el Baja pH cuando sube."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 </head>
 
@@ -2126,13 +2404,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <i class="fa-solid fa-bars"></i>
     </button>
 
-    <a href="#" class="logo">
-      <img src="assets/img/logo%20nuevo.png" alt="Cloro en Tabletas" class="logo-img">
+    <a href="./" class="logo">
+      <img src="assets/img/logo-cloro-en-tabletas.png" alt="Cloro en Tabletas" class="logo-img" width="83" height="70">
     </a>
 
     <nav class="nav-links">
-      <a href="#">INICIO</a>
-      <a href="#productos">PRODUCTOS</a>
+      <a href="./">INICIO</a>
+      <a href="productos/">PRODUCTOS</a>
       <a href="#quienes-somos">QUIENES SOMOS</a>
       <a href="blog/">BLOG</a>
       <a href="#contacto">CONTACTO</a>
@@ -2148,7 +2426,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </span>
       </a>
 
-      <a href="#" class="cart-icon">
+      <a href="checkout/" class="cart-icon" aria-label="Ver carrito">
         <i class="fa-solid fa-cart-shopping"></i>
         <span class="cart-badge">0</span>
       </a>
@@ -2166,15 +2444,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </button>
 
   <nav class="drawer-nav">
-    <a href="#productos"><i class="fa-solid fa-tag"></i> Productos</a>
-    <a href="#productos"><i class="fa-solid fa-store"></i> Tienda</a>
+    <a href="productos/"><i class="fa-solid fa-tag"></i> Productos</a>
+    <a href="#quienes-somos"><i class="fa-solid fa-circle-info"></i> Quiénes Somos</a>
     <a href="blog/"><i class="fa-solid fa-newspaper"></i> Blog</a>
     <a href="#ofertas"><i class="fa-solid fa-fire"></i> Ofertas</a>
     <a href="#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a>
   </nav>
 
   <div class="drawer-footer">
-    <a href="#" class="drawer-cta">
+    <a href="cuenta/login/" class="drawer-cta">
       <i class="fa-regular fa-circle-user"></i>
       Iniciar Sesión
     </a>
@@ -2236,16 +2514,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               Promo de Temporada
             </span>
 
-            <h2>
-              Mantención de<br>
-              <span class="yellow" style="white-space:nowrap">Agua Cristalina</span>
-            </h2>
+            <h1>
+              Cloro en Tabletas<br>
+              <span class="yellow" style="white-space:nowrap">para Piscinas</span>
+            </h1>
 
             <p>
-              Cloro en tabletas de alta concentración. Larga duración, mayor pureza y agua impecable todo el verano.
+              Tabletas de cloro multifunción 3 en 1 de disolución lenta. Packs de 1 a 10 kilos para mantener el agua cristalina todo el verano, con despacho a todo Chile.
             </p>
 
-            <a href="#" class="slide-cta">
+            <a href="productos/" class="slide-cta">
               Comprar Ahora
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -2257,7 +2535,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="slide">
 
-        <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1800&auto=format&fit=crop')"></div>
+        <div class="slide-bg" style="background-image:url('assets/img/blog/piscina-cristalina.webp')"></div>
         <div class="slide-overlay"></div>
 
         <div class="slide-content">
@@ -2277,7 +2555,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               Tratamiento profesional para piscinas residenciales. Tabletas multifunción 3 en 1 con efecto prolongado.
             </p>
 
-            <a href="#" class="slide-cta">
+            <a href="productos/cloro-en-tabletas-4-kilos/" class="slide-cta">
               Ver Producto
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -2300,16 +2578,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               Calidad Profesional
             </span>
 
-            <h1>
-              <span style="white-space:nowrap">Cloro en Tabletas</span><br>
+            <h2>
+              <span style="white-space:nowrap">Tabletas de Cloro</span><br>
               <span style="white-space:nowrap">de <span class="yellow">Alta Eficiencia</span></span>
-            </h1>
+            </h2>
 
             <p>
               Disolución lenta, alto poder desinfectante y fácil dosificación. Mantén tu agua sana sin esfuerzo.
             </p>
 
-            <a href="#" class="slide-cta">
+            <a href="productos/" class="slide-cta">
               Ver Catálogo
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -2321,7 +2599,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="slide">
 
-        <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1572331165267-854da2b10ccc?q=80&w=1800&auto=format&fit=crop')"></div>
+        <div class="slide-bg" style="background-image:url('assets/img/blog/piscina-limpia.webp')"></div>
         <div class="slide-overlay"></div>
 
         <div class="slide-content">
@@ -2341,7 +2619,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               Soluciones de cloración de uso intensivo para piscinas de edificios, hoteles y condominios.
             </p>
 
-            <a href="#" class="slide-cta">
+            <a href="productos/cloro-en-tabletas-10-kilos/" class="slide-cta">
               Cotizar Ahora
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -2379,9 +2657,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="productos-track" id="productosTrack">
 
         <div class="producto-card">
-          <img src="assets/img/products/cloro-tabletas-4k.webp" alt="Cloro en Tabletas Pack 4 Kilos">
+          <img src="assets/img/products/cloro-tabletas-4k.webp" alt="Cloro en Tabletas Pack 4 Kilos" loading="lazy" decoding="async" width="400" height="400">
           <div class="producto-info">
-            <h3>Cloro en Tabletas Pack 4 Kilos</h3>
+            <h3><a href="productos/cloro-en-tabletas-4-kilos/">Cloro en Tabletas Pack 4 Kilos</a></h3>
             <div class="precio">$19.990</div>
             <a href="#" class="btn-producto">
               <i class="fa-solid fa-cart-plus"></i>
@@ -2391,9 +2669,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="producto-card">
-          <img src="assets/img/products/cloro-tabletas-2k.webp" alt="Cloro para Piscina Pack 2 Kilos Tabletas">
+          <img src="assets/img/products/cloro-tabletas-2k.webp" alt="Cloro en Tabletas Pack 2 Kilos" loading="lazy" decoding="async" width="400" height="400">
           <div class="producto-info">
-            <h3>Cloro Tabletas Pack 2 Kilos</h3>
+            <h3><a href="productos/cloro-en-tabletas-2-kilos/">Cloro en Tabletas Pack 2 Kilos</a></h3>
             <div class="precio">$10.990</div>
             <a href="#" class="btn-producto">
               <i class="fa-solid fa-cart-plus"></i>
@@ -2403,9 +2681,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="producto-card">
-          <img src="assets/img/products/cloro-1k.webp" alt="Cloro para Piscina 1 Kilo">
+          <img src="assets/img/products/cloro-1k.webp" alt="Cloro en Tabletas 1 Kilo" loading="lazy" decoding="async" width="400" height="400">
           <div class="producto-info">
-            <h3>Cloro para Piscina 1 Kilo</h3>
+            <h3><a href="productos/cloro-en-tabletas-1-kilo/">Cloro en Tabletas 1 Kilo</a></h3>
             <div class="precio">$5.990</div>
             <a href="#" class="btn-producto">
               <i class="fa-solid fa-cart-plus"></i>
@@ -2415,9 +2693,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="producto-card">
-          <img src="assets/img/products/algicida-concentrado.png" alt="Algicida Concentrado">
+          <img src="assets/img/products/algicida-concentrado.png" alt="Algicida concentrado para piscinas" loading="lazy" decoding="async" width="400" height="400">
           <div class="producto-info">
-            <h3>Algicida Concentrado</h3>
+            <h3><a href="productos/algicida-concentrado/">Algicida Concentrado</a></h3>
             <div class="precio">$10.000</div>
             <a href="#" class="btn-producto">
               <i class="fa-solid fa-cart-plus"></i>
@@ -2427,9 +2705,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="producto-card">
-          <img src="assets/img/products/baja-ph.webp" alt="Baja PH para piscinas 1 kilo">
+          <img src="assets/img/products/baja-ph.webp" alt="Baja pH para piscinas 1 kilo" loading="lazy" decoding="async" width="400" height="400">
           <div class="producto-info">
-            <h3>Baja PH para Piscinas 1 Kilo</h3>
+            <h3><a href="productos/baja-ph-piscina-1-kilo/">Baja pH para Piscinas 1 Kilo</a></h3>
             <div class="precio">$10.000</div>
             <a href="#" class="btn-producto">
               <i class="fa-solid fa-cart-plus"></i>
@@ -2460,11 +2738,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="otro-card">
         <span class="badge-top">TOP</span>
         <div class="otro-img">
-          <img src="assets/img/products/cloro-tabletas-4k.webp" alt="Cloro en Tabletas Pack 4 Kilos">
+          <img src="assets/img/products/cloro-tabletas-4k.webp" alt="Cloro en Tabletas Pack 4 Kilos" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Sanitizante</span>
-          <h3>Cloro en Tabletas Pack 4 Kilos</h3>
+          <h3><a href="productos/cloro-en-tabletas-4-kilos/">Cloro en Tabletas Pack 4 Kilos</a></h3>
           <div class="otro-bottom">
             <div class="precio">$19.990</div>
             <a href="#" class="btn-producto">
@@ -2478,11 +2756,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="otro-card">
         <span class="badge-top">TOP</span>
         <div class="otro-img">
-          <img src="assets/img/products/cloro-tabletas-2k.webp" alt="Cloro Tabletas Pack 2 Kilos">
+          <img src="assets/img/products/cloro-tabletas-2k.webp" alt="Cloro en Tabletas Pack 2 Kilos" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Sanitizante</span>
-          <h3>Cloro Tabletas Pack 2 Kilos</h3>
+          <h3><a href="productos/cloro-en-tabletas-2-kilos/">Cloro en Tabletas Pack 2 Kilos</a></h3>
           <div class="otro-bottom">
             <div class="precio">$10.990</div>
             <a href="#" class="btn-producto">
@@ -2496,11 +2774,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="otro-card">
         <span class="badge-top">TOP</span>
         <div class="otro-img">
-          <img src="assets/img/products/cloro-1k.webp" alt="Cloro para Piscina 1 Kilo">
+          <img src="assets/img/products/cloro-1k.webp" alt="Cloro en Tabletas 1 Kilo" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Sanitizante</span>
-          <h3>Cloro para Piscina 1 Kilo</h3>
+          <h3><a href="productos/cloro-en-tabletas-1-kilo/">Cloro en Tabletas 1 Kilo</a></h3>
           <div class="otro-bottom">
             <div class="precio">$5.990</div>
             <a href="#" class="btn-producto">
@@ -2514,11 +2792,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="otro-card">
         <span class="badge-top">TOP</span>
         <div class="otro-img">
-          <img src="assets/img/products/algicida-concentrado.png" alt="Algicida Concentrado">
+          <img src="assets/img/products/algicida-concentrado.png" alt="Algicida concentrado para piscinas" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Tratamiento</span>
-          <h3>Algicida Concentrado</h3>
+          <h3><a href="productos/algicida-concentrado/">Algicida Concentrado</a></h3>
           <div class="otro-bottom">
             <div class="precio">$10.000</div>
             <a href="#" class="btn-producto">
@@ -2547,9 +2825,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="producto-card">
         <span class="badge-oferta">OFERTA</span>
-        <img src="assets/img/products/cloro-tabletas-10k.webp" alt="Pack Cloro en Tabletas 10 Kilos">
+        <img src="assets/img/products/cloro-tabletas-10k.webp" alt="Pack Cloro en Tabletas 10 Kilos" loading="lazy" decoding="async" width="400" height="400">
         <div class="producto-info">
-          <h3>Pack Cloro 10KG</h3>
+          <h3><a href="productos/cloro-en-tabletas-10-kilos/">Cloro en Tabletas Pack 10 Kilos</a></h3>
           <div class="precio">$44.900</div>
           <a href="#" class="btn-producto">
             <i class="fa-solid fa-cart-plus"></i>
@@ -2560,9 +2838,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="producto-card">
         <span class="badge-oferta">OFERTA</span>
-        <img src="assets/img/products/cloro-tabletas-5k.webp" alt="Cloro en Tabletas Pack de 5 Kilos">
+        <img src="assets/img/products/cloro-tabletas-5k.webp" alt="Cloro en Tabletas Pack de 5 Kilos" loading="lazy" decoding="async" width="400" height="400">
         <div class="producto-info">
-          <h3>Cloro en Tableta Pack de 5 Kg</h3>
+          <h3><a href="productos/cloro-en-tabletas-5-kilos/">Cloro en Tabletas Pack 5 Kilos</a></h3>
           <div class="precio">$20.900</div>
           <a href="#" class="btn-producto">
             <i class="fa-solid fa-cart-plus"></i>
@@ -2573,7 +2851,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="producto-card">
         <span class="badge-oferta">OFERTA</span>
-        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=600&auto=format&fit=crop" alt="Test kit para medir cloro y pH de piscina" loading="lazy" decoding="async" width="400" height="400">
         <div class="producto-info">
           <h3>Test Kit Piscina</h3>
           <div class="precio">$8.990</div>
@@ -2586,7 +2864,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="producto-card">
         <span class="badge-oferta">OFERTA</span>
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Alguicida premium para piscinas" loading="lazy" decoding="async" width="400" height="400">
         <div class="producto-info">
           <h3>Alguicida Premium</h3>
           <div class="precio">$18.990</div>
@@ -2616,7 +2894,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="otro-card">
         <div class="otro-img">
-          <img src="https://picsum.photos/seed/limpiafondos/600/450" alt="Limpiafondos manual">
+          <img src="https://picsum.photos/seed/limpiafondos/600/450" alt="Limpiafondos manual" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Accesorios</span>
@@ -2634,7 +2912,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="otro-card">
         <div class="otro-img">
-          <img src="https://picsum.photos/seed/manguera-telescopica/600/450" alt="Manguera telescópica 6m">
+          <img src="https://picsum.photos/seed/manguera-telescopica/600/450" alt="Manguera telescópica 6m" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Accesorios</span>
@@ -2652,7 +2930,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="otro-card">
         <div class="otro-img">
-          <img src="assets/img/products/colchon-inflable.png" alt="Colchón Inflable Queen">
+          <img src="assets/img/products/colchon-inflable.png" alt="Colchón Inflable Queen" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Lifestyle</span>
@@ -2670,7 +2948,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="otro-card">
         <div class="otro-img">
-          <img src="assets/img/products/hamaca-algodon.webp" alt="Hamaca de algodón 2 plazas">
+          <img src="assets/img/products/hamaca-algodon.webp" alt="Hamaca de algodón 2 plazas" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Lifestyle</span>
@@ -2688,7 +2966,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="otro-card">
         <div class="otro-img">
-          <img src="https://picsum.photos/seed/reflector-led/600/450" alt="Reflector LED subacuático">
+          <img src="https://picsum.photos/seed/reflector-led/600/450" alt="Reflector LED subacuático" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Iluminación</span>
@@ -2706,7 +2984,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="otro-card">
         <div class="otro-img">
-          <img src="assets/img/products/termo-globo.png" alt="Termo Retráctil Globo Terráqueo">
+          <img src="assets/img/products/termo-globo.png" alt="Termo Retráctil Globo Terráqueo" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Lifestyle</span>
@@ -2724,7 +3002,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="otro-card">
         <div class="otro-img">
-          <img src="https://picsum.photos/seed/bomba-piscina/600/450" alt="Bomba de filtración 1HP">
+          <img src="https://picsum.photos/seed/bomba-piscina/600/450" alt="Bomba de filtración 1HP" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Equipos</span>
@@ -2742,7 +3020,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="otro-card">
         <div class="otro-img">
-          <img src="assets/img/products/rueda-sport.png" alt="Rueda Sport Ejercicios Abdominales">
+          <img src="assets/img/products/rueda-sport.png" alt="Rueda Sport Ejercicios Abdominales" loading="lazy" decoding="async" width="400" height="400">
         </div>
         <div class="otro-info">
           <span class="otro-cat">Fitness</span>
@@ -2761,7 +3039,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="otros-cta-wrap">
-      <a href="#" class="otros-cta-btn">
+      <a href="productos/" class="otros-cta-btn">
         Ver Tienda Completa
         <i class="fa-solid fa-arrow-right"></i>
       </a>
@@ -2782,6 +3060,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<section class="nosotros-section" id="quienes-somos">
+
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Quiénes <span>Somos</span></h2>
+      <p class="section-sub">Especialistas en cloro en tabletas y mantención de piscinas en Chile.</p>
+    </div>
+
+    <div class="nosotros-wrap">
+
+      <div class="nosotros-texto">
+        <p>En <strong>Cloro en Tabletas</strong> nos dedicamos a una sola cosa: que tu piscina tenga el agua cristalina con el menor esfuerzo posible. Vendemos <strong>cloro en tabletas para piscinas</strong> en formatos de 1, 2, 4, 5 y 10 kilos, además de algicida y reductor de pH, con despacho a todo Chile desde Santiago.</p>
+        <p>Trabajamos con <strong>tabletas de cloro multifunción 3 en 1</strong> de 200 g: desinfectan, previenen algas y clarifican el agua en un solo paso. Se disuelven lentamente, así que basta con reponerlas una vez por semana en un flotador o en el skimmer.</p>
+
+        <h3>¿Cómo elegir tu cloro en tabletas?</h3>
+        <ul>
+          <li><strong>Piscinas pequeñas (hasta 20 m³):</strong> <a href="productos/cloro-en-tabletas-1-kilo/">cloro en tabletas 1 kilo</a> o <a href="productos/cloro-en-tabletas-2-kilos/">pack de 2 kilos</a>.</li>
+          <li><strong>Piscinas familiares (20 a 40 m³):</strong> <a href="productos/cloro-en-tabletas-4-kilos/">pack de 4 kilos</a> o <a href="productos/cloro-en-tabletas-5-kilos/">cloro en tabletas 5 kilos</a>, el de mejor precio por kilo.</li>
+          <li><strong>Piscinas grandes y condominios:</strong> <a href="productos/cloro-en-tabletas-10-kilos/">cloro en tabletas 10 kilos</a>.</li>
+        </ul>
+        <p>La dosis de referencia es <strong>1 tableta de 200 g por cada 20 m³</strong> de agua cada 5 a 7 días, con el pH entre 7,2 y 7,6. Si quieres el detalle, revisa nuestra <a href="blog/tabla-cloro-piscinas/">tabla de cloro para piscinas</a> o la <a href="blog/pastillas-cloro-piscinas/">guía de pastillas de cloro</a>.</p>
+      </div>
+
+      <div class="nosotros-beneficios">
+        <div class="beneficio">
+          <i class="fa-solid fa-truck-fast"></i>
+          <div>
+            <h3>Despacho a todo Chile</h3>
+            <p>Enviamos a la Región Metropolitana y a todas las regiones del país.</p>
+          </div>
+        </div>
+        <div class="beneficio">
+          <i class="fa-solid fa-flask"></i>
+          <div>
+            <h3>Tabletas 3 en 1</h3>
+            <p>Cloro, alguicida y clarificador en cada tableta de 200 g.</p>
+          </div>
+        </div>
+        <div class="beneficio">
+          <i class="fa-solid fa-tags"></i>
+          <div>
+            <h3>Packs de 1 a 10 kilos</h3>
+            <p>Mientras más grande el pack, menor el precio por kilo.</p>
+          </div>
+        </div>
+        <div class="beneficio">
+          <i class="fa-solid fa-lock"></i>
+          <div>
+            <h3>Compra segura</h3>
+            <p>Pago por transferencia electrónica y 10 días para cambios y devoluciones.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 <section class="blog-section" id="blog">
 
   <div class="container">
@@ -2795,7 +3134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-07-20">
         <a href="blog/como-bajar-ph-piscina/" class="blog-img">
-          <img src="assets/img/blog/preparando-la-piscina.webp" alt="Cómo bajar el pH de la piscina">
+          <img src="assets/img/blog/preparando-la-piscina.webp" alt="Cómo bajar el pH de la piscina" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Guías</span>
         </a>
         <div class="blog-info">
@@ -2808,7 +3147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-07-13">
         <a href="blog/dosificador-cloro-piscinas/" class="blog-img">
-          <img src="assets/img/blog/cloro-en-tabletas-foto.webp" alt="Dosificador de cloro para piscinas">
+          <img src="assets/img/blog/cloro-en-tabletas-foto.webp" alt="Dosificador de cloro para piscinas" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Guías</span>
         </a>
         <div class="blog-info">
@@ -2821,7 +3160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-07-10">
         <a href="blog/tabla-cloro-piscinas/" class="blog-img">
-          <img src="assets/img/blog/disfrutando-la-piscina.webp" alt="Tabla de cloro para piscinas">
+          <img src="assets/img/blog/disfrutando-la-piscina.webp" alt="Tabla de cloro para piscinas" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Tips</span>
         </a>
         <div class="blog-info">
@@ -2834,7 +3173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-07-08">
         <a href="blog/flotadores-cloro-piscinas/" class="blog-img">
-          <img src="assets/img/blog/piscina-limpia.webp" alt="Flotadores de cloro para piscinas">
+          <img src="assets/img/blog/piscina-limpia.webp" alt="Flotadores de cloro para piscinas" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Guías</span>
         </a>
         <div class="blog-info">
@@ -2847,7 +3186,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-07-06">
         <a href="blog/dispensador-cloro-piscinas/" class="blog-img">
-          <img src="assets/img/blog/dispensador-de-cloro.webp" alt="Dispensador de cloro para piscinas">
+          <img src="assets/img/blog/dispensador-de-cloro.webp" alt="Dispensador de cloro para piscinas" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Guías</span>
         </a>
         <div class="blog-info">
@@ -2860,7 +3199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-07-03">
         <a href="blog/cloro-granulado-piscinas/" class="blog-img">
-          <img src="assets/img/blog/cloro-granulado.webp" alt="Cloro granulado para piscinas">
+          <img src="assets/img/blog/cloro-granulado.webp" alt="Cloro granulado para piscinas" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Guías</span>
         </a>
         <div class="blog-info">
@@ -2873,7 +3212,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-07-01">
         <a href="blog/pastillas-cloro-piscinas/" class="blog-img">
-          <img src="assets/img/blog/tabletas-de-cloro.webp" alt="Pastillas de cloro para piscinas">
+          <img src="assets/img/blog/tabletas-de-cloro.webp" alt="Pastillas de cloro para piscinas" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Guías</span>
         </a>
         <div class="blog-info">
@@ -2886,7 +3225,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-06-29">
         <a href="blog/cloro-para-piscinas/" class="blog-img">
-          <img src="assets/img/blog/piscina-ok.webp" alt="Cloro para piscinas">
+          <img src="assets/img/blog/piscina-ok.webp" alt="Cloro para piscinas" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Guías</span>
         </a>
         <div class="blog-info">
@@ -2899,7 +3238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-06-27">
         <a href="blog/prevenir-algas-en-piscina/" class="blog-img">
-          <img src="assets/img/blog/evitar-algas-en-piscina.webp" alt="Cómo prevenir algas en tu piscina">
+          <img src="assets/img/blog/evitar-algas-en-piscina.webp" alt="Cómo prevenir algas en tu piscina" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Guías</span>
         </a>
         <div class="blog-info">
@@ -2918,7 +3257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-05-28">
         <a href="blog/invernar-piscina-sin-vaciar/" class="blog-img">
-          <img src="assets/img/blog/invernar-piscina.webp" alt="Invernar tu piscina sin vaciar el agua">
+          <img src="assets/img/blog/invernar-piscina.webp" alt="Invernar tu piscina sin vaciar el agua" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Guías</span>
         </a>
         <div class="blog-info">
@@ -2937,7 +3276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="blog-card" data-publish-date="2026-05-28">
         <a href="blog/mitos-piscina-invierno/" class="blog-img">
-          <img src="assets/img/blog/mitos-piscina-invierno.webp" alt="Mitos sobre el cuidado de la piscina en invierno">
+          <img src="assets/img/blog/mitos-piscina-invierno.webp" alt="Mitos sobre el cuidado de la piscina en invierno" loading="lazy" decoding="async" width="800" height="500">
           <span class="blog-cat">Tips</span>
         </a>
         <div class="blog-info">
@@ -2967,6 +3306,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </section>
 
+<section class="faq-section" id="preguntas-frecuentes">
+
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Preguntas Frecuentes sobre el <span>Cloro en Tabletas</span></h2>
+    </div>
+
+    <div class="faq-home">
+      <details>
+        <summary>¿Cuántas tabletas de cloro necesita mi piscina?</summary>
+        <p>La regla práctica es 1 tableta de 200 g por cada 20 m³ de agua, repuesta cada 5 a 7 días. Una piscina familiar de 30 m³ usa unas 2 tabletas por semana.</p>
+      </details>
+      <details>
+        <summary>¿Qué formato de cloro en tabletas me conviene?</summary>
+        <p>Para piscinas pequeñas, 1 o 2 kilos. Para piscinas familiares de 20 a 40 m³, el pack de 4 o 5 kilos (el de 5 kilos tiene el mejor precio por kilo). Para piscinas grandes o condominios, el pack de 10 kilos.</p>
+      </details>
+      <details>
+        <summary>¿Qué significa que las tabletas sean multifunción 3 en 1?</summary>
+        <p>Que además de desinfectar, previenen algas y clarifican el agua. También incluyen estabilizador, que protege el cloro de los rayos del sol.</p>
+      </details>
+      <details>
+        <summary>¿Dónde se ponen las tabletas de cloro?</summary>
+        <p>En un flotador dosificador o en el canasto del skimmer, con la filtración funcionando. Nunca directo en el fondo, porque pueden manchar el liner.</p>
+      </details>
+      <details>
+        <summary>¿Hacen despacho a regiones?</summary>
+        <p>Sí, despachamos a todo Chile. Región Metropolitana $3.990, de la IV a la X región $6.990 y otras regiones $9.990.</p>
+      </details>
+      <details>
+        <summary>¿Por qué el cloro no funciona si mi pH está alto?</summary>
+        <p>Con un pH sobre 7,8 gran parte del cloro pierde su poder desinfectante. Por eso hay que mantener el pH entre 7,2 y 7,6, usando un reductor como el Baja pH cuando sube.</p>
+      </details>
+    </div>
+
+  </div>
+
+</section>
+
 <footer class="footer" id="contacto">
 
   <div class="container">
@@ -2990,7 +3368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <h4>Navegación</h4>
         <ul class="footer-links">
-          <li><a href="#productos">Tienda</a></li>
+          <li><a href="productos/">Tienda</a></li>
           <li><a href="#mas-vendidos">Más Vendidos</a></li>
           <li><a href="#ofertas">Ofertas</a></li>
           <li><a href="#tienda">Otros Productos</a></li>

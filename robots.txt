@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
 
-# Páginas funcionales sin valor SEO
-Disallow: /checkout/gracias/
-Disallow: /cuenta/
+# Checkout y cuenta llevan <meta name="robots" content="noindex">.
+# No se bloquean aquí para que Google pueda leer esa etiqueta.
 
 Sitemap: https://cloroentabletas.cl/sitemap.xml

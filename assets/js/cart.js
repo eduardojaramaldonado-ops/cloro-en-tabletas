@@ -162,6 +162,18 @@
     document.querySelectorAll('.btn-producto').forEach(btn => {
       btn.addEventListener('click', function(e){
         e.preventDefault();
+
+        // Páginas de producto: los datos vienen en el propio botón
+        if(btn.dataset.name){
+          addToCart({
+            id: btn.dataset.id || slugify(btn.dataset.name),
+            name: btn.dataset.name,
+            price: parsePrice(btn.dataset.price),
+            image: new URL(btn.dataset.image, location.href).href
+          });
+          return;
+        }
+
         const card = btn.closest('.producto-card, .otro-card');
         if(!card) return;
 
