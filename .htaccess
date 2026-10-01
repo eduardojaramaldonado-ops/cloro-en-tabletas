@@ -20,6 +20,11 @@ RewriteRule ^ https://cloroentabletas.cl%{REQUEST_URI} [L,R=301]
 # 2. /index.html duplicado -> URL de carpeta
 RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
 RewriteRule ^(.*/)?index\.html$ /$1 [L,R=301]
+
+# 3. Restos del repositorio que no son parte del sitio: responder 404
+#    (el despliegue no borra archivos viejos de public_html)
+RewriteRule ^(src|public)(/.*)?$ - [R=404,L]
+RewriteRule ^(package(-lock)?\.json|vite\.config\.js|eslint\.config\.js|git|README\.md|netlify\.toml|\.gitignore)$ - [R=404,L]
 </IfModule>
 
 # 3. Página 404 propia
