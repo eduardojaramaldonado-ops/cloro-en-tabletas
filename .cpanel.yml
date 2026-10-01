@@ -1,5 +1,10 @@
 ---
+# Despliegue a public_html: copia SOLO los archivos públicos del sitio.
+# No se publican src/, public/, package.json, README.md, netlify.toml
+# ni este archivo. Si agregas una carpeta nueva al sitio, súmala a la lista.
+# .htaccess no se copia a propósito: se gestiona directo en el servidor.
 deployment:
   tasks:
     - export DEPLOYPATH=/home/ke53vs82b652/public_html/
-    - /bin/cp -r * $DEPLOYPATH
+    - /bin/cp index.html 404.html robots.txt sitemap.xml $DEPLOYPATH
+    - /bin/cp -R assets blog productos checkout cuenta politica-devoluciones politica-privacidad $DEPLOYPATH
