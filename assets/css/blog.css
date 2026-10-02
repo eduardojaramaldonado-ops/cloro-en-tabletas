@@ -1675,29 +1675,87 @@ FOOTER
 
 .footer-wrap{
   display:grid;
-  grid-template-columns:2fr 1fr 1fr;
+  grid-template-columns:2fr 1fr 1fr 1.2fr;
   gap:40px;
+
   padding-bottom:40px;
   border-bottom:1px solid rgba(255,255,255,.1);
 }
 
 .footer h3{
   font-size:28px;
-  margin-bottom:20px;
+  margin-bottom:18px;
   font-weight:900;
 }
 
 .footer h4{
-  font-size:18px;
+  font-size:16px;
   margin-bottom:20px;
-  font-weight:700;
+  font-weight:800;
   text-transform:uppercase;
   letter-spacing:1px;
+  color:#ffb800;
 }
 
 .footer p{
-  line-height:1.8;
+  line-height:1.7;
   color:#d1d5db;
+  font-size:14px;
+}
+
+.footer-col-brand p{
+  margin-bottom:22px;
+}
+
+.footer-links{
+  list-style:none;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-links a{
+  color:#d1d5db;
+  text-decoration:none;
+  font-size:14px;
+  transition:.2s;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.footer-links a::before{
+  content:"›";
+  color:#0a78c2;
+  font-weight:900;
+}
+
+.footer-links a:hover{
+  color:#ffb800;
+  padding-left:4px;
+}
+
+.footer-contact{
+  list-style:none;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-contact li{
+  color:#d1d5db;
+  font-size:14px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.footer-contact i{
+  color:#ffb800;
+  width:18px;
+  margin-top:3px;
 }
 
 .redes-icons{
@@ -1791,7 +1849,12 @@ TABLET
   }
 
   .footer-wrap{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2, 1fr);
+    gap:30px;
+  }
+
+  .footer-col-brand{
+    grid-column:1 / -1;
   }
 
 }
@@ -1801,6 +1864,15 @@ MOBILE
 ========================= */
 
 @media(max-width:768px){
+
+  .footer-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .footer-col-brand{
+    grid-column:auto;
+  }
+
 
   .container{
     padding:0 10px;
@@ -2282,4 +2354,191 @@ CALCULADORA DE CLORO
 @media(max-width:768px){
   .calc-cloro{ padding:20px 16px; }
   .calc-grid{ grid-template-columns:1fr; }
+}
+
+/* =========================
+PÁGINA DE CONTACTO
+========================= */
+
+.contacto-wrap{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.contacto-intro{
+  max-width:720px;
+  margin:14px 0 0;
+  font-size:16px;
+  line-height:1.7;
+  color:#4b5563;
+}
+
+.contacto-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:28px;
+  margin-top:34px;
+  align-items:start;
+}
+
+.contacto-canales{
+  display:grid;
+  gap:14px;
+}
+
+.contacto-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:18px 20px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  color:#0a3a5f;
+  text-decoration:none;
+  font-size:14px;
+  line-height:1.5;
+  transition:.2s;
+}
+
+a.contacto-card:hover{
+  border-color:#0a78c2;
+  box-shadow:0 10px 25px rgba(10,120,194,.12);
+}
+
+.contacto-card i{
+  flex-shrink:0;
+  width:46px;
+  height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#eff6ff;
+  color:#0a78c2;
+  font-size:20px;
+}
+
+.contacto-card strong{
+  display:block;
+  font-size:15px;
+  font-weight:800;
+}
+
+.contacto-wa{
+  background:#25d366;
+  border-color:#25d366;
+  color:#fff;
+}
+
+.contacto-wa i{
+  background:rgba(255,255,255,.2);
+  color:#fff;
+  font-size:24px;
+}
+
+a.contacto-wa:hover{
+  border-color:#1ebe5a;
+  box-shadow:0 10px 25px rgba(37,211,102,.35);
+}
+
+.contacto-form{
+  position:relative;
+  display:grid;
+  gap:14px;
+  padding:28px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+}
+
+.contacto-form h2{
+  font-size:24px;
+  font-weight:900;
+  color:#0a3a5f;
+  margin:0 0 4px;
+}
+
+.contacto-form h2 .azul{ color:#0a78c2; }
+
+.contacto-form label{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:13px;
+  font-weight:700;
+  color:#0a3a5f;
+}
+
+.contacto-form input,
+.contacto-form select,
+.contacto-form textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  background:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-size:15px;
+  color:#111827;
+}
+
+.contacto-form textarea{ resize:vertical; }
+
+.contacto-form input:focus,
+.contacto-form select:focus,
+.contacto-form textarea:focus{
+  outline:none;
+  border-color:#0a78c2;
+  box-shadow:0 0 0 3px rgba(10,120,194,.15);
+}
+
+.contacto-enviar{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  height:52px;
+  border:none;
+  border-radius:10px;
+  background:#0a78c2;
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-size:15px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.contacto-enviar:hover{ background:#0a3a5f; }
+.contacto-enviar:disabled{ opacity:.6; cursor:wait; }
+
+.contacto-estado{
+  min-height:20px;
+  margin:0;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.contacto-estado.ok{ color:#15803d; font-weight:700; }
+.contacto-estado.error{ color:#dc2626; }
+.contacto-estado a{ color:inherit; font-weight:800; }
+
+.contacto-privacidad{
+  margin:0;
+  font-size:12px;
+  color:#6b7280;
+}
+
+.contacto-privacidad a{ color:#0a78c2; }
+
+@media(max-width:1024px){
+  .contacto-grid{ grid-template-columns:1fr; }
+}
+
+@media(max-width:768px){
+  .contacto-form{ padding:20px 16px; }
+  .contacto-intro{ font-size:15px; }
 }
