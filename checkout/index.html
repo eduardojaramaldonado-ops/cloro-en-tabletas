@@ -832,16 +832,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="td-value">pedidos@cloroentabletas.cl</span>
               </div>
               <p class="transferencia-note">
-                Una vez realizada la transferencia, envía el comprobante a
-                <strong>pedidos@cloroentabletas.cl</strong> indicando el número de tu pedido.
+                Una vez realizada la transferencia, envía el comprobante por WhatsApp al
+                <a href="https://wa.me/56992460216" target="_blank" rel="noopener"><strong>+56 9 9246 0216</strong></a>
+                o a <strong>pedidos@cloroentabletas.cl</strong>, indicando el número de tu pedido.
               </p>
             </div>
           </div>
 
           <button type="submit" class="checkout-cta">
-            Confirmar Pedido
-            <i class="fa-solid fa-lock"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            Confirmar y enviar por WhatsApp
           </button>
+          <p class="checkout-wa-nota" style="font-size:12px;color:#6b7280;text-align:center;margin-top:10px;line-height:1.5">Se abrirá WhatsApp con el detalle de tu pedido listo para enviarnos. Te respondemos con la confirmación.</p>
 
         </form>
 
@@ -962,6 +964,37 @@ const CUPONES = {
 };
 
 let cuponActivo = null;
+const WHATSAPP_PEDIDOS = 'https://wa.me/56992460216';
+
+function valor(id){
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+
+// Texto del pedido para WhatsApp (lo envía el propio cliente)
+function mensajeWhatsApp(d, despacho){
+  const precio = n => window.CloroCart.formatPrice(n);
+  const lineas = [
+    '*Nuevo pedido ' + d.pedido + '* (cloroentabletas.cl)',
+    '',
+    '*Productos:*'
+  ];
+  d.productos.forEach(p => lineas.push('• ' + p.quantity + ' × ' + p.name + ' — ' + precio(p.price * p.quantity)));
+  lineas.push('', 'Subtotal: ' + precio(d.subtotal));
+  if(d.descuento) lineas.push('Descuento' + (d.cupon ? ' (' + d.cupon + ')' : '') + ': -' + precio(d.descuento));
+  lineas.push('*Total: ' + precio(d.total) + '*');
+  lineas.push('Envío: por pagar vía Starken');
+  lineas.push('Pago: transferencia electrónica');
+  lineas.push('', '*Datos de despacho:*');
+  lineas.push('Nombre: ' + d.nombre + ' ' + d.apellido);
+  if(despacho.rut) lineas.push('RUT: ' + despacho.rut);
+  if(despacho.telefono) lineas.push('Teléfono: ' + despacho.telefono);
+  if(d.email) lineas.push('Email: ' + d.email);
+  lineas.push('Dirección: ' + [despacho.direccion, despacho.depto].filter(Boolean).join(', '));
+  lineas.push('Comuna: ' + despacho.comuna + ' · ' + despacho.ciudad + ' · ' + d.region);
+  if(despacho.notas) lineas.push('Notas: ' + despacho.notas);
+  return lineas.join('\n');
+}
 let checkoutIniciado = false;
 
 // Medición opcional: si tracking.js no está cargado, el checkout funciona igual
@@ -1192,10 +1225,19 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
     productos: window.CloroCart.getItems().map(i => ({ id: i.id, name: i.name, price: i.price, quantity: i.quantity }))
   };
 
+  data.whatsapp = mensajeWhatsApp(data, {
+    telefono: valor('telefono'), rut: valor('rut'), direccion: valor('direccion'), depto: valor('depto'),
+    comuna: valor('comuna'), ciudad: valor('ciudad'), notas: valor('notas')
+  });
+
   medir('addPaymentInfo', window.CloroCart.getItems(), data.pago, data.cupon);
 
   sessionStorage.setItem('cloroentabletas_pedido', JSON.stringify(data));
   window.CloroCart.clearCart();
+
+  // Abre WhatsApp con el pedido (gesto del usuario: no lo bloquea el navegador);
+  // si no se abre, la página de gracias tiene el botón para enviarlo.
+  window.open(WHATSAPP_PEDIDOS + '?text=' + encodeURIComponent(data.whatsapp), '_blank');
   window.location.href = 'gracias/index.html';
 });
 </script>

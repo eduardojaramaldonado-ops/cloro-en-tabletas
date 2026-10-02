@@ -355,8 +355,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="fa-solid fa-check"></i>
       </div>
 
-      <h1>¡Pedido <span class="yellow">Confirmado</span>!</h1>
-      <p class="lead">Gracias por tu compra <span id="nombreCliente">cliente</span>. Hemos recibido tu pedido y enviamos los detalles a tu email.</p>
+      <h1>¡Tu Pedido Está <span class="yellow">Listo</span>!</h1>
+      <p class="lead">Gracias por tu compra <span id="nombreCliente">cliente</span>. Para confirmarlo, envíanos el pedido por WhatsApp: te responderemos con la confirmación y los datos para la transferencia.</p>
+
+      <div class="wa-pedido" style="margin:24px auto 28px;max-width:520px;text-align:center">
+        <a id="waPedido" href="https://wa.me/56992460216" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px 24px;background:#25d366;color:#fff;border-radius:50px;text-decoration:none;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.5px;box-shadow:0 10px 25px rgba(37,211,102,.35)">
+          <i class="fa-brands fa-whatsapp" style="font-size:22px"></i>
+          Enviar pedido por WhatsApp
+        </a>
+        <p style="font-size:13px;color:#6b7280;margin-top:10px">Si WhatsApp no se abrió automáticamente, toca el botón.</p>
+      </div>
 
       <div class="pedido-info">
         <div class="pedido-numero">
@@ -377,7 +385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="val" id="pedidoPago">—</span>
           </div>
           <div class="detalle">
-            <span class="key">Total Pagado</span>
+            <span class="key">Total a Pagar</span>
             <span class="val total" id="pedidoTotal">$0</span>
           </div>
         </div>
@@ -388,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ol>
           <li>
             <span class="num">1</span>
-            <p><strong>Revisa tu email:</strong> te enviamos la confirmación con los datos del pedido y, si corresponde, los datos para transferencia bancaria.</p>
+            <p><strong>Envía tu pedido por WhatsApp:</strong> te respondemos con la confirmación y los datos para la transferencia bancaria.</p>
           </li>
           <li>
             <span class="num">2</span>
@@ -456,6 +464,9 @@ if(data.pedido){
   document.getElementById('pedidoItems').textContent = data.items + ' producto' + (data.items > 1 ? 's' : '');
   document.getElementById('pedidoTotal').textContent = '$' + Number(data.total).toLocaleString('es-CL');
   const pagoNombres = { transferencia:'Transferencia Electrónica' };
+  if(data.whatsapp){
+    document.getElementById('waPedido').href = 'https://wa.me/56992460216?text=' + encodeURIComponent(data.whatsapp);
+  }
   document.getElementById('pedidoPago').textContent = pagoNombres[data.pago] || data.pago;
 }
 
