@@ -8,4 +8,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/ke53vs82b652/public_html/
     - /bin/cp .cpanel.yml index.html 404.html robots.txt sitemap.xml $DEPLOYPATH
-    - /bin/cp -R assets blog productos checkout cuenta politica-devoluciones politica-privacidad $DEPLOYPATH
+    - /bin/cp -R api assets blog productos checkout cuenta politica-devoluciones politica-privacidad $DEPLOYPATH

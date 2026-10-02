@@ -717,6 +717,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="checkout-sub">Completa tus datos y elige el método de pago para confirmar tu pedido.</p>
 
         <form id="checkoutForm" novalidate>
+          <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
           <div class="form-section">
             <h3><span class="step-num">1</span> Datos de Contacto</h3>
@@ -1238,7 +1239,30 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
   // Abre WhatsApp con el pedido (gesto del usuario: no lo bloquea el navegador);
   // si no se abre, la página de gracias tiene el botón para enviarlo.
   window.open(WHATSAPP_PEDIDOS + '?text=' + encodeURIComponent(data.whatsapp), '_blank');
-  window.location.href = 'gracias/index.html';
+
+  // Copia del pedido por correo al cliente y a la tienda. No bloquea la compra:
+  // se espera como máximo 2,5 s y luego se pasa a la página de gracias igual.
+  const boton = this.querySelector('[type="submit"]');
+  if(boton) boton.disabled = true;
+  const correo = fetch('../api/pedido.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    keepalive: true,
+    body: JSON.stringify({
+      pedido: data.pedido, nombre: data.nombre, apellido: data.apellido, email: data.email,
+      region: data.region, cupon: data.cupon, productos: data.productos,
+      telefono: valor('telefono'), rut: valor('rut'), direccion: valor('direccion'), depto: valor('depto'),
+      comuna: valor('comuna'), ciudad: valor('ciudad'), notas: valor('notas'), website: valor('website')
+    })
+  }).then(r => r.json()).catch(() => null);
+
+  Promise.race([correo, new Promise(r => setTimeout(r, 2500))]).then(res => {
+    if(res && res.cliente){
+      data.correoEnviado = true;
+      sessionStorage.setItem('cloroentabletas_pedido', JSON.stringify(data));
+    }
+    window.location.href = 'gracias/index.html';
+  });
 });
 </script>
 

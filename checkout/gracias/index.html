@@ -364,6 +364,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Enviar pedido por WhatsApp
         </a>
         <p style="font-size:13px;color:#6b7280;margin-top:10px">Si WhatsApp no se abrió automáticamente, toca el botón.</p>
+        <p id="correoCopia" style="display:none;font-size:14px;color:#0a3a5f;margin-top:14px"><i class="fa-regular fa-envelope"></i> También te enviamos el detalle del pedido a <strong id="correoCopiaEmail"></strong>.</p>
       </div>
 
       <div class="pedido-info">
@@ -464,6 +465,10 @@ if(data.pedido){
   document.getElementById('pedidoItems').textContent = data.items + ' producto' + (data.items > 1 ? 's' : '');
   document.getElementById('pedidoTotal').textContent = '$' + Number(data.total).toLocaleString('es-CL');
   const pagoNombres = { transferencia:'Transferencia Electrónica' };
+  if(data.correoEnviado){
+    document.getElementById('correoCopiaEmail').textContent = data.email;
+    document.getElementById('correoCopia').style.display = 'block';
+  }
   if(data.whatsapp){
     document.getElementById('waPedido').href = 'https://wa.me/56992460216?text=' + encodeURIComponent(data.whatsapp);
   }
