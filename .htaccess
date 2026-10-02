@@ -25,6 +25,15 @@ RewriteRule ^(.*/)?index\.html$ /$1 [L,R=301]
 #    (el despliegue no borra archivos viejos de public_html)
 RewriteRule ^(src|public)(/.*)?$ - [R=404,L]
 RewriteRule ^(package(-lock)?\.json|vite\.config\.js|eslint\.config\.js|git|README\.md|netlify\.toml|\.gitignore)$ - [R=404,L]
+
+# 4. URLs del sitio anterior (WordPress/WooCommerce) -> páginas actuales
+RewriteRule ^blog/como-limpiar-una-piscina-verde/?$ https://cloroentabletas.cl/blog/piscina-verde-como-recuperarla/ [R=301,L,QSD]
+RewriteRule ^blog/mantener-la-piscina/?$ https://cloroentabletas.cl/blog/como-mantener-piscina-cristalina/ [R=301,L,QSD]
+RewriteRule ^mantencion-de-piscinas/?$ https://cloroentabletas.cl/blog/como-mantener-piscina-cristalina/ [R=301,L,QSD]
+RewriteRule ^tienda/?$ https://cloroentabletas.cl/productos/ [R=301,L,QSD]
+RewriteRule ^producto/baja-ph[^/]*/?$ https://cloroentabletas.cl/productos/baja-ph-piscina-1-kilo/ [R=301,L,QSD]
+RewriteRule ^producto/cloro-en-tabletas-pack-de-4-kilos/?$ https://cloroentabletas.cl/productos/cloro-en-tabletas-4-kilos/ [R=301,L,QSD]
+RewriteRule ^producto/ https://cloroentabletas.cl/productos/ [R=301,L,QSD]
 </IfModule>
 
 # 3. Página 404 propia
