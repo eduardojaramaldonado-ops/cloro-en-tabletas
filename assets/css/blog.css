@@ -2191,3 +2191,95 @@ BLOG LANDING (listado de artículos)
   to{ transform:rotate(360deg); }
 }
 
+
+/* =========================
+CALCULADORA DE CLORO
+========================= */
+
+.calc-cloro{
+  margin:30px 0 10px;
+  padding:28px;
+  background:#eff6ff;
+  border:2px solid #0a78c2;
+  border-radius:16px;
+}
+
+.post-body .calc-cloro h2{
+  margin:0 0 8px;
+}
+
+.post-body .calc-cloro .calc-intro{
+  font-size:15px;
+  margin-bottom:18px;
+}
+
+.calc-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:14px 18px;
+}
+
+.calc-grid label{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:13px;
+  font-weight:700;
+  color:#0a3a5f;
+}
+
+.calc-grid .calc-full{
+  grid-column:1 / -1;
+}
+
+.calc-grid input,
+.calc-grid select{
+  width:100%;
+  height:46px;
+  padding:0 14px;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  background:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-size:15px;
+  color:#111827;
+}
+
+.calc-grid input:focus,
+.calc-grid select:focus{
+  outline:none;
+  border-color:#0a78c2;
+  box-shadow:0 0 0 3px rgba(10,120,194,.15);
+}
+
+.calc-resultado{
+  margin-top:20px;
+  padding:20px 22px;
+  background:#fff;
+  border-radius:12px;
+  border-left:5px solid #ffb800;
+}
+
+.post-body .calc-resultado p,
+.post-body .calc-resultado li{
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+.post-body .calc-resultado ul{
+  margin:10px 0 12px;
+}
+
+.post-body .calc-resultado .calc-vacio{
+  color:#6b7280;
+  margin:0;
+}
+
+.post-body .calc-resultado .calc-pack{
+  margin:0;
+}
+
+@media(max-width:768px){
+  .calc-cloro{ padding:20px 16px; }
+  .calc-grid{ grid-template-columns:1fr; }
+}
