@@ -947,6 +947,7 @@ drawerOverlay.addEventListener('click', cerrarDrawer);
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarDrawer));
 </script>
 
+<script src="../assets/js/tracking.js"></script>
 <script src="../assets/js/cart.js"></script>
 
 <script>
@@ -968,6 +969,13 @@ const CUPONES = {
 };
 
 let cuponActivo = null;
+let checkoutIniciado = false;
+
+// Medición opcional: si tracking.js no está cargado, el checkout funciona igual
+function medir(metodo){
+  const args = Array.prototype.slice.call(arguments, 1);
+  try { if(window.CloroTrack) window.CloroTrack[metodo].apply(null, args); } catch(e){}
+}
 
 function getEnvio(region){
   if(!region) return null;
@@ -980,6 +988,7 @@ function actualizarCantidad(id, change){
   const cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
   const item = cart.find(i => i.id === id);
   if(!item) return;
+  medir(change > 0 ? 'addToCart' : 'removeFromCart', item, Math.abs(change));
   item.quantity += change;
   if(item.quantity < 1){
     const filtered = cart.filter(i => i.id !== id);
@@ -993,6 +1002,8 @@ function actualizarCantidad(id, change){
 
 function eliminarItem(id){
   const cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  const item = cart.find(i => i.id === id);
+  if(item) medir('removeFromCart', item, item.quantity);
   const filtered = cart.filter(i => i.id !== id);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
   document.dispatchEvent(new CustomEvent('cartchange'));
@@ -1014,6 +1025,11 @@ function renderCheckout(){
 
   wrap.style.display = 'grid';
   empty.style.display = 'none';
+
+  if(!checkoutIniciado){
+    checkoutIniciado = true;
+    medir('beginCheckout', items);
+  }
 
   document.getElementById('summaryItems').innerHTML = items.map(it => `
     <div class="summary-item">
@@ -1097,6 +1113,10 @@ function renderCheckout(){
 setTimeout(renderCheckout, 50);
 document.addEventListener('cartchange', renderCheckout);
 document.getElementById('region').addEventListener('change', renderCheckout);
+document.getElementById('region').addEventListener('change', function(){
+  const envioInfo = getEnvio(this.value);
+  if(envioInfo) medir('addShippingInfo', window.CloroCart.getItems(), envioInfo.label);
+});
 
 // Cupón
 document.getElementById('cuponToggle').addEventListener('click', () => {
@@ -1116,6 +1136,7 @@ document.getElementById('cuponApply').addEventListener('click', () => {
   }
 
   const cupon = CUPONES[codigo];
+  medir('applyCoupon', codigo, !!cupon);
   if(!cupon){
     msgEl.className = 'cupon-msg err';
     msgEl.textContent = 'Código no válido.';
@@ -1179,8 +1200,14 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
     items: window.CloroCart.getItems().reduce((s,i)=>s+i.quantity,0),
     pago: document.querySelector('input[name="pago"]:checked').value,
     cupon: cuponActivo ? cuponActivo.codigo : null,
-    pedido: 'CT-' + Date.now().toString().slice(-8)
+    pedido: 'CT-' + Date.now().toString().slice(-8),
+    subtotal: subtotal,
+    envio: envio,
+    descuento: descuento,
+    productos: window.CloroCart.getItems().map(i => ({ id: i.id, name: i.name, price: i.price, quantity: i.quantity }))
   };
+
+  medir('addPaymentInfo', window.CloroCart.getItems(), data.pago, data.cupon);
 
   sessionStorage.setItem('cloroentabletas_pedido', JSON.stringify(data));
   window.CloroCart.clearCart();

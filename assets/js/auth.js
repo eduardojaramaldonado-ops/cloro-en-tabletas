@@ -18,6 +18,11 @@
   function setSession(u){ localStorage.setItem(SESSION_KEY, JSON.stringify(u)); }
   function clearSession(){ localStorage.removeItem(SESSION_KEY); }
 
+  // Medición opcional: si tracking.js no está cargado, no hace nada
+  function track(method){
+    try { if(window.CloroTrack) window.CloroTrack[method](); } catch(e){}
+  }
+
   function register(data){
     const users = getUsers();
     if(users.find(u => u.email.toLowerCase() === data.email.toLowerCase())){
@@ -26,6 +31,7 @@
     users.push(data);
     saveUsers(users);
     setSession({ email: data.email, nombre: data.nombre, apellido: data.apellido });
+    track('signUp');
   }
 
   function login(email, password){
@@ -36,6 +42,7 @@
     );
     if(!user) throw new Error('Email o contraseña incorrectos');
     setSession({ email: user.email, nombre: user.nombre, apellido: user.apellido });
+    track('login');
     return user;
   }
 
@@ -44,6 +51,7 @@
   function isAuth(){ return getSession() !== null; }
 
   function requestRecovery(email){
+    track('passwordResetRequest');
     const users = getUsers();
     const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
     if(!user) return false;
