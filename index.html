@@ -2304,6 +2304,15 @@ MOBILE
       "areaServed": {
         "@type": "Country",
         "name": "Chile"
+      },
+      "telephone": "+56992460216",
+      "taxID": "9.138.152-4",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56992460216",
+        "contactType": "customer service",
+        "areaServed": "CL",
+        "availableLanguage": "es"
       }
     },
     {
@@ -2370,7 +2379,7 @@ MOBILE
           "name": "¿Hacen despacho a regiones?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí, despachamos a todo Chile. Región Metropolitana $3.990, de la IV a la X región $6.990 y otras regiones $9.990."
+            "text": "Sí, enviamos a todo Chile vía Starken. El envío es por pagar: el costo del despacho lo pagas al recibir o retirar tu pedido."
           }
         },
         {
@@ -2484,7 +2493,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span>Subtotal</span>
       <span id="cartSubtotal">$0</span>
     </div>
-    <p class="cart-note">Envío e impuestos calculados en el checkout.</p>
+    <p class="cart-note">Envío por pagar vía Starken a todo Chile.</p>
     <a href="checkout/index.html" class="cart-checkout-btn">
       Ir al Checkout
       <i class="fa-solid fa-arrow-right"></i>
@@ -3088,8 +3097,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="beneficio">
           <i class="fa-solid fa-truck-fast"></i>
           <div>
-            <h3>Despacho a todo Chile</h3>
-            <p>Enviamos a la Región Metropolitana y a todas las regiones del país.</p>
+            <h3>Envíos a todo Chile</h3>
+            <p>Despachamos vía Starken a todas las regiones del país. El envío es por pagar al recibir.</p>
           </div>
         </div>
         <div class="beneficio">
@@ -3346,7 +3355,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </details>
       <details>
         <summary>¿Hacen despacho a regiones?</summary>
-        <p>Sí, despachamos a todo Chile. Región Metropolitana $3.990, de la IV a la X región $6.990 y otras regiones $9.990.</p>
+        <p>Sí, enviamos a todo Chile vía Starken. El envío es por pagar: el costo del despacho lo pagas al recibir o retirar tu pedido.</p>
       </details>
       <details>
         <summary>¿Por qué el cloro no funciona si mi pH está alto?</summary>
@@ -3374,7 +3383,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://wa.me/56992460216" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
 
@@ -3405,16 +3414,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h4>Contacto</h4>
         <ul class="footer-contact">
           <li><i class="fa-solid fa-envelope"></i> contacto@cloroentabletas.cl</li>
-          <li><i class="fa-solid fa-phone"></i> +56 9 9999 9999</li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+56992460216" style="color:inherit">+56 9 9246 0216</a></li>
           <li><i class="fa-regular fa-clock"></i> Lun a Vie 9:00 - 18:00</li>
           <li><i class="fa-solid fa-location-dot"></i> Santiago, Chile</li>
+          <li><i class="fa-solid fa-truck"></i> Envíos a todo Chile vía Starken (por pagar)</li>
         </ul>
       </div>
 
     </div>
 
     <div class="copyright">
-      &copy; 2026 Cloro en Tabletas. Todos los derechos reservados. RUT 76.XXX.XXX-X
+      &copy; 2026 Cloro en Tabletas. Todos los derechos reservados. RUT 9.138.152-4 · Santiago, Chile.
     </div>
 
   </div>
@@ -3575,6 +3585,7 @@ drawer.querySelectorAll('a').forEach(a => {
 </script>
 
 <script src="assets/js/tracking.js"></script>
+<script src="assets/js/whatsapp.js"></script>
 <script src="assets/js/cart.js"></script>
 <script src="assets/js/auth.js"></script>
 

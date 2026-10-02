@@ -678,7 +678,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span>Subtotal</span>
       <span id="cartSubtotal">$0</span>
     </div>
-    <p class="cart-note">Envío e impuestos calculados en el checkout.</p>
+    <p class="cart-note">Envío por pagar vía Starken a todo Chile.</p>
     <a href="#" class="cart-checkout-btn">
       Ya estás en Checkout
     </a>
@@ -877,13 +877,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="summary-line">
             <span>Envío <small id="envioRegion" style="color:#9ca3af;font-weight:500"></small></span>
-            <span id="summaryShipping">—</span>
+            <span id="summaryShipping">Por pagar</span>
           </div>
           <div class="summary-line total">
             <span>Total</span>
             <span id="summaryTotal">$0</span>
           </div>
-          <p style="font-size:11px;color:#9ca3af;margin-top:8px;line-height:1.5" id="envioInfo">Selecciona tu región para calcular el envío.</p>
+          <p style="font-size:11px;color:#9ca3af;margin-top:8px;line-height:1.5" id="envioInfo">Enviamos a todo Chile vía Starken. El costo del despacho lo pagas al recibir o retirar tu pedido.</p>
         </div>
       </aside>
 
@@ -902,7 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://wa.me/56992460216" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
       <div>
@@ -916,11 +916,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h4>Contacto</h4>
         <ul class="footer-contact">
           <li><i class="fa-solid fa-envelope"></i> contacto@cloroentabletas.cl</li>
-          <li><i class="fa-solid fa-phone"></i> +56 9 9999 9999</li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+56992460216" style="color:inherit">+56 9 9246 0216</a></li>
         </ul>
       </div>
     </div>
-    <div class="copyright">&copy; 2026 Cloro en Tabletas. Todos los derechos reservados.</div>
+    <div class="copyright">&copy; 2026 Cloro en Tabletas. Todos los derechos reservados. RUT 9.138.152-4 · Santiago, Chile.</div>
   </div>
 </footer>
 
@@ -948,24 +948,17 @@ drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarDraw
 </script>
 
 <script src="../assets/js/tracking.js"></script>
+<script src="../assets/js/whatsapp.js"></script>
 <script src="../assets/js/cart.js"></script>
 
 <script>
 const STORAGE_KEY = 'cloroentabletas_cart';
 
-const ENVIO = {
-  metropolitana: 3990,
-  regiones: 6990,
-  otras: 9990
-};
-
-const REGIONES_4_A_10 = ['Coquimbo','Valparaíso',"O'Higgins",'Maule','Ñuble','Biobío','Araucanía'];
-
+// Envíos por pagar vía Starken: el despacho no se cobra en el sitio
 const CUPONES = {
   'VERANO10':   { tipo:'%',     valor:10, label:'-10%' },
   'PISCINA15':  { tipo:'%',     valor:15, label:'-15%' },
-  'CLORO5000':  { tipo:'fijo',  valor:5000, label:'-$5.000' },
-  'ENVIOGRATIS':{ tipo:'envio', valor:0,   label:'Envío Gratis' }
+  'CLORO5000':  { tipo:'fijo',  valor:5000, label:'-$5.000' }
 };
 
 let cuponActivo = null;
@@ -979,9 +972,7 @@ function medir(metodo){
 
 function getEnvio(region){
   if(!region) return null;
-  if(region === 'Metropolitana') return { costo: ENVIO.metropolitana, label: 'RM' };
-  if(REGIONES_4_A_10.includes(region)) return { costo: ENVIO.regiones, label: 'IV a X región' };
-  return { costo: ENVIO.otras, label: 'Otras regiones' };
+  return { costo: 0, label: 'Starken (por pagar)' };
 }
 
 function actualizarCantidad(id, change){
@@ -1072,16 +1063,10 @@ function renderCheckout(){
   const envioRegionEl = document.getElementById('envioRegion');
   const infoEl = document.getElementById('envioInfo');
 
-  if(envioInfo){
-    envio = envioInfo.costo;
-    envioEl.textContent = window.CloroCart.formatPrice(envio);
-    envioRegionEl.textContent = '(' + envioInfo.label + ')';
-    infoEl.textContent = '';
-  } else {
-    envioEl.textContent = '—';
-    envioRegionEl.textContent = '';
-    infoEl.textContent = 'Selecciona tu región para calcular el envío.';
-  }
+  // Envío por pagar vía Starken: no suma al total
+  envioEl.textContent = 'Por pagar';
+  envioRegionEl.textContent = '(Starken)';
+  infoEl.textContent = 'Enviamos a todo Chile vía Starken. El costo del despacho lo pagas al recibir o retirar tu pedido.';
 
   // Descuento
   let descuento = 0;
