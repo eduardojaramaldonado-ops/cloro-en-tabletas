@@ -68,7 +68,6 @@
     ['#productosTrack .producto-card:not([aria-hidden="true"])', 'Productos destacados'],
     ['#mas-vendidos .otro-card', 'Más vendidos'],
     ['#ofertas .producto-card', 'Ofertas'],
-    ['#tienda .otro-card', 'Otros productos'],
     ['.productos-relacionados .catalogo-card', 'Relacionados'],
   ];
 
