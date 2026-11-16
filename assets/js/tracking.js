@@ -67,7 +67,6 @@
   const LISTS = [
     ['#productosTrack .producto-card:not([aria-hidden="true"])', 'Productos destacados'],
     ['#mas-vendidos .otro-card', 'Más vendidos'],
-    ['#ofertas .producto-card', 'Ofertas'],
     ['.productos-relacionados .catalogo-card', 'Relacionados'],
   ];
 

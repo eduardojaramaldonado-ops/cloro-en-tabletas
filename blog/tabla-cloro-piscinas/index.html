@@ -188,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="mobile-drawer" id="mobileDrawer">
   <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
-  <nav class="drawer-nav"><a href="../../productos/"><i class="fa-solid fa-tag"></i> Productos</a><a href="../../productos/"><i class="fa-solid fa-store"></i> Tienda</a><a href="../../blog/"><i class="fa-solid fa-newspaper"></i> Blog</a><a href="../../#ofertas"><i class="fa-solid fa-fire"></i> Ofertas</a><a href="../../contacto/"><i class="fa-solid fa-envelope"></i> Contacto</a></nav>
+  <nav class="drawer-nav"><a href="../../productos/"><i class="fa-solid fa-tag"></i> Productos</a><a href="../../productos/"><i class="fa-solid fa-store"></i> Tienda</a><a href="../../blog/"><i class="fa-solid fa-newspaper"></i> Blog</a><a href="../../contacto/"><i class="fa-solid fa-envelope"></i> Contacto</a></nav>
   <div class="drawer-footer"><a href="../../cuenta/login/" class="drawer-cta"><i class="fa-regular fa-circle-user"></i> Iniciar Sesión</a></div>
 </div>
 <div class="drawer-overlay" id="drawerOverlay"></div>
@@ -284,8 +284,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <tr><td>Hasta 10 m³</td><td>0.5 tableta cada 7 días</td><td><a href="../../productos/">1 Kg</a></td></tr>
             <tr><td>10 a 20 m³</td><td>1 tableta cada 7 días</td><td><a href="../../productos/">2 Kg</a></td></tr>
             <tr><td>20 a 30 m³</td><td>1.5 tabletas cada 7 días</td><td><a href="../../productos/">4 Kg</a></td></tr>
-            <tr><td>30 a 50 m³</td><td>2-3 tabletas cada 7 días</td><td><a href="../../productos/">5 Kg</a></td></tr>
-            <tr><td>50 a 100 m³</td><td>4-5 tabletas o usar formato 500 g</td><td><a href="../../#ofertas">10 Kg</a></td></tr>
+            <tr><td>30 a 50 m³</td><td>2-3 tabletas cada 7 días</td><td><a href="../../productos/cloro-en-tabletas-4-kilos/">2 packs de 4 Kg</a></td></tr>
+            <tr><td>50 a 100 m³</td><td>4-5 tabletas o usar formato 500 g</td><td><a href="../../contacto/">Cotizar por mayor</a></td></tr>
             <tr><td>Más de 100 m³</td><td>Mejor con clorinador en línea</td><td>Consultar</td></tr>
           </tbody>
         </table>
@@ -443,7 +443,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="big-cta">
   <div class="container">
     <h2>Tu Piscina, <span class="yellow">Tu Cloro Exacto</span></h2>
-    <p>Cloro en tabletas en todos los formatos: 1, 2, 4, 5 y 10 kilos. Despacho a todo Chile.</p>
+    <p>Cloro en tabletas en todos los formatos: 1, 2 y 4 kilos. Despacho a todo Chile.</p>
     <a href="../../productos/" class="big-cta-btn">Ver Productos <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 </section>
@@ -484,8 +484,6 @@ drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',cerrarDrawer)
     { kg: 1, url: '../../productos/cloro-en-tabletas-1-kilo/' },
     { kg: 2, url: '../../productos/cloro-en-tabletas-2-kilos/' },
     { kg: 4, url: '../../productos/cloro-en-tabletas-4-kilos/' },
-    { kg: 5, url: '../../productos/cloro-en-tabletas-5-kilos/' },
-    { kg: 10, url: '../../productos/cloro-en-tabletas-10-kilos/' },
   ];
   const SEMANAS_TEMPORADA = 16;
   const num = el => { const v = parseFloat(String(el.value).replace(',', '.')); return isFinite(v) && v > 0 ? v : 0; };
@@ -518,7 +516,7 @@ drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',cerrarDrawer)
     const tabletas = Math.max(0.5, Math.ceil((m3 / 20) * factor * 2) / 2);
     const kgTemporada = tabletas * SEMANAS_TEMPORADA * 0.2;
     const pack = PACKS.find(p => p.kg >= kgTemporada) || PACKS[PACKS.length - 1];
-    const masDeUno = kgTemporada > 10;
+    const packs = Math.ceil(kgTemporada / pack.kg);   // más de un pack de 4 kg en piscinas grandes
 
     out.innerHTML =
       '<p class="calc-volumen">Tu piscina tiene <strong>' + fmt(m3, 1) + ' m³</strong> (' + fmt(m3 * 1000) + ' litros).</p>' +
@@ -529,8 +527,9 @@ drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',cerrarDrawer)
         '<li><strong>Cloro líquido al 10 %:</strong> ' + fmt(m3 * 1.5) + ' a ' + fmt(m3 * 2) + ' ml al día</li>' +
       '</ul>' +
       '<p class="calc-pack">Para una temporada de verano (' + SEMANAS_TEMPORADA + ' semanas) necesitas unos <strong>' + fmt(kgTemporada, 1) + ' kg</strong> de tabletas. ' +
-      'Te recomendamos el <a href="' + pack.url + '">pack de ' + pack.kg + (pack.kg === 1 ? ' kilo' : ' kilos') + '</a>' +
-      (masDeUno ? ' (más de un pack, o reponer a mitad de temporada).' : '.') + '</p>';
+      (packs > 1
+        ? 'Te recomendamos <a href="' + pack.url + '">' + packs + ' packs de ' + pack.kg + ' kilos</a>, o <a href="../../contacto/">escríbenos</a> para una cotización por mayor.'
+        : 'Te recomendamos el <a href="' + pack.url + '">pack de ' + pack.kg + (pack.kg === 1 ? ' kilo' : ' kilos') + '</a>.') + '</p>';
   }
 
   ['calcForma', 'calcLargo', 'calcAncho', 'calcProf', 'calcLitros', 'calcTemp', 'calcUso'].forEach(id => {
